@@ -29,7 +29,4 @@
     "discord.js-commando": "^0.10.0",
     "commando": "^0.0.2"
   },
-  "devDependencies": {
-    "coffee-script": "^1.12.7"
-  }
 }

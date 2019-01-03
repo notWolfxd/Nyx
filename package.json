@@ -2,10 +2,10 @@
   "name": "nyx",
   "version": "1.0.1",
   "description": "Super great shit amirite",
-  "main": "node config.js",
+  "main": "node bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node config.js"
+    "start": "node bot.js"
   },
   "engines": {
     "node": "8.4.0"

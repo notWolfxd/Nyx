@@ -22,7 +22,7 @@ const command = args.shift().toLowerCase();
     .addField("In this team they are a:", `${position}`)
   client.channels.get("530178004928823306").sendEmbed(leaderEmbed);
   client.channels.get("530178004928823306").send("@everyone");
-  
+  }
 });
 
 client.login(process.env.BOT_TOKEN);

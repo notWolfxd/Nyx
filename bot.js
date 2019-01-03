@@ -12,6 +12,7 @@ const command = args.shift().toLowerCase();
   
   if(command === "iam") {
     let [gamemode, position, team] = args;
+    if (![gamemode, position, team]) return message.channel.send("To acquire a role do `.iam [Gamemode (Factions | Skyblock | Prison)] [Position (Leader | CoLeader)] [Team name]`.");
     var leaderEmbed = new Discord.RichEmbed()
     .setDescription("Leader Request")
     .setColor("#f4392b")

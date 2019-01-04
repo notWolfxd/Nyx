@@ -4,7 +4,7 @@ const client = new Discord.Client();
 
 client.on("ready", async () => {
     console.log(`${client.user.username}  is online!`);
-    client.user.setGame("with tiddies");
+    client.user.setGame("with big anime tiddies.");
 
 });
 

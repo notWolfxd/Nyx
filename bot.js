@@ -19,7 +19,7 @@ client.on("message", (message) => {
 
   if(command === "iam") {
     let [gamemode, position, team] = args;
-    if (!position || !team || !gamemode) return message.reply("| To acquire a role do: `.iam [Gamemode (Factions | Skyblock | Prison)] [Position (Leader | CoLeader)] [Team name]`.");
+    if (!position || !team || !gamemode) return channel.send("`${message.author} | To acquire a role do: `.iam [Gamemode (Factions | Skyblock | Prison)] [Position (Leader | CoLeader)] [Team name]`.");
     var leaderEmbed = new Discord.RichEmbed()
     .setDescription("Leader Request")
     .setColor("#f4392b")
@@ -29,7 +29,7 @@ client.on("message", (message) => {
     .addField("They are apart of:", `${team}`)
     .addField("In this team they are a:", `${position}`)
     .setFooter("Nyx v1.2.5 | Made By: Wolf#9001", client.user.avatarURL)
-  message.reply("| Staff have been notified that you need the correct role. Please be patient.");
+  channel.send("`${message.author} | Staff have been notified that you need the correct role. Please be patient.");
   client.channels.get("530178004928823306").sendEmbed(leaderEmbed);
   client.channels.get("530178004928823306").send("@everyone");
   }

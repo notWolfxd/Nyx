@@ -30,7 +30,7 @@ client.on("message", (message) => {
     .addField("They are looking for a role in the gametype:", `${gamemode}`)
     .addField("They are apart of:", `${team}`)
     .addField("In this team they are a:", `${position}`)
-    .setFooter(":wolfy: Nyx v1.2.5 | Made By: Wolf#9001")
+    .setFooter("Nyx v1.2.5 | Made By: Wolf#9001", client.user.avatarURL())
   message.reply("Staff have been notified that you need the correct role. Please be patient.");
   client.channels.get("530178004928823306").sendEmbed(leaderEmbed);
   client.channels.get("530178004928823306").send("@everyone");

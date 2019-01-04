@@ -17,7 +17,7 @@ client.on("message", (message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 
-  if(command === "test") {
+  if(command === "iam") {
     let [gamemode, position, team] = args;
     if (!position) return message.reply("To acquire a role do `.iam [Gamemode (Factions | Skyblock | Prison)] [Position (Leader | CoLeader)] [Team name]`.");
     if (!team) return message.reply("To acquire a role do `.iam [Gamemode (Factions | Skyblock | Prison)] [Position (Leader | CoLeader)] [Team name]`.");

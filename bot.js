@@ -19,7 +19,7 @@ client.on("message", (message) => {
 
   if(command === "iam") {
     let [gamemode, position, team] = args;
-    if (!position || !team || !gamemode) return channel.send("`${message.author} | To acquire a role do: `.iam [Gamemode (Factions | Skyblock | Prison)] [Position (Leader | CoLeader)] [Team name]`.");
+    if (!position || !team || !gamemode) return client.channels.send("`${message.author} | To acquire a role do: `.iam [Gamemode (Factions | Skyblock | Prison)] [Position (Leader | CoLeader)] [Team name]`.");
     var leaderEmbed = new Discord.RichEmbed()
     .setDescription("Leader Request")
     .setColor("#f4392b")

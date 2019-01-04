@@ -19,9 +19,9 @@ client.on("message", (message) => {
 
   if(command === "iam") {
     let [gamemode, position, team] = args;
-    if (!position) return message.mention.author("| To acquire a role do: `.iam [Gamemode (Factions | Skyblock | Prison)] [Position (Leader | CoLeader)] [Team name]`.");
-    if (!team) return message.mention.author("| To acquire a role do: `.iam [Gamemode (Factions | Skyblock | Prison)] [Position (Leader | CoLeader)] [Team name]`.");
-    if (!gamemode) return message.mention.author("| To acquire a role do: `.iam [Gamemode (Factions | Skyblock | Prison)] [Position (Leader | CoLeader)] [Team name]`.");
+    if (!position) return message.author.mention("| To acquire a role do: `.iam [Gamemode (Factions | Skyblock | Prison)] [Position (Leader | CoLeader)] [Team name]`.");
+    if (!team) return message.author.mention("| To acquire a role do: `.iam [Gamemode (Factions | Skyblock | Prison)] [Position (Leader | CoLeader)] [Team name]`.");
+    if (!gamemode) return message.author.mention("| To acquire a role do: `.iam [Gamemode (Factions | Skyblock | Prison)] [Position (Leader | CoLeader)] [Team name]`.");
     var leaderEmbed = new Discord.RichEmbed()
     .setDescription("Leader Request")
     .setColor("#f4392b")

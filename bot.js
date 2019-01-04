@@ -32,8 +32,8 @@ client.on("message", (message) => {
     .addField("In this team they are a:", `${position}`)
     .setFooter("<:wolfy:530534132887846912> Nyx v1.2.5 | Made By: Wolf#9001")
   message.reply("Staff have been notified that you need the correct role. Please be patient.");
-  client.channels.get("517178851441508356").sendEmbed(leaderEmbed);
-  client.channels.get("517178851441508356").send("@everyone");
+  client.channels.get("530178004928823306").sendEmbed(leaderEmbed);
+  client.channels.get("530178004928823306").send("@everyone");
   }
 
 });

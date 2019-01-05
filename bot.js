@@ -1,39 +1,42 @@
 const config = require("./config.json");
 const Discord = require("discord.js");
+const fs = require("fs");
 const client = new Discord.Client();
+client.commands = new Discord.Collection();
 
-client.on("ready", async () => {
-    console.log(`${client.user.username}  is online!`);
-    client.user.setGame("with big anime tiddies.");
+fs.readdir("./commands/", (err, files) => {
 
-});
+  if(err) console.log(err);
 
-client.on("message", (message) => {
-
-    let prefix = config.prefix;
-    // Exit and stop if the prefix is not there or if user is a bot
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
-    
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
-
-  if(command === "iam") {
-    let [gamemode, position, team] = args;
-    if (!position || !team || !gamemode) return message.reply("| To acquire a role do: `.iam [Gamemode (Factions | Skyblock | Prison)] [Position (Leader | CoLeader)] [Team name]`.");
-    var leaderEmbed = new Discord.RichEmbed()
-    .setDescription("Leader Request")
-    .setColor("#f4392b")
-    .setThumbnail(message.author.avatarURL)
-    .addField("Role requested by:", `${message.author} | ${message.author.id}`)
-    .addField("They are looking for a role in the gametype:", `${gamemode}`)
-    .addField("They are apart of:", `${team}`)
-    .addField("In this team they are a:", `${position}`)
-    .setFooter("Nyx v1.2.5 | Made By: Wolf#9001", client.user.avatarURL)
-  message.reply ("| Staff have been notified that you need the correct role. Please be patient.");
-  client.channels.get("530178004928823306").sendEmbed(leaderEmbed);
-  client.channels.get("530178004928823306").send("@everyone");
+  let jsfile = files.filter(f => f.split(".").pop() === "js")
+  if(jsfile.length <= 0){
+    console.log("Couldn't find commands.");
+    return;
   }
 
+  jsfile.forEach((f, i) =>{
+    let props = require(`./commands/${f}`);
+    console.log(`${f} loaded!`);
+    client.commands.set(props.help.name, props);
+  });
+});
+client.on("ready", async () => {
+  console.log(`${client.user.username} is online on ${client.guilds.size} servers!`);
+
+  client.user.setActivity("with big anime tiddies", {type: "PLAYING"});
+});
+
+client.on("message", async message => {
+  if(message.author.bot) return;
+  if(message.channel.type === "dm") return;
+
+  let prefix = config.prefix;
+  let messageArray = message.content.split(" ");
+  let command = messageArray[0];
+  let args = message.content.slice(prefix.length).trim().split(/ +/g);
+
+  let commandfile = client.commands.get(command.slice(prefix.length));
+  if(commandfile) commandfile.run(client,message,args);
 });
 
 client.login(process.env.BOT_TOKEN);

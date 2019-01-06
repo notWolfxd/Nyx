@@ -31,7 +31,7 @@ client.on("message", async message => {
   if(message.channel.type === "dm") return;
 
   let prefix = config.prefix;
-  let messageArray = message.content.split(" ");
+  let messageArray = message.content.split(prefix.length).trim().split(/ +/g);
   let command = messageArray[0];
   let args = message.content.slice(prefix.length).trim().split(/ +/g);
 

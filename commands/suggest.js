@@ -5,7 +5,6 @@ module.exports.run = async (client, message, args) => {
     let gametype = args[0];
     let suggestion = args.slice(1).join(" ")
     if (!gametype || !suggestion) return message.reply("to submit a suggestion do: `.suggest (Gamemode [Factions | Skyblock | Prison]) (Suggestion)`.");
-    if (gametype != gamemodes) return message.reply("something went wrong");
     var suggestEmbed = new Discord.RichEmbed()
     .setDescription("**Suggestion**")
     .setColor("#f74e00")

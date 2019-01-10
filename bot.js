@@ -27,11 +27,11 @@ client.on("ready", async () => {
 });
 
 client.on("message", async message => {
+  let prefix = config.prefix;
   if(message.author.bot) return;
-  if(!config.prefix) return;
+  if(!prefix) return;
   if(message.channel.type === "dm") return;
 
-  let prefix = config.prefix;
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 

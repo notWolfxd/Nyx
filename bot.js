@@ -27,9 +27,9 @@ client.on("ready", async () => {
 });
 
 client.on("message", async message => {
-  let prefix = config.prefix;
+  let prefix = config.prefix
+  if (!message.content.startsWith(prefix)) return; 
   if(message.author.bot) return;
-  if(!prefix) return;
   if(message.channel.type === "dm") return;
 
   const args = message.content.slice(prefix.length).trim().split(/ +/g);

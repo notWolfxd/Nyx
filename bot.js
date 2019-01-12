@@ -27,10 +27,21 @@ client.on("ready", async () => {
 });
 
 client.on("message", async message => {
-  let prefix = config.prefix
-  if (!message.content.startsWith(prefix)) return; 
+ // let prefix = config.prefix
+ // if (!message.content.startsWith(prefix)) return; 
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
+
+  let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
+
+  if (!prefixes[message.guild.id]){
+    prefixes[message.guild.id] = {
+        prefix: config.prefix
+    };
+  }
+
+  let prefix = prefixes[message.guild.id].prefix;
+  if (!message.content.startsWith(prefix)) return; 
 
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();

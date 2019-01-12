@@ -8,8 +8,8 @@ module.exports.run = async (client, message, args) => {
     .setColor("#f74e00")
     .setThumbnail(message.author.avatarURL)
     .addField("Description: ", "Sends a suggestion to the suggestion channel. Once sent the players/ users can vote upon what was suggested.")
-    .addField("Usage: ", ".suggest (Gamemode [factions | skyblock | prison]) (Suggestion)")
-    .addField("Example: ", ".suggest Factions ╠═══╣ Lets build a ladder to demote Milk ╠═══╣")
+    .addField("Usage: ", "-suggest (Gamemode [factions | skyblock | prison]) (Suggestion)")
+    .addField("Example: ", "-suggest Factions ╠═══╣ Lets build a ladder to demote Milk ╠═══╣")
     .setFooter("Nyx v1.3.1 | Made By: Wolf#9001", client.user.avatarURL)
 
     //Define the arguments for .suggest.

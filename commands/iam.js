@@ -8,8 +8,8 @@ module.exports.run = async (client, message, args) => {
     .setColor("#f4392b")
     .setThumbnail(message.author.avatarURL)
     .addField("Description: ", "Alerts the proper staff that you need a leader role in the gamemode of choice.")
-    .addField("Usage: ", ".iam [Gamemode (Factions | Skyblock | Prison)] [Position (Leader | CoLeader)] [Team name]")
-    .addField("Example: ", ".iam Factions Leader Promised")
+    .addField("Usage: ", "-iam [Gamemode (factions | skyblock | prison)] [Position (leader | coleader)] [Team name]")
+    .addField("Example: ", "-iam factions leader Promised")
     .setFooter("Nyx v1.3.1 | Made By: Wolf#9001", client.user.avatarURL)
 
     //Define the arguments for .iam.

@@ -1,0 +1,54 @@
+//Not finished yet, lot of work left to do. Not adding .js to it until ready.
+const Discord = require("discord.js");
+
+module.exports.run = async (client, message, args) => {
+
+    //Build .recruit help Embed
+    var recruitHelpEmbed = new Discord.RichEmbed()
+    .setTitle("Command: Recruit")
+    .setColor("#f74e00")
+    .setThumbnail(message.author.avatarURL)
+    .addField("Description: ", "Recruit people to join your team for either prison, factions, or skyblock.")
+    .addField("Permissions", "You must have one of the three leader roles (faction-leader, island-leader, or gang-leader", true)
+    .addField("Usage: ", "-recruit (gamemode [factions | skyblock | prison]) | (teamname) | (aboutline1) | (aboutline2) | (req1) | (req2) | (req3) | (invitelink)")
+    .addField("Friendly PSA:", "If you are caught using this to advertise other servers, then you will be banned", true)
+    .addField("Example: ", "-recruit factions | Promised | We are gods | We never lose (unlike RIP) | No being stupid. | Must be competent | Must have an IQ >100 | {link}")
+    .setFooter("Nyx v1.3.1 | Made By: Wolf#9001", client.user.avatarURL)
+
+    //Define the arguments for .recruit.
+    let recruitDefine = args.join(" ").split(" | ");
+    let gametype = recruitDefine[0];
+    let teamname = recruitDefine[1];
+    let aboutline1 = recruitDefine[2];
+    let aboutline2 = recruitDefine[3];
+    let req1 = recruitDefine[4];
+    let req2 = recruitDefine[5];
+    let req3 = recruitDefine[6];
+    let link = recruitDefine[7];
+    if (recruitDefine[0] != "factions" && recruitDefine[0] != "prison" && recruitDefine[0] != "skyblock") return message.channel.sendEmbed(recruitHelpEmbed);
+
+    //Build the .recruit message Embed.
+    var recruitEmbed = new Discord.RichEmbed()
+    .setTitle("Team Recruitment!")
+    .setColor("#ffae00")
+    .setThumbnail(message.author.avatarURL)
+    .addField("Recruiter:", `${message.author} | ${message.author.id}`)
+    .addField("Recruiting In:", `${gametype}`)
+    .addField("Recruiting For:", `${teamname}`)
+    .addField("About Them:", `- ${aboutline1}`, `- ${aboutline2}`)
+    .addField("Their Requirements:", `- ${req1}`, `- ${req2}`, `${req3}`)
+    .addField("Team Discord", `${link}`)
+    .setFooter("Nyx v1.3.1 | Made By: Wolf#9001", client.user.avatarURL)
+    
+  //Sending the completed message.
+   message.reply("your recruitment information has been sent! You must now wait 5 hours to send it again.")
+   if (recruitDefine[0] != "prison" && recruitDefine[0] != "skyblock" && recruitDefine[0] != "factions") return message.channel.send("You did not specify a valid gamemode!");
+   if (!message.member.roles.has("") && !message.member.roles.has("") && message.author.roles.has("")) return message.channel.send("You do not have a leader role. To get one read #faqs!");
+   if (recruitDefine[0] == "factions" && message.member.roles.has("")) return client.channels.get("").sendEmbed(recruitEmbed);
+   if (recruitDefine[0] == "skyblock" && message.member.roles.has("")) return client.channels.get("").sendEmbed(recruitEmbed);
+   if (recruitDefine[0] == "prison" && message.member.roles.has("")) return client.channels.get("").sendEmbed(recruitEmbed);
+  }
+
+ module.exports.help = {
+    name: "recruit"
+ }

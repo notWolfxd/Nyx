@@ -1,7 +1,9 @@
-//Not finished yet, lot of work left to do. Not adding .js to it until ready.
 const Discord = require("discord.js");
+const cooldown = new Set();
 
 module.exports.run = async (client, message, args) => {
+    if (cooldown.has(message.author.id)) return message.reply("you must wait 5 hours between recruiting!");
+    else {
 
     //Build .recruit help Embed
     var recruitHelpEmbed = new Discord.RichEmbed()
@@ -21,10 +23,11 @@ module.exports.run = async (client, message, args) => {
     let teamname = recruitDefine[1];
     let aboutline1 = recruitDefine[2];
     let aboutline2 = recruitDefine[3];
-    let req1 = recruitDefine[4];
-    let req2 = recruitDefine[5];
-    let req3 = recruitDefine[6];
-    let link = recruitDefine[7];
+    let aboutline3 = recruitDefine[4];
+    let req1 = recruitDefine[5];
+    let req2 = recruitDefine[6];
+    let req3 = recruitDefine[7];
+    let link = recruitDefine[8];
     if (recruitDefine[0] != "factions" && recruitDefine[0] != "prison" && recruitDefine[0] != "skyblock") return message.channel.sendEmbed(recruitHelpEmbed);
 
     //Build the .recruit message Embed.
@@ -35,20 +38,26 @@ module.exports.run = async (client, message, args) => {
     .addField("Recruiter:", `${message.author} | ${message.author.id}`)
     .addField("Recruiting In:", `${gametype}`)
     .addField("Recruiting For:", `${teamname}`)
-    .addField("About Them:", `- ${aboutline1}`, `- ${aboutline2}`)
-    .addField("Their Requirements:", `- ${req1}`, `- ${req2}`, `${req3}`)
+    .addField("About Them:", `- ${aboutline1} 
+    - ${aboutline2}
+    - ${aboutline3}`)
+    .addField("Their Requirements:", `- ${req1} 
+    - ${req2} 
+    - ${req3}`)
     .addField("Team Discord", `${link}`)
     .setFooter("Nyx v1.3.1 | Made By: Wolf#9001", client.user.avatarURL)
     
   //Sending the completed message.
-   message.reply("your recruitment information has been sent! You must now wait 5 hours to send it again.")
-   if (recruitDefine[0] != "prison" && recruitDefine[0] != "skyblock" && recruitDefine[0] != "factions") return message.channel.send("You did not specify a valid gamemode!");
-   if (!message.member.roles.has("") && !message.member.roles.has("") && message.author.roles.has("")) return message.channel.send("You do not have a leader role. To get one read #faqs!");
-   if (recruitDefine[0] == "factions" && message.member.roles.has("")) return client.channels.get("").sendEmbed(recruitEmbed);
-   if (recruitDefine[0] == "skyblock" && message.member.roles.has("")) return client.channels.get("").sendEmbed(recruitEmbed);
-   if (recruitDefine[0] == "prison" && message.member.roles.has("")) return client.channels.get("").sendEmbed(recruitEmbed);
-  }
-
+  cooldown.add(message.author.id);
+  setTimeout(() => {
+      cooldown.delete(message.author.id);
+  }, 1000 * 60 * 60 * 5);
+   if (message.member.roles.has("533736423367639040") && recruitDefine[0] == "factions") return client.channels.get("533736792831295488").send(recruitEmbed);
+   if (message.member.roles.has("533736456573812736") && recruitDefine[0] == "skyblock") return client.channels.get("533736764289056768").send(recruitEmbed);
+   if (message.member.roles.has("533736483052322816") && recruitDefine[0] == "prison") return client.channels.get("533736735796887552").send(recruitEmbed);
+   message.reply("your recruitment information has been sent! You must now wait 5 hours to send it again.");
+    }
+ }
  module.exports.help = {
     name: "recruit"
- }
+}

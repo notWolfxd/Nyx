@@ -11,11 +11,11 @@ module.exports.run = async (client, message, args) => {
     .setColor("#f74e00")
     .setThumbnail(message.author.avatarURL)
     .addField("Description: ", "Recruit people to join your team for either prison, factions, or skyblock.")
-    .addField("Permissions", "You must have one of the three leader roles (faction-leader, island-leader, or gang-leader", true)
+    .addField("Permissions:", "You must have one of the three leader roles (faction-leader, island-leader, or gang-leader", true)
     .addField("Usage: ", "-recruit (gamemode [factions | skyblock | prison]) | (teamname) | (aboutline1) | (aboutline2) | (req1) | (req2) | (req3) | (invitelink)")
     .addField("Friendly PSA:", "If you are caught using this to advertise other servers, then you will be banned", true)
     .addField("Example: ", "-recruit factions | Promised | We are gods | We never lose (unlike RIP) | No being stupid. | Must be competent | Must have an IQ >100 | {link}")
-    .setFooter("Nyx v1.3.1 | Made By: Wolf#9001", client.user.avatarURL)
+    .setFooter("Nyx v1.3.5 | Made By: Wolf#9001", client.user.avatarURL)
 
     //Define the arguments for .recruit.
     let recruitDefine = args.join(" ").split(" | ");
@@ -45,16 +45,16 @@ module.exports.run = async (client, message, args) => {
     - ${req2} 
     - ${req3}`)
     .addField("Team Discord", `${link}`)
-    .setFooter("Nyx v1.3.1 | Made By: Wolf#9001", client.user.avatarURL)
+    .setFooter("Nyx v1.3.5 | Made By: Wolf#9001", client.user.avatarURL)
     
   //Sending the completed message.
   cooldown.add(message.author.id);
   setTimeout(() => {
       cooldown.delete(message.author.id);
   }, 1000 * 60 * 60 * 5);
-   if (message.member.roles.has("533736423367639040") && recruitDefine[0] == "factions") return client.channels.get("533736792831295488").send(recruitEmbed);
-   if (message.member.roles.has("533736456573812736") && recruitDefine[0] == "skyblock") return client.channels.get("533736764289056768").send(recruitEmbed);
-   if (message.member.roles.has("533736483052322816") && recruitDefine[0] == "prison") return client.channels.get("533736735796887552").send(recruitEmbed);
+   if (message.member.roles.has("471779470525595668") && recruitDefine[0] == "factions") return client.channels.get("426903359392448522").send(recruitEmbed);
+   if (message.member.roles.has("487054093655998485") && recruitDefine[0] == "skyblock") return client.channels.get("487053977821904909").send(recruitEmbed);
+   if (message.member.roles.has("515587892525924352") && recruitDefine[0] == "prison") return client.channels.get("515639377695866881").send(recruitEmbed);
    message.reply("your recruitment information has been sent! You must now wait 5 hours to send it again.");
     }
  }

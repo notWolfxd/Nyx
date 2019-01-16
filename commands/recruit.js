@@ -12,9 +12,9 @@ module.exports.run = async (client, message, args) => {
     .setThumbnail(message.author.avatarURL)
     .addField("Description: ", "Recruit people to join your team for either prison, factions, or skyblock.")
     .addField("Permissions:", "You must have one of the three leader roles (faction-leader, island-leader, or gang-leader", true)
-    .addField("Usage: ", "-recruit (gamemode [factions | skyblock | prison]) | (teamname) | (aboutline1) | (aboutline2) | (req1) | (req2) | (req3) | (invitelink)")
+    .addField("Usage: ", "-recruit (gamemode [factions | skyblock | prison]) | (teamname) | (aboutline1) | (aboutline2) | (aboutline3) | (req1) | (req2) | (req3) | (invitelink)")
     .addField("Friendly PSA:", "If you are caught using this to advertise other servers, then you will be banned", true)
-    .addField("Example: ", "-recruit factions | Promised | We are gods | We never lose (unlike RIP) | No being stupid. | Must be competent | Must have an IQ >100 | {link}")
+    .addField("Example: ", "-recruit factions | Promised | We are gods | We never lose (unlike RIP) | We are on top | No being stupid. | Must be competent | Must have an IQ >100 | {link}")
     .setFooter("Nyx v1.3.5 | Made By: Wolf#9001", client.user.avatarURL)
 
     //Define the arguments for .recruit.
@@ -29,6 +29,7 @@ module.exports.run = async (client, message, args) => {
     let req3 = recruitDefine[7];
     let link = recruitDefine[8];
     if (recruitDefine[0] != "factions" && recruitDefine[0] != "prison" && recruitDefine[0] != "skyblock") return message.channel.sendEmbed(recruitHelpEmbed);
+    if (!recruitDefine[8]) return message.channel.sendEmbed(recruitHelpEmbed);
 
     //Build the .recruit message Embed.
     var recruitEmbed = new Discord.RichEmbed()
@@ -39,11 +40,11 @@ module.exports.run = async (client, message, args) => {
     .addField("Recruiting In:", `${gametype}`)
     .addField("Recruiting For:", `${teamname}`)
     .addField("About Them:", `- ${aboutline1} 
-    - ${aboutline2}
-    - ${aboutline3}`)
+   - ${aboutline2}
+   - ${aboutline3}`)
     .addField("Their Requirements:", `- ${req1} 
-    - ${req2} 
-    - ${req3}`)
+   - ${req2} 
+   - ${req3}`)
     .addField("Team Discord", `${link}`)
     .setFooter("Nyx v1.3.5 | Made By: Wolf#9001", client.user.avatarURL)
     

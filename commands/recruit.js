@@ -29,7 +29,7 @@ module.exports.run = async (client, message, args) => {
     let req2 = recruitDefine[6];
     let req3 = recruitDefine[7];
     let link = recruitDefine[8];
-    if (recruitDefine[0] != "factions" && recruitDefine[0] != "prison" && recruitDefine[0] != "skyblock") return message.channel.sendEmbed(recruitHelpEmbed);
+    if (recruitDefine[0] != "factions" && recruitDefine[0] != "prison" && recruitDefine[0] != "skyblock" && recruitDefine[0] != "Skyblock" && recruitDefine[0] != "Factions" && recruitDefine[0] != "Prison") return message.channel.sendEmbed(recruitHelpEmbed);
     if (!recruitDefine[8]) return message.channel.sendEmbed(recruitHelpEmbed);
 
     //Build the .recruit message Embed.

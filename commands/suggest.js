@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
 
+    if (message.guild.id == "290249616484597771") return;
     //Build .suggest help Embed
     var suggestHelpEmbed = new Discord.RichEmbed()
     .setTitle("Command: Suggest")

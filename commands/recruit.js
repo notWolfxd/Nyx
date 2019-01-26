@@ -12,11 +12,9 @@ module.exports.run = async (client, message, args) => {
     .setThumbnail(message.author.avatarURL)
     .addField("Description: ", "Recruit people to join your team for either prison, factions, or skyblock.")
     .addField("Permissions:", "You must have one of the three leader roles (faction-leader, island-leader, or gang-leader", true)
-    .addField("Usage: ", "-recruit (gamemode [factions | skyblock | prison]) | (teamname) | (aboutline1) | (aboutline2) | (aboutline3) | (req1) | (req2) | (req3) | (invitelink)")
-    .addField("Syntax Formatter: ", "Head over to https://notwolfxd.github.io/leaders/ , and use this to format the recruitment post if you're having trouble.")
-    .addField("Friendly PSA:", "If you are caught using this to advertise other servers, then you will be banned", true)
-    .addField("Example: ", "-recruit factions | Promised | We are gods | We never lose (unlike RIP) | We are on top | No being stupid. | Must be competent | Must have an IQ >100 | {link}")
-    .setFooter("Nyx v1.3.5 | Made By: Wolf#9001", client.user.avatarURL)
+    .addField("Syntax Formatter: ", "Use https://notwolfxd.github.io/leaders/ to format the recruitment post if you're having trouble.")
+    .addField("Friendly PSA:", "If you are caught using this to advertise other servers, then you will be banned.", true)
+    .setFooter("Nyx v1.3.6 | Made By: Wolf#9001", client.user.avatarURL)
 
     //Define the arguments for .recruit.
     let recruitDefine = args.join(" ").split(" | ");
@@ -47,7 +45,7 @@ module.exports.run = async (client, message, args) => {
    - ${req2} 
    - ${req3}`)
     .addField("Team Discord", `${link}`)
-    .setFooter("Nyx v1.3.5 | Made By: Wolf#9001", client.user.avatarURL)
+    .setFooter("Nyx v1.3.6 | Made By: Wolf#9001", client.user.avatarURL)
     
   //Sending the completed message.
   cooldown.add(message.author.id);

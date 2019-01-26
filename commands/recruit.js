@@ -52,9 +52,9 @@ module.exports.run = async (client, message, args) => {
   setTimeout(() => {
       cooldown.delete(message.author.id);
   }, 18000000);
-   if (message.member.roles.has("471779470525595668")) return client.channels.get("426903359392448522").send(recruitEmbed);
-   if (message.member.roles.has("487054093655998485")) return client.channels.get("487053977821904909").send(recruitEmbed);
-   if (message.member.roles.has("515587892525924352")) return client.channels.get("515639377695866881").send(recruitEmbed);
+   if (message.member.roles.has("471779470525595668") && recruitDefine[0] == "factions" || recruitDefine[0] = "Factions") return client.channels.get("426903359392448522").send(recruitEmbed);
+   if (message.member.roles.has("487054093655998485") && recruitDefine[0] == "skyblock" || recruitDefine[0] = "Skyblock") return client.channels.get("487053977821904909").send(recruitEmbed);
+   if (message.member.roles.has("515587892525924352") && recruitDefine[0] == "prison" || recruitDefine[0] = "Prison") return client.channels.get("515639377695866881").send(recruitEmbed);
    message.reply("your recruitment information has been sent! You must now wait 5 hours to send it again.");
     }
  }

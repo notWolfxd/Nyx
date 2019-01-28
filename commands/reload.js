@@ -28,7 +28,7 @@ const props = require(`./${commandName}.js`);
 client.commands.set(commandName, props);
 
 //Sending the completed message.
-message.channel.send("The command " + `${commandName}` + " has been reloaded!");
+message.channel.send("The command " + "`"+`${commandName}`+"`" + " has been reloaded!");
 }
 
 module.exports.help = {

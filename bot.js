@@ -23,7 +23,7 @@ fs.readdir("./commands/", (err, files) => {
 client.on("ready", async () => {
   console.log(`${client.user.username} is online on ${client.guilds.size} servers!`);
 
-  client.user.setActivity("with big anime tiddies", {type: "PLAYING"});
+  client.user.setActivity("FREE NADEKO 2K19", {type: "PLAYING"});
 });
 
 client.on("message", async message => {

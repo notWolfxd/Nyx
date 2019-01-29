@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (client, message, args) => {
 
 //Doing the necessary checks
-if (message.author.id !== "298812170093723649") return message.channel.send("You're not my owner, do not attempt to violate me like that!")
+if (message.author.id !== "298812170093723649") return;
 if(!args || args.size < 1) return message.channel.send("Must provide a command name to reload.");
 const commandName = args[0];
 if(!client.commands.has(commandName)) {

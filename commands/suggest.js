@@ -11,7 +11,7 @@ module.exports.run = async (client, message, args) => {
     .addField("Description: ", "Sends a suggestion to the suggestion channel. Once sent the players/ users can vote upon what was suggested.")
     .addField("Usage: ", "-suggest (Gamemode [factions | skyblock | prison]) (Suggestion)")
     .addField("Example: ", "-suggest Factions ╠═══╣ Lets build a ladder to demote Milk ╠═══╣")
-    .setFooter("Nyx v1.3.1 | Made By: Wolf#9001", client.user.avatarURL)
+    .setFooter("Nyx v1.4.0 | Made By: Wolf#9001", client.user.avatarURL)
 
     //Define the arguments for .suggest.
     let gametype = args[0];
@@ -26,7 +26,7 @@ module.exports.run = async (client, message, args) => {
     .addField("Suggested By:", `${message.author} | ${message.author.id}`)
     .addField("Suggestion For:", `${gametype}`)
     .addField("Their Suggestion Is:", `${suggestion}`)
-    .setFooter("Nyx v1.3.1 | Made By: Wolf#9001", client.user.avatarURL)
+    .setFooter("Nyx v1.4.0 | Made By: Wolf#9001", client.user.avatarURL)
     
   //Sending the completed message.
   message.reply("thank you for your suggestion, it has been sent to the suggestion area for players to vote on!");

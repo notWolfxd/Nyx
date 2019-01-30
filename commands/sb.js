@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (client, message, args) => {
     
     let member = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    let modlog = message.guild.channels.find(channel => channel.name === "test");
+    let modlog = message.guild.channels.find(channel => channel.name === "bot-logs");
     let reason = args.splice(1, args.length).join(' ') || `No reason provided.`;
 
 //A whole lot of ifs to protect stuff.

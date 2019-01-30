@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args) => {
     .addField("Description: ", "Sets the prefix for the server.")
     .addField("Usage: ", ".prefix [DesiredPrefix]")
     .addField("Example: ", ".prefix >")
-    .setFooter("Nyx v1.3.1 | Made By: Wolf#9001", client.user.avatarURL)
+    .setFooter("Nyx v1.4.0 | Made By: Wolf#9001", client.user.avatarURL)
 
     //Setting the permissions & sending help message.
     if (!message.member.hasPermission("MANAGE_SERVER")) return message.channel.send("You do not have sufficient permissions to use this command!");

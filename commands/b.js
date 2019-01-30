@@ -3,10 +3,15 @@ const Discord = require("discord.js");
 module.exports.run = async (client, message, args) => {
     
     let member = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    let modlog = message.guild.channels.find(channel => channel.name === "bot-logs");
+    let reason = args.splice(1, args.length).join(' ') || `No reason provided.`;
 
 //A whole lot of ifs to protect stuff.
 if (!message.member.hasPermission("BAN_MEMBERS")) 
         return;
+
+if (!args[0]) 
+        return message.channel.send("I can't ban the air noob.");
 
 if (member.id === message.author.id)
         return message.channel.send("Unfortunately you can't ban yourself, will probs add this later though for fun.")
@@ -19,12 +24,6 @@ if (member.highestRole.position === message.member.highestRole.position)
 
 if (member.highestRole.position > message.member.highestRole.position)
         return message.channel.send("Now that you have tried to ban someone with a higher role than you, expect a ban from them lol !")
-
-if (!member) 
-    return message.channel.send('Please mention a valid member of this server');
-
-	const modlog = message.guild.channels.find(channel => channel.name === "test");
-	const reason = args.splice(1, args.length).join(' ');
 
     member.ban({ days: 7, reason: `${message.author.username} | For: ${reason}` }).then(() => {
 	//message.guild.ban(member,  `${message.author.username} | For: ${reason}`).then(() => {

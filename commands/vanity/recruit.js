@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const cooldown = new Set();
 
 module.exports.run = async (client, message, args) => {
+    if (message.channel.id !== ("410526913879080960")) return;
     if (cooldown.has(message.author.id)) return message.reply("you must wait 5 hours between recruiting!");
     else {
 

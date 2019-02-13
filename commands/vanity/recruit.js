@@ -25,6 +25,8 @@ module.exports.run = async (client, message, args) => {
     //Define the arguments for .recruit.
     let recruitDefine = args.join(" ").split(" | ");
     let gametype = recruitDefine[0];
+       if (!recruitDefine[0]) 
+        return message.channel.sendEmbed(recruitHelpEmbed);
     let teamname = recruitDefine[1];
     let about = recruitDefine[2];
     about = about.replace(/(-)\s/gi, '\n$&');
@@ -33,8 +35,6 @@ module.exports.run = async (client, message, args) => {
     let link = recruitDefine[4];
 
     if (recruitDefine[0] != "factions" && recruitDefine[0] != "prison" && recruitDefine[0] != "skyblock" && recruitDefine[0] != "Skyblock" && recruitDefine[0] != "Factions" && recruitDefine[0] != "Prison") 
-      return message.channel.sendEmbed(recruitHelpEmbed);
-    if (!recruitDefine[4]) 
       return message.channel.sendEmbed(recruitHelpEmbed);
 
     //Build the .recruit message Embed.

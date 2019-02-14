@@ -46,8 +46,8 @@ module.exports.run = async (client, message, args) => {
     .addField("Recruiter:", `${message.author} | ${message.author.id}`)
     .addField("Recruiting In:", `${gametype}`)
     .addField("Recruiting For:", `${teamname}`)
-    .addField("About Them:", `- ${about} `)
-    .addField("Their Requirements:", `- ${req}`)
+    .addField("About Them:", `${about} `)
+    .addField("Their Requirements:", `${req}`)
     .addField("Team Discord", `${link}`)
     .setFooter("Nyx v1.4.0 | Made By: Wolf#9001", client.user.avatarURL)
     

@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
 	
     var banHelpEmbed = new Discord.RichEmbed();
     .setTitle("Command: Ban")
-    .setThumbnail(message,author.id)
+    .setThumbnail(message,author.avatarURL)
     .setColor("#32CD32")
     .addField("**Description:** Bans a user.")
     .addField("**Usage:** -b <user> [reason]")

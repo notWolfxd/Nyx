@@ -5,13 +5,23 @@ module.exports.run = async (client, message, args) => {
     let member = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     let modlog = message.guild.channels.find(channel => channel.name === "bot-logs");
     let reason = args.splice(1, args.length).join(' ') || `No reason provided.`;
+	
+    var banHelpEmbed = new Discord.RichEmbed();
+    .setTitle("Command: Ban")
+    .setThumbnail(message,author.id)
+    .setColor("#32CD32")
+    .addField("**Description:** Bans a user.")
+    .addField("**Usage:** -b <user> [reason]")
+    .addField("**Example:** -b @Jarno Being gay")
+    .addField("**Category:** Moderation")
+    .setFooter("Do not include <> or [] ー They indicate <required> and [optional] arguments.")
 
 //A whole lot of ifs to protect stuff.
 if (!message.member.hasPermission("BAN_MEMBERS")) 
         return;
 
 if (!args[0]) 
-        return message.channel.send("I can't ban the air noob.");
+        return message.channel.send(banHelpEmbed);
 
 if (member.id === message.author.id)
         return message.channel.send("Unfortunately you can't ban yourself, will probs add this later though for fun.")

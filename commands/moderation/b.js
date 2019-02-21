@@ -54,7 +54,7 @@ if (member.highestRole.position > message.member.highestRole.position)
 };
 module.exports.help = {
     name: "b",
-    aliases: [ "kick",
-	       "brb"
+    aliases: [ "ban",
+	       "sayonara"
 	    ]
   }

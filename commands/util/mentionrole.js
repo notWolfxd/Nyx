@@ -17,10 +17,10 @@ if (!message.member.hasPermission("MANAGE_ROLES"))
     role = message.guild.roles.find(role => role.name === args.role);
   }
 
-   if (!args.role)
+   if (!role)
     return message.channel.send("Specify a role!");
 
-  args.role = args.role.join(' ');
+  role = role.join(' ');
    
   if (role.editable) {
     await role.setMentionable(true, '`${message.author}`, with command mentionrole (Start).');

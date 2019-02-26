@@ -10,11 +10,11 @@ if (!message.member.hasPermission("MANAGE_ROLES"))
   if (message.mentions.roles.size) {
     role = message.mentions.roles.first();
   }
-  else if (message.guild.roles.has(args.role)) {
-    role = message.guild.roles.get(args.role);
+  else if (message.guild.roles.has(role)) {
+    role = message.guild.roles.get(role);
   }
   else {
-    role = message.guild.roles.find(role => role.name === args.role);
+    role = message.guild.roles.find(role => role.name === role);
   }
 
    if (!role)

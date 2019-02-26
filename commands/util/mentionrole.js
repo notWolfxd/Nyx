@@ -6,7 +6,6 @@ if (!message.member.hasPermission("MANAGE_ROLES"))
    return;
 
   let menrole = args;
-   menrole = menrole.join(" ");
   let role;
    
   if (message.mentions.roles.size) {

@@ -5,7 +5,8 @@ module.exports.run = async (client, message, args) => {
 if (!message.member.hasPermission("MANAGE_ROLES"))
    return;
 
-  let args.role = args.join(" ");
+   
+  let role;
   if (message.mentions.roles.size) {
     role = message.mentions.roles.first();
   }
@@ -21,15 +22,10 @@ if (!message.member.hasPermission("MANAGE_ROLES"))
 
   args.role = args.role.join(' ');
    
-   	
-   
   if (role.editable) {
     await role.setMentionable(true, '`${message.author}`, with command mentionrole (Start).');
     await message.channel.send(`<@&${role.id}>`);
     await role.setMentionable(false, '`${message.author}`, with command mentionrole (Stop).');
-     
-     if (err)
-        return message.channel.send(err);
      	
   }
 };

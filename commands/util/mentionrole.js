@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
 if (!message.member.hasPermission("MANAGE_ROLES"))
    return;
 
-  let role;
+  let args.role = args.join(" ");
   if (message.mentions.roles.size) {
     role = message.mentions.roles.first();
   }

@@ -28,7 +28,6 @@ if (!args.role)
   }
 };
 
-};
 module.exports.help = {
     name: "mentionrole",
     aliases: [

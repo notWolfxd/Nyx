@@ -25,7 +25,7 @@ if (member.highestRole.position === message.member.highestRole.position)
 if (member.highestRole.position > message.member.highestRole.position)
         return message.channel.send("You cannot kick your superiors.")
 
-    member.kick({reason: `${message.author.username} | For: ${reason}` }).then(() => {
+    member.kick(`${message.author.username} | For: ${reason}`).then(() => {
         var kEmbed = new Discord.RichEmbed()
         .setTitle("⚠️ User Kicked")
         .setColor("#32CD32")

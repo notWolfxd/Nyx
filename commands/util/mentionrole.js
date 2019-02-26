@@ -21,14 +21,16 @@ if (!message.member.hasPermission("MANAGE_ROLES"))
 
   args.role = args.role.join(' ');
    
-   	.catch(error => message.channel.send(`Unable to mention because of : ${error}`));
+   	
    
   if (role.editable) {
     await role.setMentionable(true, '`${message.author}`, with command mentionrole (Start).');
     await message.channel.send(`<@&${role.id}>`);
     await role.setMentionable(false, '`${message.author}`, with command mentionrole (Stop).');
      
-     	.catch(error => message.channel.send(`Unable to mention because of : ${error}`));
+     if (err)
+        return message.channel.send(err);
+     	
   }
 };
 

@@ -5,22 +5,22 @@ module.exports.run = async (client, message, args) => {
 if (!message.member.hasPermission("MANAGE_ROLES"))
    return;
 
-   
+  let menrole = args;
+   menrole = menrole.join(" ");
   let role;
+   
   if (message.mentions.roles.size) {
     role = message.mentions.roles.first();
   }
-  else if (message.guild.roles.has(role)) {
-    role = message.guild.roles.get(role);
+  else if (message.guild.roles.has(menrole)) {
+    role = message.guild.roles.get(menrole);
   }
   else {
-    role = message.guild.roles.find(role => role.name === role);
+    role = message.guild.roles.find(role => role.name === menrole);
   }
 
-   if (!role)
+   if (!menrole)
     return message.channel.send("Specify a role!");
-
-  role = role.join(' ');
    
   if (role.editable) {
     await role.setMentionable(true, '`${message.author}`, with command mentionrole (Start).');

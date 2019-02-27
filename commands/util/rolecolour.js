@@ -23,12 +23,10 @@ let clrchange;
         }
 let colour = colourchange[1];
 
+if (!clrchange)
+        return message.channel.send("Could not find the original role or you did not specify a colour.");
 if (!clrchange.editable)
         return message.channel.send("I do not have sufficient enough permissions to change the colour of that role.");
-if (!clrchange)
-        return message.channel.send("Could not find a role to change the colour of.");
-if (!colour)
-        return message.channel.send("You need to specify a colour to change to.");
 
 clrchange.setColor(colour, `${message.author.username} | With command rolecolour.`);
 

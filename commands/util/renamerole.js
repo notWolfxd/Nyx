@@ -23,14 +23,12 @@ let namechanging;
         }
 let newname = namechange[1];
 
+if (!namechanging)
+        return message.channel.send("Could not find the original role or you did not specify a colour.");
 if (newname.length >= 100)
         return message.channel.send("The new name you entered is too long.")
 if (!namechanging.editable)
         return message.channel.send("I do not have sufficient enough permissions to change the name of that role.");
-if (!oldname)
-        return message.channel.send("Could not find the original role.");
-if (!newname)
-        return message.channel.send("You need to specify a new name for the role.")
 
 namechanging.setName(newname, `${message.author.username} | With command renamerole.`);
 

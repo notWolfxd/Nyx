@@ -5,30 +5,33 @@ module.exports.run = async (client, message, args) => {
 if (!message.member.hasPermission("MANAGE_ROLES"))
    return;
 
-  let menrole = args;
-  let role;
-   
-  if (message.mentions.roles.size) {
-    role = message.mentions.roles.first();
-  }
-  else if (message.guild.roles.has(menrole)) {
-    role = message.guild.roles.get(menrole);
-  }
-  else {
-    role = message.guild.roles.find(role => role.name === menrole);
-  }
+let menrole = args.join(" ");
 
-   if (!menrole)
-    return message.channel.send("Specify a role!");
-   
-  if (role.editable) {
-    await role.setMentionable(true, '`${message.author}`, with command mentionrole (Start).');
-    await message.channel.send(`<@&${role.id}>`);
-    await role.setMentionable(false, '`${message.author}`, with command mentionrole (Stop).');
-     	
-  }
+if (menrole.position >= message.member.highestRole.position)
+        return message.channel.send("You do not have permission to mention this role!");
+        
+let mentionrole;
+        if (message.mentions.roles.size) {
+          mentionrole = message.mentions.roles.first();
+        }
+        else if (message.guild.roles.has(menrole)) {
+          mentionrole = message.guild.roles.get(menrole);
+        }
+        else {
+          mentionrole = message.guild.roles.find(role => role.name === menrole);
+        }
+
+if (!menrole)
+        return message.channel.send("Could not find role to mention.");
+
+if (mentionrole.editable) {
+  await mentionrole.setMentionable(true, `${message.author.username} | With command mentionrole. (Start)`);
+  await message.channel.send(`<@&${mentionrole.id}>`);
+  await mentionrole.setMentionable(false, `${message.author.username} | With command mentionrole. (End)`);
+        }
+if (!mentionrole.editable)
+        return message.channel.send("I do not have sufficient enough permissions to mention that role.");
 };
-
 module.exports.help = {
     name: "mentionrole",
     aliases: [

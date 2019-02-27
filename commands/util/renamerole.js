@@ -24,7 +24,7 @@ let namechanging;
 let newname = namechange[1];
 
 if (!namechanging)
-        return message.channel.send("Could not find the original role or you did not specify a colour.");
+        return message.channel.send("Could not find the original role or you did not specify a new name.");
 if (newname.length >= 100)
         return message.channel.send("The new name you entered is too long.")
 if (!namechanging.editable)

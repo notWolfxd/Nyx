@@ -18,7 +18,7 @@ let mentionrole;
           mentionrole = message.guild.roles.get(menrole);
         }
         else {
-          mentionrole = message.guild.roles.find(role => role.name.toLowerCase() === menrole.toLowerCases());
+          mentionrole = message.guild.roles.find(role => role.name.toLowerCase() === menrole.toLowerCase());
         }
 
 if (!menrole)

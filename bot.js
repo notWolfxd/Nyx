@@ -10,6 +10,7 @@ require("./handler/eventhandler")(client);
         console.log(`${client.user.username} is online on ${client.guilds.size} servers!`);
       
         client.user.setActivity("FREE NADEKO 2K19", {type: "PLAYING"});
+        client.user.setStatus('idle');
       });
 
 client.login(process.env.BOT_TOKEN).catch(err => console.log(err));

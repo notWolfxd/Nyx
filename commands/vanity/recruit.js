@@ -16,8 +16,8 @@ module.exports.run = async (client, message, args) => {
     .setTitle("Command: Recruit")
     .setColor("#f74e00")
     .setThumbnail(message.author.avatarURL)
-    .addField("Description: ", "Recruit people to join your team for either prison, factions, or skyblock.")
-    .addField("Permissions:", "You must have one of the three leader roles (faction-leader, island-leader, or gang-leader")
+    .addField("Description: ", "Recruit people to join your team for either: Factions, Skyblock, or Prison.")
+    .addField("Permissions:", "You must have one of the three leader roles (faction-leader, island-leader, or gang-leader).")
     .addField("Syntax Formatter: ", "Use https://notwolfxd.github.io/leaders/ to format the recruitment post if you're having trouble.")
     .addField("Friendly PSA:", "If you are caught using this to advertise other servers, then you will be banned.")
     .setFooter("Nyx v1.4.0 | Made By: Wolf#9001", client.user.avatarURL)
@@ -43,13 +43,13 @@ module.exports.run = async (client, message, args) => {
     .setTitle("Team Recruitment!")
     .setColor("#ffae00")
     .setThumbnail(message.author.avatarURL)
-    .addField("Recruiter:", `${message.author} | ${message.author.id}`)
+    .addField("Recruiter:", `${message.author.username} | ${message.author.id}`)
     .addField("Recruiting In:", `${gametype}`)
     .addField("Recruiting For:", `${teamname}`)
     .addField("About Them:", `${about} `)
     .addField("Their Requirements:", `${req}`)
     .addField("Team Discord", `${link}`)
-    .setFooter("Nyx v1.4.0 | Made By: Wolf#9001", client.user.avatarURL)
+    .setFooter("Nyx v1.4.0 | Made By: Wolf#9001 | [Recruit Here](https://notwolfxd.github.io/leaders)", client.user.avatarURL)
     
 //  Command cooldown set up.
    cooldown.add(message.author.id);

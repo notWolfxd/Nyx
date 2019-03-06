@@ -43,7 +43,7 @@ module.exports.run = async (client, message, args) => {
     .setTitle("Team Recruitment!")
     .setColor("#ffae00")
     .setThumbnail(message.author.avatarURL)
-    .addField("Recruiter:", `${message.author.user} | ${message.author.id}`)
+    .addField("Recruiter:", `${message.author} | ${message.author.id}`)
     .addField("Recruiting In:", `${gametype}`)
     .addField("Recruiting For:", `${teamname}`)
     .addField("About Them:", `${about} `)

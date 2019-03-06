@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const cooldown = new Set();
 
 module.exports.run = async (client, message, args) => {
-    if (message.channel.id !== ("410526913879080960") && message.member.roles.has("402751364846845953")) 
+    if (message.channel.id !== ("410526913879080960") && !message.member.roles.has("402751364846845953")) 
       return;
 
     if (cooldown.has(message.author.id)) 
@@ -41,15 +41,16 @@ module.exports.run = async (client, message, args) => {
     var recruitEmbed = new Discord.RichEmbed()
 
     .setTitle("Team Recruitment!")
-    .setColor("#ffae00")
+    .setColor("#ffa0bb")
     .setThumbnail(message.author.avatarURL)
+    .addField("[Recruitment Format](https://notwolfxd.github.io/leaders)")
     .addField("Recruiter:", `${message.author.username} | ${message.author.id}`)
     .addField("Recruiting In:", `${gametype}`)
     .addField("Recruiting For:", `${teamname}`)
     .addField("About Them:", `${about} `)
     .addField("Their Requirements:", `${req}`)
     .addField("Team Discord", `${link}`)
-    .setFooter("Nyx v1.4.0 | Made By: Wolf#9001 | [Recruit Here](https://notwolfxd.github.io/leaders)", client.user.avatarURL)
+    .setFooter("Nyx v1.4.0 | Made By: Wolf#9001", client.user.avatarURL)
     
 //  Command cooldown set up.
    cooldown.add(message.author.id);

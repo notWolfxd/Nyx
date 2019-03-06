@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const cooldown = new Set();
 
 module.exports.run = async (client, message, args) => {
-    if (message.channel.id !== ("410526913879080960")) 
+    if (message.channel.id !== ("410526913879080960") && message.member.roles.has("402751364846845953")) 
       return;
 
     if (cooldown.has(message.author.id)) 
@@ -43,7 +43,7 @@ module.exports.run = async (client, message, args) => {
     .setTitle("Team Recruitment!")
     .setColor("#ffae00")
     .setThumbnail(message.author.avatarURL)
-    .addField("Recruiter:", `${message.author} | ${message.author.id}`)
+    .addField("Recruiter:", `${message.author.username} | ${message.author.id}`)
     .addField("Recruiting In:", `${gametype}`)
     .addField("Recruiting For:", `${teamname}`)
     .addField("About Them:", `${about} `)

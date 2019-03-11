@@ -49,7 +49,7 @@ module.exports.run = async (client, message, args) => {
     .addField("Recruiting For:", `${teamname}`)
     .addField("About Them:", `${about} `)
     .addField("Their Requirements:", `${req}`)
-    .addField("Team Discord", `${link}`)
+    .addField("Team Discord:", `${link}`)
     .setFooter("Nyx v1.4.0 | Made By: Wolf#9001", client.user.avatarURL)
     
 //  Command cooldown set up.

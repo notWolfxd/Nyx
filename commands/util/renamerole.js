@@ -5,13 +5,13 @@ module.exports.run = async (client, message, args) => {
 if (!message.member.hasPermission("MANAGE_ROLES"))
    return;
 
-let namechange = args.join(" ").split(" | ");
-let oldname = namechange[0];
+   let namechange = args.join(" ").split(" | ");
+   let oldname = namechange[0];
 
 if (oldname.position >= message.member.highestRole.position)
         return message.channel.send("You do not have permission to edit this role!");
 
-let namechanging;
+   let namechanging;
         if (message.mentions.roles.size) {
           namechanging = message.mentions.roles.first();
         }
@@ -19,9 +19,10 @@ let namechanging;
           namechanging = message.guild.roles.get(oldname);
         }
         else {
-          namechanging = message.guild.roles.find(role => role.name === oldname);
+          namechanging = message.guild.roles.find(role => role.name.toLowerCase() === oldname.toLowerCase());
         }
-let newname = namechange[1];
+   
+   let newname = namechange[1];
 
 if (!namechanging)
         return message.channel.send("Could not find the original role or you did not specify a new name.");
@@ -32,13 +33,13 @@ if (!namechanging.editable)
 
 namechanging.setName(newname, `${message.author.username} | With command renamerole.`);
 
-var ncembed = new Discord.RichEmbed()
-   .setTitle("Role Name Changed")
-   .setColor("#f439c3")
-   .addField("Old Name", oldname, true)
-   .addField("New Name", newname,true)
+      var ncembed = new Discord.RichEmbed()
+         .setTitle("Role Name Changed")
+         .setColor("#f439c3")
+         .addField("Old Name", oldname, true)
+         .addField("New Name", newname,true)
    
-message.channel.send(ncembed);
+      message.channel.send(ncembed);
 
 };
 module.exports.help = {

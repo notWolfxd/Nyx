@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args) => {
     
       else {
 
-    //Build .recruit help Embed
+    //Build recruit help Embed
     var recruitHelpEmbed = new Discord.RichEmbed()
 
     .setTitle("Command: Recruit")
@@ -22,7 +22,7 @@ module.exports.run = async (client, message, args) => {
     .addField("Friendly PSA:", "If you are caught using this to advertise other servers, then you will be banned.")
     .setFooter("Nyx v1.4.0 | Made By: Wolf#9001", client.user.avatarURL)
 
-    //Define the arguments for .recruit.
+    //Define the arguments for recruit.
     let recruitDefine = args.join(" ").split(" | ");
     let gametype = recruitDefine[0];
        if (!recruitDefine[0]) 
@@ -69,4 +69,8 @@ module.exports.run = async (client, message, args) => {
  }
  module.exports.help = {
     name: "recruit",
+    aliases: [ "rec",
+               "recruitment",
+               "recruiting"
+             ]
 }

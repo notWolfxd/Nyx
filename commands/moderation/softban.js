@@ -53,5 +53,8 @@ if (member.highestRole.position > message.member.highestRole.position)
 
 };
 module.exports.help = {
-    name: "sb"
+    name: "softban",
+    aliases: [ "sb",
+	       "pullout"
+	     ]
   }

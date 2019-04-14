@@ -61,11 +61,11 @@ module.exports.run = async (client, message, args) => {
        cooldown.delete(message.author.id);
    }, 18000000);
 
-   if (message.member.roles.has("471779470525595668") && recruitDefine[0].toLowerCase() === facsaliases) 
+   if (message.member.roles.has("471779470525595668") && recruitDefine[0].toLowerCase() == "factions") 
       return client.channels.get("426903359392448522").send(recruitEmbed);
-   if (message.member.roles.has("487054093655998485") && recruitDefine[0].toLowerCase() === sbaliases) 
+   if (message.member.roles.has("487054093655998485") && recruitDefine[0].toLowerCase() == "skyblock") 
       return client.channels.get("487053977821904909").send(recruitEmbed);
-   if (message.member.roles.has("515587892525924352") && recruitDefine[0].toLowerCase() === prisonaliases) 
+   if (message.member.roles.has("515587892525924352") && recruitDefine[0].toLowerCase() == "prison") 
       return client.channels.get("515639377695866881").send(recruitEmbed);
    await message.reply("you need a leader role to use this command!");
     }

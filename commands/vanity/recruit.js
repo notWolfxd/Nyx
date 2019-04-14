@@ -64,7 +64,7 @@ module.exports.run = async (client, message, args) => {
       return client.channels.get("487053977821904909").send(recruitEmbed);
    if (message.member.roles.has("515587892525924352") && recruitDefine[0] == "prison" || recruitDefine[0] == "Prison") 
       return client.channels.get("515639377695866881").send(recruitEmbed);
-   await message.reply("your recruitment information has been sent! You must now wait 5 hours to send it again.");
+   await message.reply("TEST recruitment information has been sent! You must now wait 5 hours to send it again.");
     }
  }
  module.exports.help = {

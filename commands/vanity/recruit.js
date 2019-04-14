@@ -33,7 +33,7 @@ module.exports.run = async (client, message, args) => {
     let req = recruitDefine[3];
     req = req.replace(/(-)\s/gi, '\n$&');  
     let link = recruitDefine[4];
-    let facsaliases = [ "facs", "factions", "faction", "demonic", "heroic", "apocalyptic" ];
+    let [ "facs", "factions", "faction", "demonic", "heroic", "apocalyptic" ] = facsaliases;
     let sbaliases = [ "sb", "skyblock", "island", "space", "jungle", "wildwest", "wild west" ];
     let prisonaliases = [ "prison", "prisons", "cell", "gang", "galactic", "alcatraz", "mythic" ];
 

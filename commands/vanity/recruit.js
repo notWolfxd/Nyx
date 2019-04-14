@@ -37,7 +37,7 @@ module.exports.run = async (client, message, args) => {
     let sbaliases = [ "sb", "skyblock", "island", "space", "jungle", "wildwest", "wild west" ];
     let prisonaliases = [ "prison", "prisons", "cell", "gang", "galactic", "alcatraz", "mythic" ];
 
-    if (recruitDefine[0] != facsaliases.toLowerCase() && recruitDefine[0] != sbaliases.toLowerCase() && recruitDefine[0] != prisonaliases.toLowerCase()) 
+    if (recruitDefine[0] !== facsaliases.toLowerCase() && recruitDefine[0] !== sbaliases.toLowerCase() && recruitDefine[0] !== prisonaliases.toLowerCase()) 
       return message.channel.sendEmbed(recruitHelpEmbed);
 
     //Build the .recruit message Embed.

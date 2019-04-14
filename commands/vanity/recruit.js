@@ -37,7 +37,7 @@ module.exports.run = async (client, message, args) => {
     let sbaliases = [ "sb", "skyblock", "island", "space", "jungle", "wildwest", "wild west" ];
     let prisonaliases = [ "prison", "prisons", "cell", "gang", "galactic", "alcatraz", "mythic" ];
 
-    if (recruitDefine[0] != "factions" && recruitDefine[0] != "prison" && recruitDefine[0] != "skyblock" && recruitDefine[0] != "Skyblock" && recruitDefine[0] != "Factions" && recruitDefine[0] != "Prison") 
+    if (recruitDefine[0] != facsaliases.toLowerCase() && recruitDefine[0] != sbaliases.toLowerCase() && recruitDefine[0] != prisonaliases.toLowerCase()) 
       return message.channel.sendEmbed(recruitHelpEmbed);
 
     //Build the .recruit message Embed.
@@ -63,11 +63,11 @@ module.exports.run = async (client, message, args) => {
 
    if (message.member.roles.has("471779470525595668") && recruitDefine[0] == facsaliases.toLowerCase()) 
       return client.channels.get("426903359392448522").send(recruitEmbed);
-   if (message.member.roles.has("487054093655998485") && recruitDefine[0] == "skyblock" || recruitDefine[0] == "Skyblock") 
+   if (message.member.roles.has("487054093655998485") && recruitDefine[0] == sbaliases.toLowerCase()) 
       return client.channels.get("487053977821904909").send(recruitEmbed);
-   if (message.member.roles.has("515587892525924352") && recruitDefine[0] == "prison" || recruitDefine[0] == "Prison") 
+   if (message.member.roles.has("515587892525924352") && recruitDefine[0] == prisonaliases.toLowerCase()) 
       return client.channels.get("515639377695866881").send(recruitEmbed);
-   await message.reply("TEST recruitment information has been sent! You must now wait 5 hours to send it again.");
+   await message.reply("you need a leader role to use this command!");
     }
  }
  module.exports.help = {

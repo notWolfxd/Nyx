@@ -33,12 +33,12 @@ module.exports.run = async (client, message, args) => {
     let req = recruitDefine[3];
     req = req.replace(/(-)\s/gi, '\n$&');  
     let link = recruitDefine[4];
-    let [ "facs", "factions", "faction", "demonic", "heroic", "apocalyptic" ] = facsaliases;
-    let sbaliases = [ "sb", "skyblock", "island", "space", "jungle", "wildwest", "wild west" ];
-    let prisonaliases = [ "prison", "prisons", "cell", "gang", "galactic", "alcatraz", "mythic" ];
+//   let [ "facs", "factions", "faction", "demonic", "heroic", "apocalyptic" ] = facsaliases;
+//    let sbaliases = [ "sb", "skyblock", "island", "space", "jungle", "wildwest", "wild west" ];
+//    let prisonaliases = [ "prison", "prisons", "cell", "gang", "galactic", "alcatraz", "mythic" ];
 
-    if (recruitDefine[0] !== facsaliases.toLowerCase() && recruitDefine[0] !== sbaliases.toLowerCase() && recruitDefine[0] !== prisonaliases.toLowerCase()) 
-      return message.channel.sendEmbed(recruitHelpEmbed);
+   // if (recruitDefine[0] !== facsaliases.toLowerCase() && recruitDefine[0] !== sbaliases.toLowerCase() && recruitDefine[0] !== prisonaliases.toLowerCase()) 
+//      return message.channel.sendEmbed(recruitHelpEmbed);
 
     //Build the .recruit message Embed.
     var recruitEmbed = new Discord.RichEmbed()
@@ -61,7 +61,7 @@ module.exports.run = async (client, message, args) => {
        cooldown.delete(message.author.id);
    }, 18000000);
 
-   if (message.member.roles.has("471779470525595668") && recruitDefine[0] === facsaliases.toLowerCase()) 
+   if (message.member.roles.has("471779470525595668") && recruitDefine[0].toLowerCase() == "factions") 
       return client.channels.get("426903359392448522").send(recruitEmbed);
    if (message.member.roles.has("487054093655998485") && recruitDefine[0] === sbaliases.toLowerCase()) 
       return client.channels.get("487053977821904909").send(recruitEmbed);

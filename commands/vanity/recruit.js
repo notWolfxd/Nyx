@@ -33,6 +33,9 @@ module.exports.run = async (client, message, args) => {
     let req = recruitDefine[3];
     req = req.replace(/(-)\s/gi, '\n$&');  
     let link = recruitDefine[4];
+    let facsaliases = [ "facs", "factions", "faction", "demonic", "heroic", "apocalyptic" ];
+    let sbaliases = [ "sb", "skyblock", "island", "space", "jungle", "wildwest", "wild west" ];
+    let prisonaliases = [ "prison", "prisons", "cell", "gang", "galactic", "alcatraz", "mythic" ];
 
     if (recruitDefine[0] != "factions" && recruitDefine[0] != "prison" && recruitDefine[0] != "skyblock" && recruitDefine[0] != "Skyblock" && recruitDefine[0] != "Factions" && recruitDefine[0] != "Prison") 
       return message.channel.sendEmbed(recruitHelpEmbed);
@@ -58,7 +61,7 @@ module.exports.run = async (client, message, args) => {
        cooldown.delete(message.author.id);
    }, 18000000);
 
-   if (message.member.roles.has("471779470525595668") && recruitDefine[0] == "factions" || recruitDefine[0] == "Factions") 
+   if (message.member.roles.has("471779470525595668") && recruitDefine[0] == facsaliases.toLowerCase()) 
       return client.channels.get("426903359392448522").send(recruitEmbed);
    if (message.member.roles.has("487054093655998485") && recruitDefine[0] == "skyblock" || recruitDefine[0] == "Skyblock") 
       return client.channels.get("487053977821904909").send(recruitEmbed);

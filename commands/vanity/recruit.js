@@ -33,9 +33,9 @@ module.exports.run = async (client, message, args) => {
     let req = recruitDefine[3];
     req = req.replace(/(-)\s/gi, '\n$&');  
     let link = recruitDefine[4];
-//   let [ "facs", "factions", "faction", "demonic", "heroic", "apocalyptic" ] = facsaliases;
+    let facsaliases = [ "facs", "factions", "faction", "demonic", "heroic", "apocalyptic" ];
     let sbaliases = [ "sb", "skyblock", "island", "space", "jungle", "wildwest", "wild west" ];
-//    let prisonaliases = [ "prison", "prisons", "cell", "gang", "galactic", "alcatraz", "mythic" ];
+    let prisonaliases = [ "prison", "prisons", "cell", "gang", "galactic", "alcatraz", "mythic" ];
 
    // if (recruitDefine[0] !== facsaliases.toLowerCase() && recruitDefine[0] !== sbaliases.toLowerCase() && recruitDefine[0] !== prisonaliases.toLowerCase()) 
 //      return message.channel.sendEmbed(recruitHelpEmbed);
@@ -61,11 +61,11 @@ module.exports.run = async (client, message, args) => {
        cooldown.delete(message.author.id);
    }, 18000000);
 
-   if (message.member.roles.has("471779470525595668") && recruitDefine[0].toLowerCase() == "factions") 
+   if (message.member.roles.has("471779470525595668") && recruitDefine[0].toLowerCase() == facsaliases) 
       return client.channels.get("426903359392448522").send(recruitEmbed);
    if (message.member.roles.has("487054093655998485") && recruitDefine[0].toLowerCase() == sbaliases) 
       return client.channels.get("487053977821904909").send(recruitEmbed);
-   if (message.member.roles.has("515587892525924352") && recruitDefine[0] === prisonaliases.toLowerCase()) 
+   if (message.member.roles.has("515587892525924352") && recruitDefine[0].toLowerCase() == prisonaliases) 
       return client.channels.get("515639377695866881").send(recruitEmbed);
    await message.reply("you need a leader role to use this command!");
     }

@@ -3,7 +3,7 @@ const cooldown = new Set();
 
 module.exports.run = async (client, message, args) => {
 
-    if (!message.member.roles.has("402751364846845953")) 
+    if (!message.member.roles.has("427989567925256212")) 
       return;
     //Build changelog help Embed
     var changelogHelpEmbed = new Discord.RichEmbed()
@@ -27,11 +27,10 @@ module.exports.run = async (client, message, args) => {
     .addField("Changelog:", `${changelogcontent}`)
     .setFooter(`Nyx v1.4.4 | Submitted By: ${message.author.username}`, message.author.avatarURL)
 
-   if (message.member.roles.has("471779470525595668") && recruitDefine[0].toLowerCase() == "factions") 
-      return client.channels.get("426903359392448522").send(recruitEmbed);
+   if (message.member.roles.has("427989567925256212")) 
+      return client.channels.get("426903359392448522").send(changelogEmbed);
       await message.reply("you need a leader role to use this command!");
     }
- }
  module.exports.help = {
     name: "changelog",
     aliases: [ "cl",

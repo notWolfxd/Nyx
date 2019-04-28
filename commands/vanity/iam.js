@@ -13,8 +13,11 @@ module.exports.run = async (client, message, args) => {
     .setFooter("Nyx v1.4.0 | Made By: Wolf#9001", client.user.avatarURL)
 
     //Define the arguments for .iam.
-    let gamemode = args
-    let member = message.member
+    let gamemode = args;
+    let facsrole = message.guild.roles.find(r => r.id === "556189435796914204");
+    let sbrole = message.guild.roles.find(r => r.id === 556189434672971777);
+    let prisonrole = message.guild.roles.find(r => r.id === "Team Mystic");
+    let member = message.member;
     if (!gamemode) return message.channel.sendEmbed(iamHelpEmbed);
     if (args[0] != "factions" && args[0] != "prison" && args[0] != "skyblock") return message.channel.sendEmbed(iamHelpEmbed);
  
@@ -29,9 +32,9 @@ module.exports.run = async (client, message, args) => {
     
   //Sending the completed message.
     if(args[0].toLowerCase() == "factions")
-        return member.addRole(556189435796914204);
+        return member.addRole(facsrole);
     if(args[0].toLowerCase() == "skyblock")
-        return member.addRole(556189434672971777);
+        return member.addRole(sbrole);
     if(args[0].toLowerCase() == "prison")
         return member.addRole(556189416172027910);
     //message.reply("staff have been notified that you need the correct role. Please be patient.");

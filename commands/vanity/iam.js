@@ -14,6 +14,7 @@ module.exports.run = async (client, message, args) => {
 
     //Define the arguments for .iam.
     let gamemode = args
+    let member = message.member
     if (!gamemode) return message.channel.sendEmbed(iamHelpEmbed);
     if (args[0] != "factions" && args[0] != "prison" && args[0] != "skyblock") return message.channel.sendEmbed(iamHelpEmbed);
  
@@ -28,11 +29,11 @@ module.exports.run = async (client, message, args) => {
     
   //Sending the completed message.
     if(args[0].toLowerCase() == "factions")
-        return message.member.addRole(556189435796914204);
+        return member.addRole(556189435796914204);
     if(args[0].toLowerCase() == "skyblock")
-        return message.member.addRole(556189434672971777);
+        return member.addRole(556189434672971777);
     if(args[0].toLowerCase() == "prison")
-        return message.member.addRole(556189416172027910);
+        return member.addRole(556189416172027910);
     //message.reply("staff have been notified that you need the correct role. Please be patient.");
  // client.channels.get("530178004928823306").sendEmbed(leaderEmbed);
   }

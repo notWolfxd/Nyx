@@ -2,8 +2,9 @@ const Discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
 
- //   if (!message.member.roles.has("427989567925256212")) 
- //     return;
+    if (!message.member.roles.has("427989567925256212")) 
+      return;
+ 
     //Build changelog help Embed
     var changelogHelpEmbed = new Discord.RichEmbed()
 
@@ -24,11 +25,11 @@ module.exports.run = async (client, message, args) => {
     
     .setColor("#f74e00")
     .addField("Changelog:", changelogcontent)
-    .setFooter("Nyx v1.4.4 | Submitted By: ${message.author.username}", message.author.avatarURL)
+    .setFooter(`Nyx v1.4.4 | Submitted By: ${message.author.username}`, message.author.avatarURL)
 
-  // if (message.member.roles.has("427989567925256212")) 
-       client.channels.get("426903359392448522").send(changelogEmbed);
- //     await message.reply("you need a leader role to use this command!");
+   if (message.member.roles.has("427989567925256212")) 
+       return client.channels.get("517754885874253835").send(changelogEmbed);
+       await message.channel.send("Message sent to changelog channel!");
     }
  module.exports.help = {
     name: "changelog",

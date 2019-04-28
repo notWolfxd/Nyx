@@ -33,15 +33,15 @@ module.exports.run = async (client, message, args) => {
   //Sending the completed message.
     if(args[0].toLowerCase() == "factions" && !member.roles.has(556189435796914204))
         return member.addRole(facsrole);
-    if(args[0].toLowerCase() == "factions" && member.roles.has(556189435796914204))
+    else(args[0].toLowerCase() == "factions" && member.roles.has(556189435796914204))
         return member.removeRole(facsrole);
     if(args[0].toLowerCase() == "skyblock" && !member.roles.has(556189434672971777))
         return member.addRole(sbrole);
-    if(args[0].toLowerCase() == "skyblock" && member.roles.has(556189434672971777))
+    else(args[0].toLowerCase() == "skyblock" && member.roles.has(556189434672971777))
         return member.removeRole(sbrole);
     if(args[0].toLowerCase() == "prison" && !member.roles.has(556189416172027910))
         return member.addRole(prisonrole);
-    if(args[0].toLowerCase() == "prison" && member.roles.has(556189416172027910))
+    else(args[0].toLowerCase() == "prison" && member.roles.has(556189416172027910))
         return member.removeRole(prisonrole);
     //message.reply("staff have been notified that you need the correct role. Please be patient.");
  // client.channels.get("530178004928823306").sendEmbed(leaderEmbed);

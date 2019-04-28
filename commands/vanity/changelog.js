@@ -3,8 +3,8 @@ const cooldown = new Set();
 
 module.exports.run = async (client, message, args) => {
 
-    if (!message.member.roles.has("427989567925256212")) 
-      return;
+ //   if (!message.member.roles.has("427989567925256212")) 
+ //     return;
     //Build changelog help Embed
     var changelogHelpEmbed = new Discord.RichEmbed()
 
@@ -18,7 +18,7 @@ module.exports.run = async (client, message, args) => {
     .setFooter("Nyx v1.4.0 | Made By: Wolf#9001", client.user.avatarURL)
 
     //Define the arguments for changelog.
-    let changelogcontent = message.content;
+    let changelogcontent = message.content();
 
     //Build the .changelog message Embed.
     var changelogEmbed = new Discord.RichEmbed()
@@ -27,9 +27,9 @@ module.exports.run = async (client, message, args) => {
     .addField("Changelog:", `${changelogcontent}`)
     .setFooter(`Nyx v1.4.4 | Submitted By: ${message.author.username}`, message.author.avatarURL)
 
-   if (message.member.roles.has("427989567925256212")) 
-      return client.channels.get("426903359392448522").send(changelogEmbed);
-      await message.reply("you need a leader role to use this command!");
+  // if (message.member.roles.has("427989567925256212")) 
+       client.channels.get("426903359392448522").send(changelogEmbed);
+ //     await message.reply("you need a leader role to use this command!");
     }
  module.exports.help = {
     name: "changelog",

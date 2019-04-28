@@ -24,9 +24,10 @@ module.exports.run = async (client, message, args) => {
     var changelogEmbed = new Discord.RichEmbed()
     
     .setColor(meesage.member.highestRole.color)
-    .addField("Changelog:", `${changelogcontent}`)
+    .addField("Changelog:", changelogcontent)
     .setFooter(`Nyx v1.4.4 | Submitted By: ${message.author.username}`, message.author.avatarURL)
-
+     if (err) 
+       return message.channel.send(err);
   // if (message.member.roles.has("427989567925256212")) 
        client.channels.get("426903359392448522").send(changelogEmbed);
  //     await message.reply("you need a leader role to use this command!");

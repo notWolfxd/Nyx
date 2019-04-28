@@ -33,13 +33,13 @@ module.exports.run = async (client, message, args) => {
   //Sending the completed message.
     if(args[0].toLowerCase() == "factions" || !member.roles.has(556189435796914204))
         return member.addRole(facsrole);
-    if(args[0].toLowerCase() == "factions" || member.roles.has(556189435796914204))
+    if(args[0].toLowerCase() == "factions" && member.roles.has(556189435796914204))
         return member.removeRole(facsrole);
-    if(args[0].toLowerCase() == "skyblock" && !member.roles.has(556189434672971777))
+    if(args[0].toLowerCase() == "skyblock" || !member.roles.has(556189434672971777))
         return member.addRole(sbrole);
     if(args[0].toLowerCase() == "skyblock" && member.roles.has(556189434672971777))
         return member.removeRole(sbrole);
-    if(args[0].toLowerCase() == "prison" && !member.roles.has(556189416172027910))
+    if(args[0].toLowerCase() == "prison" || !member.roles.has(556189416172027910))
         return member.addRole(prisonrole);
     if(args[0].toLowerCase() == "prison" && member.roles.has(556189416172027910))
         return member.removeRole(prisonrole);

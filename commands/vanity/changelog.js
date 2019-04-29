@@ -29,7 +29,7 @@ module.exports.run = async (client, message, args) => {
 
    if (message.member.roles.has("427989567925256212")) 
        return client.channels.get("517754885874253835").send(changelogEmbed);
-       await message.channel.send("Message sent to changelog channel!");
+       return message.channel.send("Message sent to changelog channel!");
     }
  module.exports.help = {
     name: "changelog",

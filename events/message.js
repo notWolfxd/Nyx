@@ -5,14 +5,14 @@ const fs = require("fs");
 module.exports = async(client, message) => {
 
 
-    var tkn = "client.token,token".split(",");
-    for (i=0;i<tkn.length;i++) {
-        if (message.content.toLowerCase().includes(tkn[i])) {
-   
-          return;
-        }
-    }
-	if(message.author.bot) return;
+ //   var tkn = "client.token,token".split(",");
+ //   for (i=0;i<tkn.length;i++) {
+ //       if (message.content.toLowerCase().includes(tkn[i])) {
+ //  
+ //         return;
+ //       }
+ //   }
+    if(message.author.bot) return;
     if(message.channel.type === "dm") return;
     
     let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));

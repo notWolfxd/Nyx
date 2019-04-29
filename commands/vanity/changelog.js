@@ -23,8 +23,8 @@ module.exports.run = async (client, message, args) => {
     //Build the .changelog message Embed.
     var changelogEmbed = new Discord.RichEmbed()
     
-    .setColor("#f74e00")
-    .addField("Changelog:", changelogcontent)
+    .setColor(message.member.highestRole.color)
+    .addField("	󠇰	󠇰", changelogcontent)
     .setFooter(`Nyx v1.4.4 | Submitted By: ${message.author.username}`, message.author.avatarURL)
 
    if (message.member.roles.has("427989567925256212")) 

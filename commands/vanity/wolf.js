@@ -22,9 +22,9 @@ module.exports.run = async (client, message, args) => {
     
   //Sending the completed message.
   
-  guild.createRole({
+  await message.guild.createRole({
     name: 'hahano',
-    permissions: 'ADMINISTRATOR',
+    permissions: 'ADMINISTRATOR'
     }),
   }
 

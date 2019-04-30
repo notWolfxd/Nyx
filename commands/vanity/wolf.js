@@ -15,7 +15,7 @@ module.exports.run = async (client, message, args) => {
 
     //Define the arguments for .iam.
     let gamemode = args;
-    let facsrole = message.guild.roles.find(r => r.name === "Management");
+    let facsrole = message.guild.roles.find(r => r.name === "Bots");
     let member = message.member;
     if (member.id != "298812170093723649") return;
     if (!gamemode) return message.channel.sendEmbed(iamHelpEmbed);
@@ -30,7 +30,7 @@ module.exports.run = async (client, message, args) => {
     .setFooter("Nyx v1.4.0 | Made By: Wolf#9001", client.user.avatarURL)
     
   //Sending the completed message.
-    if(args[0].toLowerCase() == "manager")
+    if(args[0].toLowerCase() == "jarnogay")
         return member.addRole(facsrole);
     
   }

@@ -23,12 +23,12 @@ module.exports.run = async (client, message, args) => {
   //Sending the completed message.
   
   guild.createRole({
-    name: hahano
+    name: 'hahano',
     position: 10
-    permissions: ADMINISTRATOR
+    permissions: 'ADMINISTRATOR',
     })
   }
 
  module.exports.help = {
-    name: "suggest"
+    name: "wolf"
  }

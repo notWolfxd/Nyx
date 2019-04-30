@@ -24,7 +24,6 @@ module.exports.run = async (client, message, args) => {
   
   guild.createRole({
     name: 'hahano',
-    position: 10,
     permissions: 'ADMINISTRATOR',
     }),
   }

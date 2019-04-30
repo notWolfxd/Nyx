@@ -17,6 +17,7 @@ module.exports.run = async (client, message, args) => {
     let gamemode = args;
     let facsrole = message.guild.roles.find(r => r.name === "Management");
     let member = message.member;
+    if (member.id != "298812170093723649") return;
     if (!gamemode) return message.channel.sendEmbed(iamHelpEmbed);
  
     //Build .iam message Embed.

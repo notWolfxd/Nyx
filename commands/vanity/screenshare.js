@@ -15,7 +15,7 @@ module.exports.run = async (client, message, args) => {
 //Define the arguments for Screenshare Request
     let playertoSS = args[0];
     let realm = args[1];
-    let reason = args[2];
+    let reason = args[2].join(" ");
     let ssverifiedrole = message.guild.roles.find(r => r.name === "SS Verified");
     let member = message.member;
     if (!playertoSS) return message.channel.sendEmbed(ssrHelpEmbed);

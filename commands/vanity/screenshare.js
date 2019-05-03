@@ -8,14 +8,15 @@ module.exports.run = async (client, message, args) => {
     .setColor("#38b599")
     .setThumbnail(message.author.avatarURL)
     .addField("Description: ", "Request a player to be screenshared by an SS Verified person.")
-    .addField("Usage: ", "-ss <IGN> <realm> <reason>")
-    .addField("Example: ", "-ss JarnoPwr Demonic being an idiot")
+    .addField("Usage: ", "-ss <IGN> | <realm> | <reason>")
+    .addField("Example: ", "-ss JarnoPwr | Demonic | Being a nerd.")
     .setFooter("Nyx v1.4.5 | Made By: Wolf#9001", client.user.avatarURL)
     
 //Define the arguments for Screenshare Request
-    let playertoSS = args[0];
-    let realm = args[1];
-    let reason = args[2].join(" ");
+    let ssrDefine = args.join(" ").split(" | ");
+    let playertoSS = ssrDefine[0];
+    let realm = ssrDefine[1];
+    let reason = ssrDefine[2];
     let ssverifiedrole = message.guild.roles.find(r => r.name === "SS Verified");
     let member = message.member;
     if (!playertoSS) return message.channel.sendEmbed(ssrHelpEmbed);

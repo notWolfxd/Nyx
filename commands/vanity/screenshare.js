@@ -21,7 +21,7 @@ module.exports.run = async (client, message, args) => {
     let reason = args.slice(2).join(" ");
     let ssverifiedrole = message.guild.roles.find(r => r.name === "SS Verified");
     let member = message.member;
-    if (!playertoSS) return message.channel.sendEmbed(ssrHelpEmbed);
+    if (!playertoSS || !realm || !reason) return message.channel.sendEmbed(ssrHelpEmbed);
     
 //Build Screenshare Request message Embed.
 var ssrEmbed = new Discord.RichEmbed()

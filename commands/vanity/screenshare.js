@@ -26,7 +26,7 @@ var ssrEmbed = new Discord.RichEmbed()
     .setColor("#38b599")
     .setThumbnail(message.author.avatarURL)
     .addField("IGN:", `${playertoSS}`, true)
-    .addField("Realm:", `${realm}`,true)
+    .addField("Realm:", `${realm}`, true)
     .addField("Reason:", `${reason}`)
     .setFooter("Nyx v1.4.5 | Made By: Wolf#9001", client.user.avatarURL)
     

@@ -15,7 +15,7 @@ module.exports.run = async (client, message, args) => {
 //Define the arguments for Screenshare Request
     let playertoSS = args[0];
     let realm = args[1];
-    let reason = args[2].join(" ");
+    let reason = args[2];
     let ssverifiedrole = message.guild.roles.find(r => r.name === "SS Verified");
     let member = message.member;
     if (!playertoSS) return message.channel.sendEmbed(ssrHelpEmbed);
@@ -32,11 +32,11 @@ var ssrEmbed = new Discord.RichEmbed()
     
 //Sending the completed command things.
 
-  await ssverifiedrole.setMentionable(true, `${message.author.username} | With command Screenshare Request. (Start)`);
-  await message.channel.send(`<@&${ssverifiedrole.id}>`);
-  await ssverifiedrole.setMentionable(false, `${message.author.username} | With command Screenshare Request. (End)`);
-  await client.channels.get("573718629435047956").send(ssrEmbed);
-  await message.channel.send("Screenshare notify staff have been notified with your request.");
+   ssverifiedrole.setMentionable(true, `${message.author.username} | With command Screenshare Request. (Start)`);
+   message.channel.send(`<@&${ssverifiedrole.id}>`);
+   ssverifiedrole.setMentionable(false, `${message.author.username} | With command Screenshare Request. (End)`);
+   client.channels.get("573718629435047956").send(ssrEmbed);
+   message.channel.send("Screenshare notify staff have been notified with your request.");
   
   
   }

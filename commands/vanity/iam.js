@@ -34,13 +34,15 @@ module.exports.run = async (client, message, args) => {
     if(args[0].toLowerCase() == "factions" && !member.roles.has(556189435796914204)) {
         await member.addRole(facsrole);
         await message.channel.send(leaderEmbed);
-        },
-    if(args[0].toLowerCase() == "skyblock" && !member.roles.has(556189434672971777))
-        return member.addRole(sbrole);
-    if(args[0].toLowerCase() == "prison" && !member.roles.has(556189416172027910))
-        return member.addRole(prisonrole);
-    //message.reply("staff have been notified that you need the correct role. Please be patient.");
- // client.channels.get("530178004928823306").sendEmbed(leaderEmbed);
+        }
+    if(args[0].toLowerCase() == "skyblock" && !member.roles.has(556189434672971777)) {
+        await member.addRole(sbrole);
+        await message.channel.send(leaderEmbed);
+        }
+    if(args[0].toLowerCase() == "prison" && !member.roles.has(556189416172027910)) {
+        await member.addRole(prisonrole);
+        await message.channel.send(leaderEmbed);
+        }
   }
 
 module.exports.help = {

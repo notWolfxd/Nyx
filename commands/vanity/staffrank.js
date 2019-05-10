@@ -18,8 +18,8 @@ module.exports.run = async (client, message, args) => {
 //Define the arguments for Staff Rank
     let rankType = args[0];
     let playerinfo = args[1];
-    let position = args[2];
-    let gamemode = args.slice(3).join(" ") || "Was not needed for scenario.";
+    let position = args.slice(2).join(" ");
+    let gamemode = args.slice(5).join(" ") || "Was not needed for scenario.";
     let staffleaderrole = message.guild.roles.find(r => r.name === "Staff Leadership");
     if (!position) return message.channel.sendEmbed(srHelpEmbed);
     

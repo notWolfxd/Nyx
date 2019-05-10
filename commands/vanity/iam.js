@@ -2,6 +2,8 @@ const Discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
     
+    if (message.channel.id !== ("410526913879080960"))
+        return;
     //Build .iam help Embed.
     var iamHelpEmbed = new Discord.RichEmbed()
     .setTitle("Command: IAm")

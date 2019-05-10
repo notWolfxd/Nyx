@@ -25,7 +25,7 @@ module.exports.run = async (client, message, args) => {
     
 //Build Staff Rank message Embed.
 var ssrEmbed = new Discord.RichEmbed()
-    .setTitle("Screenshare Requested")
+    .setTitle("Staff Rank Requested")
     .setColor("#38b599")
     .setThumbnail(message.author.avatarURL)
     .addField("Rank Type:", `${rankType}`, true)

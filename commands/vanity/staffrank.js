@@ -32,7 +32,7 @@ var ssrEmbed = new Discord.RichEmbed()
     .addField("Staff Position:", `${position}`, true)
     .addBlankField()
     .addField("Staff Member:", `${playerinfo}`, true)
-    .addField("Gamemode", `${gamemode}`, true)
+    .addField("Gamemode:", `${gamemode}`, true)
     .setFooter(`Nyx v1.4.6 | Made By: Wolf#9001`, client.user.avatarURL)
     
 //Sending the completed command things.

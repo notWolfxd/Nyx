@@ -31,16 +31,16 @@ module.exports.run = async (client, message, args) => {
     .setFooter("Nyx v1.4.6 | Made By: Wolf#9001", client.user.avatarURL)
     
   //Sending the completed message.
-  if (message.guild.id == ("576567811552313361") && sbaliases.includes(gamemode.toLowerCase())) {
+  if (message.guild.id == ("576567811552313361") && sbaliases.includes(gametype.toLowerCase())) {
     let voting = await client.channels.get("576825389305954324").sendEmbed(suggestEmbed);
     await voting.react("✅");
     await voting.react("❌");
     await message.channel.send("Thank you for your suggestion, it has been sent to the suggestion area for players to vote on!");
    }
   else {
-      await message.channel.send("You did not specify a proper Skyblock Realm alias in your gamemode area.
+      await message.channel.send("You did not specify a proper Skyblock Realm alias in your gamemode area.");
   }
-
+ }                 
  module.exports.help = {
     name: "suggest",
     aliases: [ "s",

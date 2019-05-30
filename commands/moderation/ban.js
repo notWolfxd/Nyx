@@ -30,12 +30,12 @@ if (member.highestRole.position > message.member.highestRole.position)
         return message.channel.send("Now that you have tried to ban someone with a higher role than you, expect a ban from them lol !")
 
     member.send(`You have been banned from **__${message.guild.name}__** by **__${message.author.username}__** for **__${reason}__**.`)
-    member.ban({ days: 7, reason: `${message.author.username} | For: ${reason}` }).then(() => {
+    member.ban({ days: 7, reason: `${message.author.tag} | For: ${reason}` }).then(() => {
         
 var bEmbed = new Discord.RichEmbed()
         .setTitle("⛔ User Banned")
         .setColor("#32CD32")
-        .addField("Username", `${member.user}`, true)
+        .addField("Username", `${member.user.tag}`, true)
         .addField("ID", `${member.user.id}`, true)
 message.channel.send(bEmbed);
 
@@ -46,7 +46,7 @@ var embed = new Discord.RichEmbed()
 	.addField(`User:`, `${member.user.tag} | ${member.user.id}`)
 	.addField(`Issued By:`, `${message.author.tag} | ${message.author.id}`)
 	.addField(`Reason:`, `${reason}`)
-	.setFooter("Nyx v1.4.0 | Made By: Wolf#9001", client.user.avatarURL)
+	.setFooter("Nyx v1.4.6 | Made By: Wolf#9001", client.user.avatarURL)
 if (modlog) modlog.send({ embed })
                         
         .then(() => {

@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
-const users = client.users;
 
 module.exports.run = async (client, message, args) => {
     
+const users = client.users;
 
     let member = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0])) || users.filter(u => u.tag.toLowerCase().includes(args[0].toLowerCase()));
     console.log(member)

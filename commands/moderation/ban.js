@@ -1,8 +1,10 @@
 const Discord = require("discord.js");
+const users = client.users;
 
 module.exports.run = async (client, message, args) => {
     
-    let member = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+
+    let member = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0])) || users.filter(u => u.tag.toLowerCase().includes(args[0].toLowerCase()));
     console.log(member)
     let modlog = message.guild.channels.find(channel => channel.name === "bot-logs");
     let reason = args.splice(1, args.length).join(' ') || `No reason provided.`;

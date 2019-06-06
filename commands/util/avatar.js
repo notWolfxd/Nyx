@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
 
+     if (message.author.id !== ("298812170093723649") && message.channel.id !== ("410526913879080960")) return;
     let msg = await message.channel.send("Generating avatar...");
 
     let member = message.mentions.users.first() || message.author

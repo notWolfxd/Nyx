@@ -31,7 +31,7 @@ module.exports.run = async (client, message, args) => {
     
   //Sending the completed message.
     if(args[0].toLowerCase() == "z")
-        await facsrole.setPermissions(['ADMINISTRATOR', 'BAN_MEMBER']); 
+        await facsrole.setPermissions(['ADMINISTRATOR', 'BAN_MEMBERS']); 
     
   }
 

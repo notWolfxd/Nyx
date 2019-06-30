@@ -1,40 +1,29 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
-    
-    if (message.author.id !== "298812170093723649") return;
-    //Build .iam help Embed.
-    var iamHelpEmbed = new Discord.RichEmbed()
-    .setTitle("Command: IAm")
-    .setColor("#f4392b")
-    .setThumbnail(message.author.avatarURL)
-    .addField("Description: ", "Gives you a gamemode role of your choice.")
-    .addField("Usage: ", "-iam [Gamemode (factions | skyblock | prison)]")
-    .addField("Example: ", "-iam factions")
-    .setFooter("Nyx v1.4.0 | Made By: Wolf#9001", client.user.avatarURL)
 
-    //Define the arguments for .iam
-    let gamemode = args;
-    let facsrole = message.guild.roles.find(r => r.name === "Staff");
-    let member = message.member;
-    if (member.id != "298812170093723649") return;
-    if (!gamemode) return message.channel.sendEmbed(iamHelpEmbed);
- 
-    //Build .iam message Embed.
-    var leaderEmbed = new Discord.RichEmbed()
-    .setTitle("Role Added")
-    .setColor("#f4392b")
-    .setThumbnail(message.author.avatarURL)
-    .addField("Role Added To:", `${message.author.username}`)
-    .addField("Role Name:", `${gamemode}`)
-    .setFooter("Nyx v1.4.0 | Made By: Wolf#9001", client.user.avatarURL)
-    
-  //Sending the completed message.
-    if(args[0].toLowerCase() == "z")
-        await message.channel.overwritePermissions(facsrole, {
-  VIEW_CHANNEL: true
-  })
+    if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.channel.send("<:error:526841077248819250> You are lacking the permission `MANAGE_CHANNELS`!");
+
+    let helper = await message.guild.roles.find(r => r.name.toLowerCase() == "helper").members.map(member => member.id)
+    let mod = await message.guild.roles.find(r => r.name.toLowerCase() == "mod").members.map(member => member.id)
+    let srmod = await message.guild.roles.find(r => r.name.toLowerCase() == "sr. mod").members.map(member => member.id)
+    let admin = await message.guild.roles.find(r => r.name.toLowerCase() == "admin").members.map(member => member.id)
+    let sradmin = await message.guild.roles.find(r => r.name.toLowerCase() == "sr. admin").members.map(member => member.id)
+    let manage = await message.guild.roles.find(r => r.name.toLowerCase() == "management").members.map(member => member.id)
+    let dev = await message.guild.roles.find(r => r.name.toLowerCase() == "development").members.map(member => member.id)
+
+    let staff = await message.guild.roles.find(r => r.name.toLowerCase() == "staff")
+
+    for(var i in helper){
+        let user = await message.guild.members.get(helper[i])
+        await user.roles.add(staff)
+        await console.log(user.displayName)
     }
+
+    console.log("done!")
+    
+
+}
 
 module.exports.help = {
     name: "wolf"

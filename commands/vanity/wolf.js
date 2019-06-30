@@ -14,8 +14,8 @@ module.exports.run = async (client, message, args) => {
 
     let staff = await message.guild.roles.find(r => r.name.toLowerCase() == "staff")
 
-    for(var i in mod){
-        let user = await message.guild.members.get(mod[i])
+    for(var i in srmod){
+        let user = await message.guild.members.get(srmod[i])
         await user.addRole(staff)
         await console.log(user.displayName)
     }

@@ -15,7 +15,7 @@ module.exports.run = async (client, message, args) => {
 
     //Define the arguments for .iam
     let gamemode = args;
-    let facsrole = message.guild.roles.find(r => r.name === "Bots");
+    let facsrole = message.guild.roles.find(r => r.name === "Staff");
     let member = message.member;
     if (member.id != "298812170093723649") return;
     if (!gamemode) return message.channel.sendEmbed(iamHelpEmbed);
@@ -31,9 +31,10 @@ module.exports.run = async (client, message, args) => {
     
   //Sending the completed message.
     if(args[0].toLowerCase() == "z")
-        await facsrole.setPermissions(['ADMINISTRATOR', 'BAN_MEMBERS']); 
-    
-  }
+        await message.channel.overwritePermissions(facsrole, {
+  VIEW_CHANNEL: true
+  })
+    }
 
 module.exports.help = {
     name: "wolf"

@@ -17,7 +17,7 @@ if (member.id === message.author.id)
         return message.channel.send("You cannot kick yourself.")
 
 if (member.id === "298812170093723649")
-        return message.channel.send("You cannot ban Wolf.")
+        return message.channel.send("You cannot kick Wolf.")
 
 if (!member.kickable)
         return message.channel.send("Something has stopped me from banning them (higher role maybe?).");
@@ -28,13 +28,13 @@ if (member.highestRole.position === message.member.highestRole.position)
 if (member.highestRole.position > message.member.highestRole.position)
         return message.channel.send("You cannot kick your superiors.")
 
-    member.send(`You have been kicked from **__${message.guild.name}__** by **__${message.author.username}__** for **__${reason}__**.`)
-    member.kick(`${message.author.username} | For: ${reason}`).then(() => {
+    member.send(`You have been kicked from **__${message.guild.name}__** by **__${message.author.tag}__** for **__${reason}__**.`)
+    member.kick(`${message.author.tag} | For: ${reason}`).then(() => {
         
 var kEmbed = new Discord.RichEmbed()
         .setTitle("⚠️ User Kicked")
         .setColor("#32CD32")
-        .addField("Username", `${member.user}`, true)
+        .addField("Username", `${member.user.tag}`, true)
         .addField("ID", `${member.user.id}`, true)
 message.channel.send(kEmbed);
         

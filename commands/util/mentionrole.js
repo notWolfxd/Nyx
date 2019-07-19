@@ -25,9 +25,9 @@ if (!menrole)
         return message.channel.send("Could not find role to mention.");
 
 if (mentionrole.editable) {
-  await 10 mentionrole.setMentionable(true, `${message.author.username} | With command mentionrole. (Start)`);
-  await 10 message.channel.send(`<@&${mentionrole.id}>`);
-  await 10 mentionrole.setMentionable(false, `${message.author.username} | With command mentionrole. (End)`);
+  await mentionrole.setMentionable(true, `${message.author.username} | With command mentionrole. (Start)`);
+  await message.channel.send(`<@&${mentionrole.id}>`);
+  await mentionrole.setMentionable(false, `${message.author.username} | With command mentionrole. (End)`);
         }
 if (!mentionrole.editable)
         return message.channel.send("I do not have sufficient enough permissions to mention that role.");

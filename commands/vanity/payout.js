@@ -23,7 +23,7 @@ module.exports.run = async (client, message, args) => {
     //Define the arguments for payout.
     let payoutDefine = args.join(" ");
     let realm = payoutDefine[0];
-       if (!recruitDefine[0]) 
+       if (!payoutDefine[0]) 
         return message.channel.sendEmbed(payoutHelpEmbed);
     let compendium = payoutDefine[1];
     let winners = payoutDefine.slice(2);  

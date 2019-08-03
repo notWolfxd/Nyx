@@ -17,7 +17,7 @@ module.exports.run = async (client, message, args) => {
     .addField("Available Payout Realms: ", "Demonic, Heroic, Runic, Space, WildWest, Jungle, Alcatraz, & Mythic")
     .addField("Available Payout Compendiums: ", "Faction Top, Island Top, Cell Top, KoTH Top, Prestige Top, mcMMO Top, Herbalism Top, & Block Top")
     .addField("Usage: ", "-payout <Realm> <Compendium> <Winners>")
-    .addFiel("Example: ", "-payout Demonic FTop Promised Redemption Cloud9")
+    .addField("Example: ", "-payout Demonic FTop Promised Redemption Cloud9")
     .setFooter("Nyx v1.4.8 | Made By: Wolf#9001", client.user.avatarURL)
 
     //Define the arguments for payout.
@@ -26,7 +26,6 @@ module.exports.run = async (client, message, args) => {
        if (!payoutDefine[0]) 
         return message.channel.sendEmbed(payoutHelpEmbed);
     let compendium = payoutDefine[1];
-    let winners = payoutDefine.slice(2);  
     
     let facsrealmaliases = [ "demonic", "heroic", "runic", "d", "h", "r" ];
     let sbaliases = [ "space", "jungle", "wildwest", "s", "j", "ww" ];

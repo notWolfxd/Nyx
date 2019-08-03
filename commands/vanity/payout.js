@@ -41,9 +41,9 @@ module.exports.run = async (client, message, args) => {
     .setTitle(`Payouts For: ${realm} | ${compendium}`)
     .setColor("#ffa0bb")
     .setThumbnail(message.author.avatarURL)
-    .addField("1st: ", `/givecoupon p ${payoutDefine[3] 30`)
-    .addField("2nd: ", `/givecoupon p ${payoutDefine[4] 20`)
-    .addField("3rd: ", `/givecoupon p ${payoutDefine[5] 10`)
+    .addField("1st: ", `/givecoupon p ${payoutDefine[3]} 30`)
+    .addField("2nd: ", `/givecoupon p ${payoutDefine[4]} 20`)
+    .addField("3rd: ", `/givecoupon p ${payoutDefine[5]} 10`)
     .setFooter("Nyx v1.4.8 | Made By: Wolf#9001", client.user.avatarURL)
 
    if (individualcompendiumaliases.includes(payoutDefine[1].toLowerCase()) && prisonaliases.includes(payoutDefine[0].toLowerCase())) {

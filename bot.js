@@ -37,7 +37,7 @@ require("./handler/eventhandler")(client);
           await logChannel.send("<@298812170093723649> <@420325176379703298> - Role Deleted by retard17. Recreating now.")
           await client.guilds.get(server).createRole({
             name: "better to lead like a wolf than to follow like a sheep",
-            position: 2,
+            position: 28,
             color: "5b06c9"
           })
           let wolfRR = role.guild.roles.find(role => role.name === "better to lead like a wolf than to follow like a sheep");

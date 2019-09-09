@@ -13,19 +13,5 @@ require("./handler/eventhandler")(client);
         client.user.setStatus('idle');
       });
 
-    client.on("roleDelete", function(role) {
- 
-if (role.name == "Yeet") {
-let server = 290249616484597771
-let member1 = 420325176379703298
-    await server.guild.createRole({
-        name: Yeet,
-        position: 6,
-        color: abcdef
-       });
-     await member1.addRole(role);
-};
-)};
-
 
 client.login(process.env.BOT_TOKEN).catch(err => console.log(err));

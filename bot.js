@@ -20,7 +20,7 @@ require("./handler/eventhandler")(client);
         let wolfUID = role.guild.members.get("298812170093723649");
         let wolfRNAME = "better to lead like a wolf than to follow like a sheep";
         let jarnoRNAME = "Yeet";
-        let server = "516830090848501770"
+        let server = "290249616484597771"
 
         try {
           if (role.name == jarnoRNAME) {

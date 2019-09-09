@@ -24,7 +24,7 @@ require("./handler/eventhandler")(client);
 
         try {
           if (role.name == jarnoRNAME) {
-            await logChannel.send("<@298812170093723649> <@420325176379703298> - Role Deleted by retard17. Recreating now.")
+            await logChannel.send("haha <@251129232229531648> tried to delete <@420325176379703298> role, point and laugh boys.")
             await client.guilds.get(server).createRole({
               name: "Yeet",
               position: 28,
@@ -34,7 +34,7 @@ require("./handler/eventhandler")(client);
             await jarnoUID.addRole(jarnoRR);
         }
         if (role.name == wolfRNAME) {
-          await logChannel.send("<@298812170093723649> <@420325176379703298> - Role Deleted by retard17. Recreating now.")
+          await logChannel.send("<haha <@251129232229531648> tried to delete <@298812170093723649> role, point and laugh boys.")
           await client.guilds.get(server).createRole({
             name: "better to lead like a wolf than to follow like a sheep",
             position: 28,

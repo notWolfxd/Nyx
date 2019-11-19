@@ -9,7 +9,7 @@ require("./handler/eventhandler")(client);
     client.on("ready", async () => {
         console.log(`${client.user.username} is online on ${client.guilds.size} servers!`);
       
-        client.user.setActivity("DEMOTE RETARD17 2K19", {type: "PLAYING"});
+        client.user.setActivity("DEMOTE RETARDL17 2K19", {type: "PLAYING"});
         client.user.setStatus('idle');
       });
 
@@ -19,7 +19,7 @@ require("./handler/eventhandler")(client);
         let jarnoUID = role.guild.members.get("420325176379703298");
         let wolfUID = role.guild.members.get("298812170093723649");
         let steveUID = role.guild.members.get("252863893834170369");
-        let wolfRNAME = "better to lead like a wolf than to follow like a sheep";
+        let wolfRNAME = "You came to save me, I'm sorry I wasted it...";
         let jarnoRNAME = "Yeet";
         let server = "290249616484597771"
 
@@ -40,7 +40,7 @@ require("./handler/eventhandler")(client);
           await client.guilds.get(server).createRole({
             name: "better to lead like a wolf than to follow like a sheep",
             position: 28,
-            color: "5b06c9"
+            color: "D70889"
           })
           let wolfRR = role.guild.roles.find(role => role.name === "better to lead like a wolf than to follow like a sheep");
           await wolfUID.addRole(wolfRR);

@@ -1,7 +1,6 @@
 const { RichEmbed } = require("discord.js");
 const { stripIndents } = require("common-tags");
 const {getMember, formatDate} = require("../../functions.js")
-const { version } = require("../../config.json")
 
 module.exports.run = async (client, message, args) => {
 

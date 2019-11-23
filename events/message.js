@@ -1,17 +1,8 @@
-const Discord = require("discord.js");
-const config = require("../config.json");
 const fs = require("fs");
+const config = require("../config.json")
 
-module.exports = async(client, message) => {
-
-
- //   var tkn = "client.token,token".split(",");
- //   for (i=0;i<tkn.length;i++) {
- //       if (message.content.toLowerCase().includes(tkn[i])) {
- //  
- //         return;
- //       }
- //   }
+exports.run = (client, message) => {
+    
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
     
@@ -48,4 +39,4 @@ try {
 } catch (e) {
 }
 
-};
+}

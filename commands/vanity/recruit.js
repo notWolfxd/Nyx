@@ -17,11 +17,11 @@ module.exports.run = async (client, message, args) => {
     .setTitle("Command: Recruit")
     .setColor("#f74e00")
     .setThumbnail(message.author.avatarURL)
-    .addField("Description: ", "Recruit people to join your team for either: Factions, Skyblock, or Prison.")
-    .addField("Permissions:", "You must have one of the three leader roles (faction-leader, island-leader, or gang-leader).")
+    .addField("Description: ", "Recruit people to join your team for either: Factions, Skyblock, Prison, or Tribes.")
+    .addField("Permissions:", "You must have one of the four leader roles (faction-leader, island-leader, gang-leader, or tribe-leader).")
     .addField("Syntax Formatter: ", "Use https://notwolfxd.github.io/leaders/ to format the recruitment post if you're having trouble.")
     .addField("Friendly PSA:", "If you are caught using this to advertise other servers, then you will be banned.")
-    .setFooter("Nyx v1.4.6 | Made By: Wolf#9001", client.user.avatarURL)
+    .setFooter("Nyx v1.5.0 | Made By: Wolf#9001", client.user.avatarURL)
 
     //Define the arguments for recruit.
     let recruitDefine = args.join(" ").split(" | ");
@@ -38,9 +38,10 @@ module.exports.run = async (client, message, args) => {
 
     let link = recruitDefine[4];
 
-    let facsaliases = [ "facs", "factions", "faction", "demonic", "heroic", "apocalyptic" ];
-    let sbaliases = [ "sb", "skyblock", "island", "space", "jungle", "wildwest", "wild west" ];
-    let prisonaliases = [ "prison", "prisons", "cell", "gang", "galactic", "alcatraz", "mythic" ];
+    let facsaliases = [ "facs", "factions", "faction", "demonic", "heroic", "runic" ];
+    let sbaliases = [ "sb", "skyblock", "island", "space", "jungle", "wildwest", "wild west", "fantasy" ];
+    let prisonaliases = [ "prison", "prisons", "cell", "gang", "alcatraz", "mythic" ];
+    let tribesaliases = [ "tribes", "tribe", "survival" ]
 
     //Build the Recruitment message Embed.
     var recruitEmbed = new Discord.RichEmbed()
@@ -49,13 +50,13 @@ module.exports.run = async (client, message, args) => {
     .setColor("#ffa0bb")
     .setThumbnail(message.author.avatarURL)
     .addField("Recruitment Format:", "https://notwolfxd.github.io/leaders")
-    .addField("Recruiter:", `${message.author.username}#${message.author.discriminator} | ${message.author.id}`)
+    .addField("Recruiter:", `${message.author.tag} | ${message.author.id}`)
     .addField("Recruiting On:", `${gametype}`)
     .addField("Recruiting For:", `${teamname}`)
     .addField("About Them:", `${about} `)
     .addField("Their Requirements:", `${req}`)
     .addField("Team Discord:", `${link}`)
-    .setFooter("Nyx v1.4.6 | Made By: Wolf#9001", client.user.avatarURL)
+    .setFooter("Nyx v1.5.0 | Made By: Wolf#9001", client.user.avatarURL)
 
    if (message.member.roles.has("471779470525595668") && facsaliases.includes(recruitDefine[0].toLowerCase())) {
       await client.channels.get("426903359392448522").send(recruitEmbed);
@@ -85,9 +86,7 @@ module.exports.run = async (client, message, args) => {
       }
  module.exports.help = {
     name: "recruit",
-    aliases: [ "rec",
-               "recruitment",
+    aliases: [               "recruitment",
                "recruiting",
-               "r"
              ]
 }

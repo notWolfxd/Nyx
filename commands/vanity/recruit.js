@@ -81,9 +81,17 @@ module.exports.run = async (client, message, args) => {
                   setTimeout(() => {
                cooldown.delete(message.author.id);
                }, 18000000);
-            }
-         }
-      }
+   }
+   if (message.member.roles.has("649056051085443082") && tribesaliases.includes(recruitDefine[0].toLowerCase())) {
+      await client.channels.get("649055487601410068").send(recruitEmbed);
+      await message.channel.send("Your recruitment information has been sent to the respective channel. You must wait **__five__** hours to post it again!");
+      await    cooldown.add(message.author.id);
+                  setTimeout(() => {
+               cooldown.delete(message.author.id);
+               }, 18000000);
+           }         
+       }
+   }
  module.exports.help = {
     name: "recruit",
     aliases: [               "recruitment",

@@ -9,7 +9,7 @@ exports.run = async (client, member) => {
 
           if (member.id == botnerd) {
             await logChannel.send("haha no <@298812170093723649> they tried it");
-            await botnerd.send('You have been banned from **__${message.guild.name}__** for **Joining a Guardian Protected Server**.');
+            await botnerd.send('You have been banned from **__${server.name}__** for **Joining a Guardian Protected Server**.');
             await botnerd.ban({ days: 7, reason: `Joining a Guardian Protected Server` })
         }
     

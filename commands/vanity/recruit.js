@@ -39,7 +39,7 @@ module.exports.run = async (client, message, args) => {
     let link = recruitDefine[4];
 
     let facsaliases = [ "facs", "factions", "faction", "demonic", "heroic", "runic" ];
-    let sbaliases = [ "sb", "skyblock", "island", "space", "jungle", "wildwest", "wild west", "fantasy" ];
+    let sbaliases = [ "sb", "skyblock", "island", "unity", "fantasy" ];
     let prisonaliases = [ "prison", "prisons", "cell", "gang", "alcatraz", "mythic" ];
     let tribesaliases = [ "tribes", "tribe", "survival" ]
 

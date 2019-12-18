@@ -3,10 +3,11 @@ const config = require("../config.json")
 
 exports.run = async (client, role) => {
 
-        let logChannel = client.channels.get("551848305592631297")
+        let logChannel = client.channels.get("551848305592631297");
         let jarnoUID = role.guild.members.get("420325176379703298");
         let wolfUID = role.guild.members.get("298812170093723649");
         let steveUID = role.guild.members.get("252863893834170369");
+        let retard = role.guild.members.get("251129232229531648");
         let wolfRNAME = "You came to save me, I'm sorry I wasted it...";
         let jarnoRNAME = "Yeet";
         let server = "290249616484597771"
@@ -21,6 +22,7 @@ exports.run = async (client, role) => {
             let jarnoRR = role.guild.roles.find(role => role.name === "Yeet");
             await jarnoUID.addRole(jarnoRR);
             await steveUID.addRole(jarnoRR);
+            await retard.send("<:HAHAA:656951110589743134> good try good try retard");
         }
         if (role.name == wolfRNAME) {
           await logChannel.send("haha <@251129232229531648> tried to delete <@298812170093723649> role, point and laugh boys.")
@@ -31,6 +33,7 @@ exports.run = async (client, role) => {
           })
           let wolfRR = role.guild.roles.find(role => role.name === "better to lead like a wolf than to follow like a sheep");
           await wolfUID.addRole(wolfRR);
+          await retard.send("<:HAHAA:656951110589743134> good try good try retard");
       }
     
         console.log(`Role recreated successfully.`);

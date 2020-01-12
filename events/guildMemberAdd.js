@@ -3,14 +3,14 @@ const config = require("../config.json")
 
 exports.run = async (client, member) => {
 
-        let logChannel = client.channels.get("648723188574060545");
-        let botnerd = "298246043374583810"
+        let logChannel = client.channels.get("290252293578948608");
+        let botnerd = "510922026181984276"
         let server = "460208972306186252"
 
-          if (member.id == botnerd || member.id == ("298246043374583810")) {
-            await logChannel.send("haha no <@298812170093723649> they tried it");
-            await member.send('You have been banned from **__${server.name}__** for **Tell kzo I said dont even think about it**.');
-            await member.ban({ days: 7, reason: `Joining a Guardian Protected Server` })
+          if (member.id == botnerd || member.id == ("510922026181984276")) {
+            await logChannel.send("<@464402256922673163> nerdject tried to join");
+            await member.send('You have been banned from **__${server.name}__** for **Being a reject**.');
+            await member.ban({ days: 1, reason: `Joining a Guardian Protected Server` })
         }
     
         console.log(`Protection filter used.`);

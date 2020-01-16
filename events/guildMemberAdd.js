@@ -12,7 +12,7 @@ exports.run = async (client, member) => {
             await logChannel.send("<@464402256922673163> nerdject tried to join");
             await member.send('You have been banned from **__${server.name}__** for **Being a reject**.');
             await member.ban({ days: 1, reason: `Joining a Guardian Protected Server` })
-        },
+        }
         if (member.id == faggot || member.id == ("366525024816988165")) {
             await logChannel.send("fag tried to join");
             await member.send('You have been banned from **__${server.name}__** for **Being a faggot**.');

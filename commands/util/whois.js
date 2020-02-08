@@ -1,10 +1,11 @@
 const { RichEmbed } = require("discord.js");
 const { stripIndents } = require("common-tags");
-const {getMember, formatDate} = require("../../functions.js")
+const {getMember, formatDate} = require("../../functions.js");
+const config = require("../../config.json");
 
 module.exports.run = async (client, message, args) => {
 
-    if (message.channel.id !== "410526913879080960" && message.author.id !== "298812170093723649") return;
+    if (message.channel.id !== "410526913879080960" && message.channel.id !== "460217052339372042" && message.author.id !== "298812170093723649") return;
     const member = getMember(message, args.join(" "));
 
     // Member variables
@@ -29,7 +30,7 @@ module.exports.run = async (client, message, args) => {
         **> Created At:** ${created}
         **> Username:** ${member.user.tag}`, true)
         
-        .setFooter(`Nyx v1.5.0 | Requested By: ${message.author.tag}`, client.user.avatarURL)
+        .setFooter(`${config.version} | Requested By: ${message.author.tag}`, client.user.avatarURL)
 
     if (member.user.presence.game) 
         embed.addField('Currently Playing:', stripIndents`**> Game:** ${member.user.presence.game.name}`);

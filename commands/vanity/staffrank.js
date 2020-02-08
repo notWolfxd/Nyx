@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const config = require("../../config.json");
 
 module.exports.run = async (client, message, args) => {
 
@@ -13,7 +14,7 @@ module.exports.run = async (client, message, args) => {
     .addField("Description: ", "Request your staff rank.")
     .addField("Usage: ", "-staff <Ingame | Forums | Discord> <IGN | Forum Profile Link> <Staff Position> (Gamemode)")
     .addField("Example: ", "-staff Ingame Wolf Owner | -staff Ingame Wolf Owner Factions")
-    .setFooter("Nyx v1.4.6 | Made By: Wolf#9001", client.user.avatarURL)
+    .setFooter(`${config.version} | Made By: Wolf#9001`, client.user.avatarURL)
     
 //Define the arguments for Staff Rank
     let rankType = args[0];
@@ -33,7 +34,7 @@ var ssrEmbed = new Discord.RichEmbed()
     .addBlankField()
     .addField("Staff Member:", `${playerinfo}`, true)
     .addField("Gamemode:", `${gamemode}`, true)
-    .setFooter(`Nyx v1.4.6 | Made By: Wolf#9001`, client.user.avatarURL)
+    .setFooter(`${config.version} | Made By: Wolf#9001`, client.user.avatarURL)
     
 //Sending the completed command things.
 if (position) {
@@ -48,6 +49,7 @@ if (position) {
 module.exports.help = {
     name: "staffrank",
     aliases: [ "rank",
-               "staff"
+               "staff",
+               "sr"
              ]
 }

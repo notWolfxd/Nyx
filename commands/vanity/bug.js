@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const config = require("../../config.json");
 
 module.exports.run = async (client, message, args) => {
     
@@ -10,7 +11,7 @@ module.exports.run = async (client, message, args) => {
     .addField("Description: ", "Notify the developers of bugs you encounter.")
     .addField("Usage: ", "-bug <Gamemode [factions | skyblock | prison]> <Bug>")
     .addField("Example: ", "-bug Factions I can't unblacklist even with the permission blacklist.unblacklist!")
-    .setFooter("Nyx v1.4.6 | Made By: Wolf#9001", client.user.avatarURL)
+    .setFooter(`${config.version} | Made By: Wolf#9001`, client.user.avatarURL)
 
     //Define the arguments for Bug Report.
     let gametype = args[0];
@@ -29,7 +30,7 @@ module.exports.run = async (client, message, args) => {
     .addField("Reported By:", `${message.author.username}#${message.author.discriminator} | ${message.author.id}`)
     .addField("Bug on:", `${gametype}`)
     .addField("Their Bug Is:", `${bug}`)
-    .setFooter("Nyx v1.4.6 | Made By: Wolf#9001", client.user.avatarURL)
+    .setFooter(`${config.version} | Made By: Wolf#9001`, client.user.avatarURL)
     
   //Sending the completed message.
   if (message.guild.id == ("576567811552313361") && sbaliases.includes(gametype.toLowerCase())) {

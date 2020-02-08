@@ -1,8 +1,11 @@
-const Discord = require("discord.js");
+const { RichEmbed } = require("discord.js");
+const { stripIndents } = require("common-tags");
+const {getMember, formatDate} = require("../../functions.js");
+const config = require("../../config.json");
 
 module.exports.run = async (client, message, args) => {
     
-    let member = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    const member = getMember(message, args[0]);
     let modlog = message.guild.channels.find(channel => channel.name === "bot-logs");
     let reason = args.splice(1, args.length).join(' ') || `No reason provided.`;
 
@@ -11,10 +14,10 @@ if (!message.member.hasPermission("BAN_MEMBERS"))
         return;
 
 if (!args[0]) 
-        return message.channel.send("I can't softban air noob.");
+        return message.channel.send("I can't softban air.");
 
 if (member.id === message.author.id)
-        return message.channel.send("Unfortunately you can't softban yourself, will probs add this later though for fun.")
+        return message.channel.send("You cannot softban yourself.")
 
 if (member.id === "298812170093723649")
         return message.channel.send("You cannot ban Wolf.")
@@ -26,27 +29,27 @@ if (member.highestRole.position === message.member.highestRole.position)
         return message.channel.send("Play nice with the people on your level.")
 
 if (member.highestRole.position > message.member.highestRole.position)
-        return message.channel.send("Now that you have tried to softban someone with a higher role than you, expect a softban from them lol !");
+        return message.channel.send("Now that you have tried to softban someone with a higher role than you, expect a softban from them!");
     
-    member.send(`You have been softbanned from **__${message.guild.name}__** by **__${message.author.username}__** for **__${reason}__**.`)
+    member.send(`You have been softbanned from **__${message.guild.name}__** by **__${message.author.username}__** for: **__${reason}__**.`)
     member.ban({ days: 7, reason: `${message.author.username} | For: ${reason}` }).then(() => {
     message.guild.unban(member);
 
-var bEmbed = new Discord.RichEmbed()
+var sbEmbed = new RichEmbed()
         .setTitle("☣ User SoftBanned")
         .setColor("#32CD32")
         .addField("Username", `${member.user}`, true)
         .addField("ID", `${member.user.id}`, true)
-message.channel.send(bEmbed);
+message.channel.send(sbEmbed);
 
-var embed = new Discord.RichEmbed()
+var embed = new RichEmbed()
         .setTitle('User SoftBanned')
         .setColor("#8B0000")
         .setThumbnail(message.author.avatarURL)
 	.addField(`User:`, `${member.user.tag} | ${member.user.id}`)
 	.addField(`Issued By:`, `${message.author.tag} | ${message.author.id}`)
 	.addField(`Reason:`, `${reason}`)
-	.setFooter("Nyx v1.4.0 | Made By: Wolf#9001", client.user.avatarURL)
+        .setFooter(`${config.version} | Made By: Wolf#9001`, client.user.avatarURL)
 if (modlog) modlog.send({ embed })
 
 	.then(() => {
@@ -62,6 +65,6 @@ if (modlog) modlog.send({ embed })
 module.exports.help = {
     name: "softban",
     aliases: [ "sb",
-	       "pullout"
+	       "banbutnotban"
 	     ]
   }

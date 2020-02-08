@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const config = require("../../config.json");
 
 module.exports.run = async (client, message, args) => {
     
@@ -10,14 +11,14 @@ module.exports.run = async (client, message, args) => {
     .addField("Description: ", "Sends a suggestion to the suggestion channel. Once sent the players/ users can vote upon what was suggested.")
     .addField("Usage: ", "-suggest <Gamemode [factions | skyblock | prison]> <Suggestion>")
     .addField("Example: ", "-suggest Factions ╠═══╣ Lets build a ladder to demote Milk ╠═══╣")
-    .setFooter("Nyx v1.4.6 | Made By: Wolf#9001", client.user.avatarURL)
+    .setFooter(`${config.version} | Made By: Wolf#9001`, client.user.avatarURL)
 
     //Define the arguments for Suggest.
     let gametype = args[0];
     let suggestion = args.slice(1).join(" ");
-    let facsaliases = [ "facs", "factions", "faction", "demonic", "heroic", "apocalyptic" ];
-    let sbaliases = [ "sb", "skyblock", "island", "space", "jungle", "wildwest", "wild west" ];
-    let prisonaliases = [ "prison", "prisons", "cell", "gang", "galactic", "alcatraz", "mythic" ];
+    let facsaliases = [ "facs", "factions", "faction", "demonic", "heroic" ];
+    let sbaliases = [ "sb", "skyblock", "island", "unity", "fantasy" ];
+    let prisonaliases = [ "prison", "prisons", "cell", "gang" ];
 
     
     //Build the .suggest message Embed.
@@ -28,7 +29,7 @@ module.exports.run = async (client, message, args) => {
     .addField("Suggested By:", `${message.author}#${message.author.discriminator} | ${message.author.id}`)
     .addField("Suggestion For:", `${gametype}`)
     .addField("Their Suggestion Is:", `${suggestion}`)
-    .setFooter("Nyx v1.4.6 | Made By: Wolf#9001", client.user.avatarURL)
+    .setFooter(`${config.version} | Made By: Wolf#9001`, client.user.avatarURL)
     
   //Sending the completed message.
   if (message.guild.id == ("576567811552313361") && sbaliases.includes(gametype.toLowerCase())) {
@@ -43,7 +44,7 @@ module.exports.run = async (client, message, args) => {
  }                 
  module.exports.help = {
     name: "suggest",
-    aliases: [ "s",
+    aliases: [
                "suggestion"
              ]
  }

@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const config = require("../../config.json");
 const cooldown = new Set();
 
 module.exports.run = async (client, message, args) => {
@@ -21,13 +22,14 @@ module.exports.run = async (client, message, args) => {
     .addField("Permissions:", "You must have one of the four leader roles (faction-leader, island-leader, or gang-leader).")
     .addField("Syntax Formatter: ", "Use https://notwolfxd.github.io/leaders/ to format the recruitment post if you're having trouble.")
     .addField("Friendly PSA:", "If you are caught using this to advertise other servers, then you will be banned.")
-    .setFooter("Nyx v1.5.0 | Made By: Wolf#9001", client.user.avatarURL)
+    .setFooter(`${config.version} | Made By: Wolf#9001`, client.user.avatarURL)
 
     //Define the arguments for recruit.
     let recruitDefine = args.join(" ").split(" | ");
     let gametype = recruitDefine[0];
        if (!recruitDefine[0]) 
         return message.channel.sendEmbed(recruitHelpEmbed);
+
     let teamname = recruitDefine[1];
 
     let about = recruitDefine[2];
@@ -55,7 +57,7 @@ module.exports.run = async (client, message, args) => {
     .addField("About Them:", `${about} `)
     .addField("Their Requirements:", `${req}`)
     .addField("Team Discord:", `${link}`)
-    .setFooter("Nyx v1.5.0 | Made By: Wolf#9001", client.user.avatarURL)
+    .setFooter(`${config.version} | Made By: Wolf#9001`, client.user.avatarURL)
 
    if (message.member.roles.has("471779470525595668") && facsaliases.includes(recruitDefine[0].toLowerCase())) {
       await client.channels.get("426903359392448522").send(recruitEmbed);
@@ -85,7 +87,8 @@ module.exports.run = async (client, message, args) => {
    }
  module.exports.help = {
     name: "recruit",
-    aliases: [               "recruitment",
+    aliases: [               
+               "recruitment",
                "recruiting",
              ]
 }

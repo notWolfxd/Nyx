@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const config = require("../../config.json");
 
 module.exports.run = async (client, message, args) => {
     
@@ -10,7 +11,7 @@ module.exports.run = async (client, message, args) => {
     .addField("Description: ", "Removes a gamemode role of your choice.")
     .addField("Usage: ", "-iamnot [Gamemode (factions | skyblock | prison)]")
     .addField("Example: ", "-iamnot factions")
-    .setFooter("Nyx v1.4.0 | Made By: Wolf#9001", client.user.avatarURL)
+    .setFooter(`${config.version} | Made By: Wolf#9001`, client.user.avatarURL)
 
     //Define the arguments for .iamnot.
     let gamemode = args;

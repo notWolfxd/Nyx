@@ -40,70 +40,70 @@ module.exports.run = async (client, message, args) => {
     > **Deaths:** ${(player.stats.SkyWars.deaths_solo || 0)}
     > **Wins:** ${(player.stats.SkyWars.wins_solo || 0)}
     > **Losses:** ${(player.stats.SkyWars.losses_solo || 0)}
-    > **W/L:** ${((player.stats.SkyWars.wins_solo / player.stats.SkyWars.losses_solo).toPrecision(2) || 0)}
-    > **K/D:** ${((player.stats.SkyWars.kills_solo / player.stats.SkyWars.deaths_solo).toPrecision(2) || 0)}
+    > **W/L:** ${((player.stats.SkyWars.wins_solo || 0) / (player.stats.SkyWars.losses_solo || 1)).toPrecision(2)}
+    > **K/D:** ${((player.stats.SkyWars.kills_solo || 0) / (player.stats.SkyWars.deaths_solo || 1)).toPrecision(2)}
     - - -`, true)
 
     .addField('**__Solo Insane:__**', `> **Kills:** ${(player.stats.SkyWars.kills_solo_insane || 0)}
     > **Deaths:** ${(player.stats.SkyWars.deaths_solo_insane || 0)}
     > **Wins:** ${(player.stats.SkyWars.wins_solo_insane || 0)}
     > **Losses:** ${(player.stats.SkyWars.losses_solo_insane || 0)}
-    > **W/L:** ${((player.stats.SkyWars.wins_solo_insane / player.stats.SkyWars.losses_solo_insane).toPrecision(2) || 0)}
-    > **K/D:** ${((player.stats.SkyWars.kills_solo_insane / player.stats.SkyWars.deaths_solo_insane).toPrecision(2) || 0)}
+    > **W/L:** ${((player.stats.SkyWars.wins_solo_insane || 0) / (player.stats.SkyWars.losses_solo_insane || 1)).toPrecision(2)}
+    > **K/D:** ${((player.stats.SkyWars.kills_solo_insane || 0) / (player.stats.SkyWars.deaths_solo_insane || 1)).toPrecision(2)}
     - - -`, true)
 
     .addField('**__Solo Normal:__**', `> **Kills:** ${(player.stats.SkyWars.kills_solo_normal || 0)}
     > **Deaths:** ${(player.stats.SkyWars.deaths_solo_normal || 0)}
     > **Wins:** ${(player.stats.SkyWars.wins_solo_normal || 0)}
     > **Losses:** ${(player.stats.SkyWars.losses_solo_normal || 0)}
-    > **W/L:** ${((player.stats.SkyWars.wins_solo_normal / player.stats.SkyWars.losses_solo_normal).toPrecision(2) || 0)}
-    > **K/D:** ${((player.stats.SkyWars.kills_solo_normal / player.stats.SkyWars.deaths_solo_normal).toPrecision(2) || 0)}
+    > **W/L:** ${((player.stats.SkyWars.wins_solo_normal || 0) / (player.stats.SkyWars.losses_solo_normal || 1)).toPrecision(2)}
+    > **K/D:** ${((player.stats.SkyWars.kills_solo_normal || 0) / (player.stats.SkyWars.deaths_solo_normal || 1)).toPrecision(2)}
     - - -`, true)
 
     .addField('**__Doubles Total:__**', `> **Kills:** ${(player.stats.SkyWars.kills_team || 0)}
     > **Deaths:** ${(player.stats.SkyWars.deaths_team || 0)}
     > **Wins:** ${(player.stats.SkyWars.wins_team || 0)}
     > **Losses:** ${(player.stats.SkyWars.losses_team || 0)}
-    > **W/L:** ${((player.stats.SkyWars.wins_team / player.stats.SkyWars.losses_team).toPrecision(2) || 0)}
-    > **K/D:** ${((player.stats.SkyWars.kills_team / player.stats.SkyWars.deaths_team).toPrecision(2) || 0)}
+    > **W/L:** ${((player.stats.SkyWars.wins_team || 0) / (player.stats.SkyWars.losses_team || 1)).toPrecision(2)}
+    > **K/D:** ${((player.stats.SkyWars.kills_team || 0) / (player.stats.SkyWars.deaths_team || 1)).toPrecision(2)}
     - - -`, true)
 
     .addField('**__Doubles Insane:__**', `> **Kills:** ${(player.stats.SkyWars.kills_team_insane || 0)}
     > **Deaths:** ${(player.stats.SkyWars.deaths_team_insane || 0)}
     > **Wins:** ${(player.stats.SkyWars.wins_team_insane || 0)}
     > **Losses:** ${(player.stats.SkyWars.losses_team_insane || 0)}
-    > **W/L:** ${((player.stats.SkyWars.wins_team_insane / player.stats.SkyWars.losses_team_insane).toPrecision(2) || 0)}
-    > **K/D:** ${((player.stats.SkyWars.kills_team_insane / player.stats.SkyWars.deaths_team_insane).toPrecision(2) || 0)}
+    > **W/L:** ${((player.stats.SkyWars.wins_team_insane || 0) / (player.stats.SkyWars.losses_team_insane || 1)).toPrecision(2)}
+    > **K/D:** ${((player.stats.SkyWars.kills_team_insane || 0) / (player.stats.SkyWars.deaths_team_insane || 1)).toPrecision(2)}
     - - -`, true)
 
     .addField('**__Doubles Normal:__**', `> **Kills:** ${(player.stats.SkyWars.kills_team_normal || 0)}
     > **Deaths:** ${(player.stats.SkyWars.deaths_team_normal || 0)}
     > **Wins:** ${(player.stats.SkyWars.wins_team_normal || 0)}
     > **Losses:** ${(player.stats.SkyWars.losses_team_normal || 0)}
-    > **W/L:** ${((player.stats.SkyWars.wins_team_normal / player.stats.SkyWars.losses_team_normal).toPrecision(2) || 0)}
-    > **K/D:** ${((player.stats.SkyWars.kills_team_normal / player.stats.SkyWars.deaths_team_normal).toPrecision(2) || 0)}
+    > **W/L:** ${((player.stats.SkyWars.wins_team_normal || 0) / (player.stats.SkyWars.losses_team_normal || 1)).toPrecision(2)}
+    > **K/D:** ${((player.stats.SkyWars.kills_team_normal || 0) / (player.stats.SkyWars.deaths_team_normal || 1)).toPrecision(2)}
     - - -`, true)
 
     .addField('**__Ranked:__**', `> **Kills:** ${(player.stats.SkyWars.kills_ranked || 0)}
     > **Deaths:** ${(player.stats.SkyWars.deaths_ranked || 0)}
     > **Wins:** ${(player.stats.SkyWars.wins_ranked || 0)}
     > **Losses:** ${(player.stats.SkyWars.losses_ranked || 0)}
-    > **W/L:** ${((player.stats.SkyWars.wins_ranked / player.stats.SkyWars.losses_ranked).toPrecision(2) || 0)}
-    > **K/D:** ${((player.stats.SkyWars.kills_ranked / player.stats.SkyWars.deaths_ranked).toPrecision(2) || 0)}`, true)
+    > **W/L:** ${((player.stats.SkyWars.wins_ranked || 0) / (player.stats.SkyWars.losses_ranked || 1)).toPrecision(2)}
+    > **K/D:** ${((player.stats.SkyWars.kills_ranked || 0) / (player.stats.SkyWars.deaths_ranked || 1)).toPrecision(2)}`, true)
 
     .addField('**__Lab:__**', `> **Kills:** ${(player.stats.SkyWars.kills_lab || 0)}
     > **Deaths:** ${(player.stats.SkyWars.deaths_lab || 0)}
     > **Wins:** ${(player.stats.SkyWars.wins_lab || 0)}
     > **Losses:** ${(player.stats.SkyWars.losses_lab || 0)}
-    > **W/L:** ${((player.stats.SkyWars.wins_lab / player.stats.SkyWars.losses_lab).toPrecision(2) || 0)}
-    > **K/D:** ${((player.stats.SkyWars.kills_lab / player.stats.SkyWars.deaths_lab).toPrecision(2) || 0)}`, true)
+    > **W/L:** ${((player.stats.SkyWars.wins_lab || 0) / (player.stats.SkyWars.losses_lab || 1)).toPrecision(2)}
+    > **K/D:** ${((player.stats.SkyWars.kills_lab || 0) / (player.stats.SkyWars.deaths_lab || 1)).toPrecision(2)}`, true)
 
     .addField('**__Mega (Doubles):__**', `> **Kills:** ${(player.stats.SkyWars.kills_mega_doubles || 0)}
     > **Deaths:** ${(player.stats.SkyWars.deaths_mega_doubles || 0)}
     > **Wins:** ${(player.stats.SkyWars.wins_mega_doubles || 0)}
     > **Losses:** ${(player.stats.SkyWars.losses_mega_doubles || 0)}
-    > **W/L:** ${((player.stats.SkyWars.wins_mega_doubles / player.stats.SkyWars.losses_mega_doubles).toPrecision(2) || 0)}
-    > **K/D:** ${((player.stats.SkyWars.kills_mega_doubles / player.stats.SkyWars.deaths_mega_doubles).toPrecision(2) || 0)}`, true)
+    > **W/L:** ${((player.stats.SkyWars.wins_mega_doubles || 0) / (player.stats.SkyWars.losses_mega_doubles || 1)).toPrecision(2)}
+    > **K/D:** ${((player.stats.SkyWars.kills_mega_doubles || 0) / (player.stats.SkyWars.deaths_mega_doubles || 1)).toPrecision(2)}`, true)
 
     .setFooter(`${config.version} | Requested By: ${message.author.tag}`, client.user.avatarURL)
 

@@ -30,7 +30,7 @@ module.exports.run = async (client, message, args) => {
     .addField('**__General:__**', `:rosette: **Level:** ${(player.stats.SkyWars.levelFormatted).replace(/[^0-9\.]+/g, "")}
     :video_game: **Games Played:** ${player.stats.SkyWars.games_played_skywars}
 
-    :skull: **Heads:** ${player.stats.SkyWars.heads}
+    :skull: **Heads:** ${(player.stats.SkyWars.heads || 0)}
     :ghost: **Souls:** ${player.stats.SkyWars.souls}
 
     :moneybag: **Coins:** ${player.stats.SkyWars.coins}

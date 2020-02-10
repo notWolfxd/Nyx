@@ -27,7 +27,7 @@ module.exports.run = async (client, message, args) => {
     .setThumbnail('https://cravatar.eu/head/' + (player.uuid || '') + '?size=2408.png')
     .setColor(member.displayHexColor === '#000000' ? '#ffffff' : member.displayHexColor)
 
-    .addField('**__General:__**', `:rosette: **Level:** ${(player.stats.SkyWars.levelFormatted).replace(/(§[0-9])+/g, "").replace(/(§[a-z])+/g, "") || 1}
+    .addField('**__General:__**', `:rosette: **Level:** ${(player.stats.SkyWars.levelFormatted || "§71").replace(/(§[0-9])+/g, "").replace(/(§[a-z])+/g, "")}
     :video_game: **Games Played:** ${player.stats.SkyWars.games_played_skywars || 0}
 
     :skull: **Heads:** ${(player.stats.SkyWars.heads || 0)}

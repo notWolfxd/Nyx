@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 
-module.exports = async (client) => {
-
+exports.run = async (client) => {
+    console.log(error);
     console.error();
+    message.channel.send(error);
 };

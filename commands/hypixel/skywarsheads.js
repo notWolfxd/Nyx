@@ -30,7 +30,7 @@ module.exports.run = async (client, message, args) => {
     .addField('**__Heads Information:__**', `Each head gives a different amount of EXP, and can only be obtained from corrupted games.
 
 
-    > **__Heads Total:__** ${player.stats.SkyWars.heads}
+    > **__Heads Total:__** ${(player.stats.SkyWars.heads || 0)}
     
     > **Eww:** ${(player.stats.SkyWars.heads_eww || 0)} | +1 EXP | 0-49 Kills
     > **Yucky:** ${(player.stats.SkyWars.heads_yucky || 0)} | +2 EXP | 50-199 Kills

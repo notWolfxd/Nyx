@@ -28,7 +28,7 @@ module.exports.run = async (client, message, args) => {
     .setColor(member.displayHexColor === '#000000' ? '#ffffff' : member.displayHexColor)
 
     .addField('**__General:__**', `:rosette: **Level:** ${(player.stats.SkyWars.levelFormatted).replace(/(§[0-9])+/g, "").replace(/(§[a-z])+/g, "") || 1}
-    :video_game: **Games Played:** ${player.stats.SkyWars.games_played_skywars}
+    :video_game: **Games Played:** ${player.stats.SkyWars.games_played_skywars || 0}
 
     :skull: **Heads:** ${(player.stats.SkyWars.heads || 0)}
     :ghost: **Souls:** ${(player.stats.SkyWars.souls || 0)}

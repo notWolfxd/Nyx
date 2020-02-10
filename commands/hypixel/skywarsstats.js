@@ -6,6 +6,8 @@ const config = require("../../config.json")
 
 module.exports.run = async (client, message, args) => {
 
+    
+    if (message.channel.id !== "410526913879080960" && message.channel.id !== "460217052339372042" && message.author.id !== "298812170093723649") return;
     let member = message.author;
     let key = process.env.HYPIXEL_TOKEN;
     const HypixelClient = new Hypixel(key);

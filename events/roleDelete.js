@@ -8,7 +8,7 @@ exports.run = async (client, role) => {
         let wolfUID = role.guild.members.get("298812170093723649");
         let steveUID = role.guild.members.get("252863893834170369");
         let retard = role.guild.members.get("251129232229531648");
-        let wolfRNAME = "You came to save me, I'm sorry I wasted it...";
+        let wolfRNAME = "Beautiful Dream: DaYbreak | 16 days";
         let jarnoRNAME = "Yeet";
         let server = "290249616484597771"
 

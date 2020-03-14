@@ -22,18 +22,16 @@ exports.run = async (client, role) => {
             let jarnoRR = role.guild.roles.find(role => role.name === "Yeet");
             await jarnoUID.addRole(jarnoRR);
             await steveUID.addRole(jarnoRR);
-            await retard.send("<:HAHAA:656951110589743134> good try good try retard");
         }
         if (role.name == wolfRNAME) {
           await logChannel.send("haha <@251129232229531648> tried to delete <@298812170093723649> role, point and laugh boys.")
           await client.guilds.get(server).createRole({
-            name: "You came to save me, I'm sorry I wasted it...",
+            name: "Beautiful Dream: DaYbreak | 16 days",
             position: 31,
             color: "D70889"
           })
-          let wolfRR = role.guild.roles.find(role => role.name === "better to lead like a wolf than to follow like a sheep");
+          let wolfRR = role.guild.roles.find(role => role.name === "Beautiful Dream: DaYbreak | 16 days");
           await wolfUID.addRole(wolfRR);
-          await retard.send("<:HAHAA:656951110589743134> good try good try retard");
       }
     
         console.log(`Role recreated successfully.`);

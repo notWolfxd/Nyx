@@ -41,7 +41,7 @@ module.exports.run = async (client, message, args) => {
     let link = recruitDefine[4];
 
     let facsaliases = [ "facs", "factions", "faction", "demonic", "heroic", "runic" ];
-    let sbaliases = [ "sb", "skyblock", "island", "unity", "fantasy" ];
+    let sbaliases = [ "sb", "skyblock", "island", "unity", "fantasy", "space" ];
     let prisonaliases = [ "prison", "prisons", "cell", "gang" ];
 
     //Build the Recruitment message Embed.

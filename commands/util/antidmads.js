@@ -17,7 +17,7 @@ if (!matches) {
     return message.channel.send('No id matches');
 }
 else {
-    return message.channel.send(matches.map(u => u.id).join(',\n '));
+    return message.channel.send(matches.map(u => u.tag).join(',\n'));
 
 }
 };

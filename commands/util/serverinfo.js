@@ -22,6 +22,7 @@ module.exports.run = async (client, message) => {
         case "india": var gLoc = ":flag_in:  India"; break;
         case "japan": var gLoc = ":flag_jp:  Japan"; break;
         case "russia": var gLoc = ":flag_ru:  Russia"; break;
+        case "amsterdam": var gLoc = ":flag_nl:  Amsterdam"; break;
         case "singapore": var gLoc = ":flag_sg:  Singapore"; break;
         case "southafrica": var gLoc = ":flag_sa:  South Africa"; break;
         case "sydney": var gLoc = ":flag_au:  Sydney"; break;
@@ -47,7 +48,7 @@ module.exports.run = async (client, message) => {
         .setThumbnail(guild.iconURL)
         .setDescription(`__Guild Info__
         **Guild Name:**     ${guild.name}
-        **Guild Owner:**    ${guild.owner.tag}
+        **Guild Owner:**    ${guild.owner.user.tag}
         **Guild Region:**   ${gLoc}
         **Guild Security:** ${vLevel}
         **Availability:**   ${(guild.available ? "✅ Available" : "❎ Not Available")}

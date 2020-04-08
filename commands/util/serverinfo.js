@@ -60,7 +60,7 @@ module.exports.run = async (client, message) => {
         👪 **Member Count:**   ${guild.memberCount}
         🧍  **Humans:** ${humans}
         🤖 **Bots:** ${bots}`)
-        .setFooter(`${config.version}`, `Requested by: ${message.author.tag}`, client.user.displayAvatarURL)
+        .setFooter(`${config.version} | Requested By: ${message.author.tag}`, client.user.avatarURL)
     
     message.channel.send(sInfo);
 };

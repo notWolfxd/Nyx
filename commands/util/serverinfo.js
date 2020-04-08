@@ -47,7 +47,7 @@ module.exports.run = async (client, message) => {
         .setThumbnail(guild.iconURL)
         .setDescription(`__Guild Info__
         **Guild Name:**     ${guild.name}
-        **Guild Owner:**    ${guild.owner}
+        **Guild Owner:**    ${guild.owner.tag}
         **Guild Region:**   ${gLoc}
         **Guild Security:** ${vLevel}
         **Availability:**   ${(guild.available ? "✅ Available" : "❎ Not Available")}

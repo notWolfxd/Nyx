@@ -1,7 +1,8 @@
 /* eslint-disable no-redeclare */
 const {RichEmbed} = require("discord.js");
+const config = require("../../config.json");
 
-module.exports.run = async (bot, message) => {
+module.exports.run = async (client, message) => {
     var guild = message.guild;
 
     // Verfification Level formatting
@@ -59,7 +60,7 @@ module.exports.run = async (bot, message) => {
         👪 **Member Count:**   ${guild.memberCount}
         🧍  **Humans:** ${humans}
         🤖 **Bots:** ${bots}`)
-        .setFooter(`${bot.config.footer}`, bot.user.displayAvatarURL)
+        .setFooter(`${config.version}`, `Requested by: ${message.author.tag}`, client.user.displayAvatarURL)
     
     message.channel.send(sInfo);
 };

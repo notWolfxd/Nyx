@@ -48,14 +48,16 @@ module.exports.run = async (client, message) => {
         .setThumbnail(guild.iconURL)
         .setDescription(`__Guild Info__
         **Guild Name:**     ${guild.name}
+        **Guild ID:**       ${guild.id}
         **Guild Owner:**    ${guild.owner.user.tag}
+
         **Guild Region:**   ${gLoc}
         **Guild Security:** ${vLevel}
         **Availability:**   ${(guild.available ? "✅ Available" : "❎ Not Available")}
 
         __General Stats__
         **Guild Created:**  ${guild.createdAt}
-        **Channels:** ${guild.channels.filter((c) => c.type === "text").size} Text | ${guild.channels.filter((c) => c.type === "voice").size} Voice | ${guild.channels.size} Total 
+        **Channels:** ${guild.channels.filter((c) => c.type === "category").size} Category | ${guild.channels.filter((c) => c.type === "news").size} Announcements | ${guild.channels.filter((c) => c.type === "text").size} Text | ${guild.channels.filter((c) => c.type === "voice").size} Voice | ${guild.channels.size} Total 
 
         __Member Info__
         👪 **Member Count:**   ${guild.memberCount}

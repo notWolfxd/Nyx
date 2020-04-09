@@ -32,7 +32,7 @@ module.exports.run = async (client, message, args) => {
         .setFooter(`${config.version} | Requested By: ${message.author.tag}`, client.user.avatarURL)
 
     if (member.user.presence.game) 
-        embed.addField('Currently Playing:', stripIndents`> **Game:** ${member.user.presence.game.details.toString()}`);
+        embed.addField('Currently Playing:', stripIndents`> **Game:** ${member.user.presence.game.details}`);
 
     message.channel.send(embed);
 

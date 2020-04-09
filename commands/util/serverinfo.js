@@ -50,20 +50,22 @@ module.exports.run = async (client, message) => {
         .setColor(`#${randomColor}`)
         .setDescription("Server Information")
         .setThumbnail(guild.iconURL)
-        .addField('__Guild Info__', `> **Guild Name:** ${guild.name}
-        > **Guild ID:** ${guild.id}
-        > **Guild Owner:** ${guild.owner.user.tag} | ${guild.ownerID}
+    
+        .addField('__Guild Info__', `> **Name:** ${guild.name}
+        > **ID:** ${guild.id}
+        > **Owner:** ${guild.owner.user.tag} | ${guild.ownerID}
 
-        > **Guild Created:**  ${dateMade}
-        > **Guild Region:** ${gLoc}
-        > **Guild Security:** ${vLevel}
+        > **Created At:**  ${dateMade}
+        > **Region:** ${gLoc}
+        > **Security:** ${vLevel}
         > **Availability:** ${(guild.available ? "✅ Available" : "❎ Not Available")}`)
 
         .addField('__Guild Stats__', `> **Channels:** ${guild.channels.filter((c) => c.type === "category").size} Category | ${guild.channels.filter((c) => c.type === "news").size} Announcements | ${guild.channels.filter((c) => c.type === "text").size} Text | ${guild.channels.filter((c) => c.type === "voice").size} Voice | ${guild.channels.size} Total 
         > **Members:** ${humans} Humans | ${bots} Bots | ${guild.memberCount} Total
-        > **Emotes:** ${emoteCount - guild.emojis.filter((e) => e.animated).size} Regular | ${guild.emojis.filter((e) => e.animated).size} Animated | ${emoteCount} Toral
+        > **Emotes:** ${emoteCount - guild.emojis.filter((e) => e.animated).size} Regular | ${guild.emojis.filter((e) => e.animated).size} Animated | ${emoteCount} Total
         > **Roles:** ${roleCount}
         > **Nitro Boosting:** ${guild.premiumSubscriptionCount} Boosts | Reward Tier ${guild.premiumTier}`)
+    
         .setFooter(`${config.version} | Requested By: ${message.author.tag}`, client.user.avatarURL)
     
     message.channel.send(sInfo);

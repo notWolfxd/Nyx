@@ -46,17 +46,15 @@ module.exports.run = async (client, message) => {
         .setColor(`#${randomColor}`)
         .setTitle("Server Information")
         .setThumbnail(guild.iconURL)
-        .setDescription(`__Guild Info__
-        **Guild Name:**     ${guild.name}
-        **Guild ID:**       ${guild.id}
-        **Guild Owner:**    ${guild.owner.user.tag}
+        .addfield("__Guild Info__", `**> Guild Name:** ${guild.name}
+        **> Guild ID:** ${guild.id}
+        **> Guild Owner:** ${guild.owner.user.tag} | ${guild.owner.user.id}
 
-        **Guild Region:**   ${gLoc}
-        **Guild Security:** ${vLevel}
-        **Availability:**   ${(guild.available ? "✅ Available" : "❎ Not Available")}
+        **> Guild Region:** ${gLoc}
+        **> Guild Security:** ${vLevel}
+        **> Availability:** ${(guild.available ? "✅ Available" : "❎ Not Available")}`);
 
-        __General Stats__
-        **Guild Created:**  ${guild.createdAt}
+        .addfield("__Guild Stats__", `**> Guild Created:**  ${guild.createdAt}
         **Channels:** ${guild.channels.filter((c) => c.type === "category").size} Category | ${guild.channels.filter((c) => c.type === "news").size} Announcements | ${guild.channels.filter((c) => c.type === "text").size} Text | ${guild.channels.filter((c) => c.type === "voice").size} Voice | ${guild.channels.size} Total 
 
         __Member Info__

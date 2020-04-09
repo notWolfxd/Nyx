@@ -54,13 +54,10 @@ module.exports.run = async (client, message) => {
         > **Guild Security:** ${vLevel}
         > **Availability:** ${(guild.available ? "✅ Available" : "❎ Not Available")}`)
 
-        .addField('__Guild Stats__', `**> Guild Created:**  ${dateMade}
-        **Channels:** ${guild.channels.filter((c) => c.type === "category").size} Category | ${guild.channels.filter((c) => c.type === "news").size} Announcements | ${guild.channels.filter((c) => c.type === "text").size} Text | ${guild.channels.filter((c) => c.type === "voice").size} Voice | ${guild.channels.size} Total 
-
-        __Member Info__
-        👪 **Member Count:**   ${guild.memberCount}
-        🧍  **Humans:** ${humans}
-        🤖 **Bots:** ${bots}`)
+        .addField('__Guild Stats__', `> **Guild Created:**  ${dateMade}
+        > **Channels:** ${guild.channels.filter((c) => c.type === "category").size} Category | ${guild.channels.filter((c) => c.type === "news").size} Announcements | ${guild.channels.filter((c) => c.type === "text").size} Text | ${guild.channels.filter((c) => c.type === "voice").size} Voice | ${guild.channels.size} Total 
+        > **Members:** ${humans} Humans | ${bots} Bots | ${guild.memberCount} Total
+        > **Nitro Boosters:** ${guild.premiumSubscriptionCount} People Boosting | Reward Tier ${guild.premiumTier}`)
         .setFooter(`${config.version} | Requested By: ${message.author.tag}`, client.user.avatarURL)
     
     message.channel.send(sInfo);

@@ -54,7 +54,7 @@ module.exports.run = async (client, message) => {
         > **Guild Security:** ${vLevel}
         > **Availability:** ${(guild.available ? "✅ Available" : "❎ Not Available")}`)
 
-        .addField('__Guild Stats__', `**> Guild Created:**  ${guild.createdAt}
+        .addField('__Guild Stats__', `**> Guild Created:**  ${dateMade}
         **Channels:** ${guild.channels.filter((c) => c.type === "category").size} Category | ${guild.channels.filter((c) => c.type === "news").size} Announcements | ${guild.channels.filter((c) => c.type === "text").size} Text | ${guild.channels.filter((c) => c.type === "voice").size} Voice | ${guild.channels.size} Total 
 
         __Member Info__

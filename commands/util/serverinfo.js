@@ -55,7 +55,7 @@ module.exports.run = async (client, message) => {
 
         __General Stats__
         **Guild Created:**  ${guild.createdAt}
-        **Number of Channels:** ${guild.textchannels.size}
+        **Number of Channels:** ${guild.channels.type("text").size}
 
         __Member Info__
         👪 **Member Count:**   ${guild.memberCount}

@@ -44,7 +44,7 @@ module.exports.run = async (client, message) => {
 
     let sInfo = new RichEmbed()
         .setColor(`#${randomColor}`)
-        .setTitle("Server Information")
+        .setDescription("Server Information")
         .setThumbnail(guild.iconURL)
         .addfield('__Guild Info__', `**> Guild Name:** ${guild.name}
         **> Guild ID:** ${guild.id}

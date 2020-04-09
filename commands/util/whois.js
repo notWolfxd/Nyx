@@ -18,17 +18,16 @@ module.exports.run = async (client, message, args) => {
     const created = formatDate(member.user.createdAt);
 
     const embed = new RichEmbed()
-        .setFooter(member.displayName, member.user.displayAvatarURL)
         .setThumbnail(member.user.displayAvatarURL)
         .setColor(member.displayHexColor === '#000000' ? '#ffffff' : member.displayHexColor)
 
-        .addField('Member Information:', stripIndents`**> Display Name:** ${member.displayName}
-        **> Joined At:** ${joined}
-        **> Roles:** ${roles}`, true)
+        .addField('Member Information:', stripIndents`> **Display Name:** ${member.displayName}
+        > **Joined At:** ${joined}
+        > **Roles:** ${roles}`, true)
 
-        .addField('User Information:', stripIndents`**> ID:** ${member.user.id}
-        **> Created At:** ${created}
-        **> Username:** ${member.user.tag}`, true)
+        .addField('User Information:', stripIndents`> **ID:** ${member.user.id}
+        > **Created At:** ${created}
+        > **Username:** ${member.user.tag}`, true)
         
         .setFooter(`${config.version} | Requested By: ${message.author.tag}`, client.user.avatarURL)
 

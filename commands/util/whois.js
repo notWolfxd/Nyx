@@ -23,16 +23,16 @@ module.exports.run = async (client, message, args) => {
 
         .addField('Member Information:', stripIndents`> **Display Name:** ${member.displayName}
         > **Joined At:** ${joined}
-        > **Roles:** ${roles}`, true)
+        > **Roles:** ${roles}`)
 
         .addField('User Information:', stripIndents`> **ID:** ${member.user.id}
         > **Created At:** ${created}
-        > **Username:** ${member.user.tag}`, true)
+        > **Username:** ${member.user.tag}`)
         
         .setFooter(`${config.version} | Requested By: ${message.author.tag}`, client.user.avatarURL)
 
     if (member.user.presence.game) 
-        embed.addField('Currently Playing:', stripIndents`**> Game:** ${member.user.presence.game.name}`);
+        embed.addField('Currently Playing:', stripIndents`> **Game:** ${member.user.presence.game.name}`);
 
     message.channel.send(embed);
 

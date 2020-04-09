@@ -41,6 +41,10 @@ module.exports.run = async (client, message) => {
 
     //Date formatting
     let dateMade = new Date(guild.createdTimestamp)
+    
+    // Role & Emote Counts
+    let emoteCount = message.guild.emojis.array().length;
+    let roleCount = message.guild.roles.array().length;
 
     let sInfo = new RichEmbed()
         .setColor(`#${randomColor}`)
@@ -57,6 +61,7 @@ module.exports.run = async (client, message) => {
         .addField('__Guild Stats__', `> **Guild Created:**  ${dateMade}
         > **Channels:** ${guild.channels.filter((c) => c.type === "category").size} Category | ${guild.channels.filter((c) => c.type === "news").size} Announcements | ${guild.channels.filter((c) => c.type === "text").size} Text | ${guild.channels.filter((c) => c.type === "voice").size} Voice | ${guild.channels.size} Total 
         > **Members:** ${humans} Humans | ${bots} Bots | ${guild.memberCount} Total
+        > **Emotes:** ${emoteCount - guild.emojis.filter((e) => e.animated)} Regular | ${guild.emojis.filter((e) => e.animated).size} Animated | ${emoteCount} Toral
         > **Nitro Boosting:** ${guild.premiumSubscriptionCount} Boosts | Reward Tier ${guild.premiumTier}`)
         .setFooter(`${config.version} | Requested By: ${message.author.tag}`, client.user.avatarURL)
     

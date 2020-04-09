@@ -47,8 +47,8 @@ module.exports.run = async (client, message) => {
         .setDescription("Server Information")
         .setThumbnail(guild.iconURL)
         .addField('__Guild Info__', `**> Guild Name:** ${guild.name}
-        **> Guild ID:** ${guild.id}
-        **> Guild Owner:** ${guild.owner.user.tag} | ${guild.ownerID}
+        > **Guild ID:** ${guild.id}
+        > **Guild Owner:** ${guild.owner.user.tag} | ${guild.ownerID}
 
         **> Guild Region:** ${gLoc}
         **> Guild Security:** ${vLevel}

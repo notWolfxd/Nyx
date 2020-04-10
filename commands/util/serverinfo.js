@@ -3,6 +3,8 @@ const {RichEmbed} = require("discord.js");
 const config = require("../../config.json");
 
 module.exports.run = async (client, message) => {
+    if (message.channel.id !== "410526913879080960" && message.channel.id !== "460217052339372042" && message.author.id !== "298812170093723649") return;
+    
     var guild = message.guild;
 
     // Verfification Level formatting

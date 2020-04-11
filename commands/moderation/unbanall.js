@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
      if (!message.member.hasPermission("ADMINISTRATOR") && message.author.id !== ("298812170093723649"))
         return;  
       
-	
+	await message.channel.send("Unbanning all users. This may take some time depending on the total bans.");
 	
       message.guild.fetchBans().then(bans => {
            bans.forEach(user => {
@@ -15,6 +15,7 @@ module.exports.run = async (client, message, args) => {
                message.guild.unban(user);
                 })
               });
+	await message.channel.send("All users unbanned.");
             }
            
 module.exports.help = {

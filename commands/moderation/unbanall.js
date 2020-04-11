@@ -14,7 +14,7 @@ module.exports.run = async (client, message, args) => {
                 console.log(user.username + '#' + user.tag);
                 message.guild.unban(user);
                 
-                }
+                })
                });
               }
            

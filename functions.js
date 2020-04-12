@@ -20,9 +20,9 @@ module.exports = {
         return target;
     },
 
-   getJoinPos: function(message, guild) {
+   getJoinPos: function(id, guild) {
        
-       guild = message.guild
+    guild = message.guild
    
     const arr = message.guild.members.array();
     arr.sort((a: any, b: any) => a.joinedAt - b.joinedAt);

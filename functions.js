@@ -20,6 +20,17 @@ module.exports = {
         return target;
     },
 
+   getJoinPos: function(id, guild) {
+    if (!guild.member(id)) return undefined;
+
+    const arr = guild.members.array();
+    arr.sort((a: any, b: any) => a.joinedAt - b.joinedAt);
+
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i].id === id) return i + 1;
+    }
+},
+    
     getRole: function(message, toFind = '') {
         toFind = toFind.toLowerCase();
 

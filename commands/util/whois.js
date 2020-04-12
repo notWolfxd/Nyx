@@ -1,12 +1,13 @@
 const { RichEmbed } = require("discord.js");
 const { stripIndents } = require("common-tags");
-const {getMember, formatDate} = require("../../functions.js");
+const {getMember, getJoinPos, formatDate} = require("../../functions.js");
 const config = require("../../config.json");
 
 module.exports.run = async (client, message, args) => {
 
     if (message.channel.id !== "410526913879080960" && message.channel.id !== "460217052339372042" && message.author.id !== "298812170093723649") return;
     const member = getMember(message, args.join(" "));
+    const joinPos = getJoinPos(member.id);
 
     // Member variables
     const joined = formatDate(member.joinedAt);
@@ -23,6 +24,7 @@ module.exports.run = async (client, message, args) => {
 
         .addField('Member Information:', stripIndents`> **Display Name:** ${member.displayName}
         > **Joined At:** ${joined}
+        > **Join Pos:** ${joinPos}
         > **Roles:** ${roles}`)
 
         .addField('User Information:', stripIndents`> **ID:** ${member.user.id}
@@ -32,7 +34,7 @@ module.exports.run = async (client, message, args) => {
         .setFooter(`${config.version} | Requested By: ${message.author.tag}`, client.user.avatarURL)
 
     if (member.user.presence.game) 
-        embed.addField('Currently Playing:', stripIndents`> **Game:** ${member.user.presence.game.details}`);
+        embed.addField('Currently Playing:', stripIndents`> **Game:** ${member.user.presence.game.state}`);
 
     message.channel.send(embed);
 

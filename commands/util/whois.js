@@ -1,13 +1,12 @@
 const { RichEmbed } = require("discord.js");
 const { stripIndents } = require("common-tags");
-const {getMember, getJoinPos, formatDate} = require("../../functions.js");
+const {getMember, formatDate} = require("../../functions.js");
 const config = require("../../config.json");
 
 module.exports.run = async (client, message, args) => {
 
     if (message.channel.id !== "410526913879080960" && message.channel.id !== "460217052339372042" && message.author.id !== "298812170093723649") return;
     const member = getMember(message, args.join(" "));
-    const joinPos = getJoinPos(member.id);
 
     // Member variables
     const joined = formatDate(member.joinedAt);
@@ -24,7 +23,6 @@ module.exports.run = async (client, message, args) => {
 
         .addField('Member Information:', stripIndents`> **Display Name:** ${member.displayName}
         > **Joined At:** ${joined}
-        > **Join Pos:** ${joinPos}
         > **Roles:** ${roles}`)
 
         .addField('User Information:', stripIndents`> **ID:** ${member.user.id}

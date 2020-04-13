@@ -20,6 +20,23 @@ module.exports = {
         return target;
     },
     
+    getGuild: function(message, toFind = '') {
+        toFind = toFind.toLowerCase();
+        
+        let target = message.client.guilds.get(toFind);
+        
+        if (!target && toFind) {
+            target = message.client.guilds.find(guild => {
+                return guild.name.toLowerCase().includes(toFind)
+            });
+        }
+            
+        if (!target) 
+            target = message.guild;
+            
+        return target;
+    },
+    
     getRole: function(message, toFind = '') {
         toFind = toFind.toLowerCase();
 

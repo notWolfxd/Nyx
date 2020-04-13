@@ -15,7 +15,7 @@ module.exports.run = async(client, message, args) => {
 		let invite = await tChannel.createInvite({
 			maxAge: "0"
 		}).catch((err) => {
-			return message.channel.send("An error has occurred, please try again in a few minutes - The developers have been notified");
+			return message.channel.send(`An error has occurred, please try again in a few minutes. ${err}`);
 		});
 		message.channel.send(invite.url);
 	} else {

@@ -1,22 +1,11 @@
 const Discord = require("discord.js");
+const {getGuild} = require("../../functions.js");
 
 module.exports.run = async(client, message, args) => {
 
 	if (message.author.id !== ("298812170093723649")) return;
-
-	let guild = null;
-
-	if (args[0]) {
-		let found = message.client.guilds.get(args[0]);
-		if (!found) {
-			found = message.client.guilds.find((g) => g.id === args.join(" "));
-			if (found) {
-				guild = found;
-			}
-		}
-	} else {
-		return message.channel.send("That ID is not valid - You must supply an ID of a guild that I am in");
-	}
+	
+	const guild = getGuild(message, args[0]);
 
 	if (guild) {
 		let tChannel = guild.channels.find((ch) => ch.permissionsFor(ch.guild.me).has("CREATE_INSTANT_INVITE"));

@@ -1,5 +1,5 @@
 const {RichEmbed} = require("discord.js");
-const config = require("../../config..json");
+const config = require("../../config.json");
 
 module.exports.run = async(client, message) => {
 	if (message.author.id !== ("298812170093723649")) return;

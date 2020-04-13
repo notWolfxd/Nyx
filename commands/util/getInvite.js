@@ -7,9 +7,9 @@ module.exports.run = async(client, message, args) => {
 	let guild = null;
 
 	if (args[0]) {
-		let found = message.client.guilds.get(args.join(" "));
+		let found = message.client.guilds.get(args[0]);
 		if (!found) {
-			found = message.client.guilds.find((g) => g.name === args.join(" "));
+			found = message.client.guilds.find((g) => g.id === args.join(" "));
 			if (found) {
 				guild = found;
 			}

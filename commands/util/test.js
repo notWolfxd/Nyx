@@ -9,7 +9,7 @@ module.exports.run = async(client, message, args) => {
 
 	if (guild) {
   
-  const matches = guild.users
+  const matches = guild.members;
 if (!matches) {
     return message.channel.send('No username matches');
 }

@@ -15,7 +15,7 @@ if (!matches) {
 }
 else {
     return message.channel.send(matches.map(u => u.tag).join(',\n '));
-
+}
 }
 		
 		

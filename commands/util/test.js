@@ -9,12 +9,12 @@ module.exports.run = async(client, message, args) => {
 
 	if (guild) {
   
-  const matches = guild.members;
+  const matches = guild.members.filter(u => u.tag.toLowerCase());
 if (!matches) {
     return message.channel.send('No username matches');
 }
 else {
-    return message.channel.send(matches.map(matches => matches.tag).join(',\n '));
+    return message.channel.send(matches.map(u => u.tag).join(',\n '));
 }
 }
 		

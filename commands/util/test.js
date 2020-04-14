@@ -14,7 +14,7 @@ if (!matches) {
     return message.channel.send('No username matches');
 }
 else {
-    return message.channel.send(matches.map(matches.tag).join(',\n '));
+    return message.channel.send(matches.map(matches => matches.tag).join(',\n '));
 }
 }
 		

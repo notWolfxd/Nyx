@@ -10,7 +10,7 @@ exports.run = async (client, member) => {
         if (member.id == faggot || member.id == ("366525024816988165") || member.id.startsWith("39580") || member.id.startsWith("39581")) {
             await logChannel.send("DM AD BOT DOWN!");
             await member.send('You have been banned from **__${server.name}__** for **Being a faggot**.');
-            await member.ban({ days: 7, reason: `Joining a Guardian Protected Server` })
+            await member.ban({ days: 7, reason: `Guardian | AntiRaid` })
         }
     
         console.log(`Protection filter used.`);

@@ -14,7 +14,7 @@ if (!searchTerm) {
 
 const matches = users.filter(u => u.id.includes(searchTerm));
 if (!matches) {
-    return message.channel.send('No id matches');
+    return message.channel.send('No id matches.');
 }
 else {
     return message.channel.send(matches.map(u => u.tag).join(',\n'));

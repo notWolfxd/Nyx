@@ -12,7 +12,7 @@ if (!searchTerm) {
     return message.channel.send('Please provide a search term.');
 }
 
-const matches = users.filter(u => u.id.includes(searchTerm));
+const matches = users.filter(u => u.id.startsWith(searchTerm));
 if (!matches) {
     return message.channel.send('No id matches.');
 }

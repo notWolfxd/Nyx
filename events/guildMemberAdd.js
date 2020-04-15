@@ -3,7 +3,7 @@ const config = require("../config.json")
 
 exports.run = async (client, member) => {
 
-        let logChannel = client.channels.get("290252293578948608");
+        let logChannel = client.channels.get("454326635978555402");
         let faggot = "366525024816988165"
         let server = "460208972306186252"
 

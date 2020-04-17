@@ -11,7 +11,7 @@ module.exports.run = async (client, message, args) => {
 
     .setColor("#38b599")
     .setThumbnail(message.author.avatarURL)
-    .setDescription("Command: Screenshare:", `**Description:** Request a player to be screenshared by an SS Verified person.
+    .addField("Command: Screenshare", `**Description:** Request a player to be screenshared by an SS Verified person.
     **Usage:** -ss <IGN> <Realm> <Reason>
     **Example:** -ss JarnoPwr Demonic Being bald
     **Category:** Vanity

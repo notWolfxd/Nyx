@@ -8,12 +8,14 @@ module.exports.run = async (client, message, args) => {
  
 //Build Screenshare Request help embed.
  var ssrHelpEmbed = new Discord.RichEmbed()
-    .setTitle("Command: ScreenshareRequest")
+
     .setColor("#38b599")
     .setThumbnail(message.author.avatarURL)
-    .addField("Description: ", "Request a player to be screenshared by an SS Verified person.")
-    .addField("Usage: ", "-ss <IGN> <realm> <reason>")
-    .addField("Example: ", "-ss JarnoPwr Demonic Being a nerd.")
+    .setDescription("Command: Screenshare:", `**Description:** Request a player to be screenshared by an SS Verified person.
+    **Usage:** -ss <IGN> <Realm> <Reason>
+    **Example:** -ss JarnoPwr Demonic Being bald
+    **Category:** Vanity`)
+
     .setFooter(`${config.version} | Made By: Wolf#9001`, client.user.avatarURL)
     
 //Define the arguments for Screenshare Request

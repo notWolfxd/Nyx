@@ -17,7 +17,7 @@ module.exports.run = async(client, message, args) => {
 		}).catch((err) => {
 			return message.channel.send(`An error has occurred, please try again in a few minutes. ${err}`);
 		});
-		message.channel.send(invite);
+		message.channel.send(invite.url);
 	} else {
 		return message.channel.send(`No server found with the specified ID - Search: ${args[0]}`);
 	}

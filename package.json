@@ -30,7 +30,8 @@
     "hypixel-api": "^1.1.0",
     "moment": "^2.24.0",
     "moment-duration-format": "^1.3.0",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "util": "^0.12.2"
   },
   "devDependencies": {
     "coffee-script": "^1.12.7"

@@ -4,7 +4,7 @@ const { inspect } = require("util");
 module.exports.run = async (client, message, args) => {
 
 if (message.author.id !== ("298812170093723649")) return;
-    if(message.author.id == ("298812170093723649)) {
+   
         let toEval = args.join(" ");
         let evaluated = inspect(eval(toEval, { depth: 0 } ))
         try {
@@ -20,9 +20,9 @@ if (message.author.id !== ("298812170093723649")) return;
         } catch(e) {
             message.channel.send(`Error whilst evaluating: \`${e.message}\``)
         }
-    } else {
-        return;
-    }
+
+
+
 
 }
 

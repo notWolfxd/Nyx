@@ -21,7 +21,7 @@ module.exports.run = async (client, message, args) => {
     let playerinfo = args[1];
     let position = args.slice(2).join(" ");
     let gamemode = args.slice(5).join(" ") || "Was not needed for scenario.";
-    let staffleaderrole = message.guild.roles.find(r => r.name === "Staff Leadership");
+    let staffleaderrole = message.guild.roles.find(r => r.name === "Leadership");
     if (!position) return message.channel.sendEmbed(srHelpEmbed);
     
 //Build Staff Rank message Embed.

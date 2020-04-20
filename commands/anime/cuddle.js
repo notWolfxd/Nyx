@@ -22,7 +22,7 @@ module.exports.run = async (client, message, args) => {
 }
 module.exports.help = {
     name: "cuddle",
-    : [ "snuggle" ],
+    aliases: [ "snuggle" ],
     description: "Cuddle with someone.",
     Usage: `${prefixes[message.guild.id].prefixes}cuddle <User>`,
     Example: `${prefixes[message.guild.id].prefixes}cuddle @Jarno`,

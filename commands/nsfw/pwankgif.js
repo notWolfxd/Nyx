@@ -4,8 +4,6 @@ const config = require("../../config.json");
 
 module.exports.run = async (client, message, args) => {
     
-    if (message.author.id !== ("298812170093723649") && message.channel.id !== ("410526913879080960") && message.channel.id !== ("541342157408043071") && message.channel.id !== ("324056323794796544")) return;
-   
       if (!message.channel.nsfw) return;
     
         const { body } = await snekfetch

@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args) => {
     
         snekfetch.get('https://nekos.life/api/v2/img/baka')
             .set('Key', 'dnZ4fFJbjtch56pNbfrZeSRfgWqdPDgf')
-            .then(r => message.channel.send(`${user}, you were called an IDIOT by ${message.author.username}!`,{
+            .then(r => message.channel.send(`${user}, you were called a BAKA by ${message.author.username}!`,{
                 embed: {
                     image: {
                         url: r.body.url
@@ -22,8 +22,8 @@ module.exports.run = async (client, message, args) => {
 }
 module.exports.help = {
     name: "baka",
-    aliases: [ "isiot" ],
-    description: "Call someone an idiot.",
+    aliases: [ "idiot" ],
+    description: "Call someone a \"baka\".",
     usage: "bqka <User>",
     example: "baka @ProZed",
     category: "Anime"

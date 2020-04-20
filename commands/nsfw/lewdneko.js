@@ -24,5 +24,5 @@ module.exports.help = {
     aliases: [ "nsfwneko" ],
     description: "Show an image of a random NSFW neko girl.",
     usage: "lewdneko",
-    category: "Anime"
+    category: "NSFW"
 }

@@ -22,6 +22,6 @@ module.exports.help = {
     aliases: [ "doggo", "dog" ],
     description: "Show an image of a random dog.",
     usage: "woof",
-    category: "Anime"
+    category: "Fun"
 
 }

@@ -24,7 +24,7 @@ module.exports.help = {
     name: "cuddle",
     aliases: [ "snuggle" ],
     description: "Cuddle with someone.",
-    Usage: `${prefixes[message.guild.id].prefixes}cuddle <User>`,
-    Example: `${prefixes[message.guild.id].prefixes}cuddle @Jarno`,
+    Usage: "cuddle <User>",
+    Example: "cuddle @Jarno",
     Category: "Anime"
 }

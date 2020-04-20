@@ -14,7 +14,7 @@ module.exports.run = async (client, message, args) => {
     .setColor('#dd67ff')
     .setImage(response.url)
     .setFooter(`${config.version} | Made By: Wolf#9001 | Requested by ${message.author.tag}`)
-    ;
+    
     message.channel.send(embed);
 }
 module.exports.help = {

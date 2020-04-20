@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const snekfetch = require("snekfetch");
-const prefixes = require("../../prefixes.json");
 
 module.exports.run = async (client, message, args) => {
 

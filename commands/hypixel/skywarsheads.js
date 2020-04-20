@@ -29,7 +29,7 @@ module.exports.run = async (client, message, args) => {
     .setThumbnail('https://cravatar.eu/head/' + (player.uuid || '') + '?size=2408.png')
     .setColor(member.displayHexColor === '#000000' ? '#ffffff' : member.displayHexColor)
 
-    .addField('**__Heads Information:__**', `Each head gives a different amount of EXP, and can only be obtained from corrupted games.
+    .addField('**__Heads Information:__**', stripIndents`Each head gives a different amount of EXP, and can only be obtained from corrupted games.
 
     > **__Angel of Death Tier:__** ${(player.stats.SkyWars.angel_of_death_level) || 0}
     > **__Heads Total:__** ${(player.stats.SkyWars.heads || 0)}

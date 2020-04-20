@@ -1,4 +1,4 @@
-https://cdn.nekos.life/les/OnlyG107.giconst Discord = require("discord.js");
+const Discord = require("discord.js");
 const snekfetch = require("snekfetch");
 const config = require("../../config.json");
 

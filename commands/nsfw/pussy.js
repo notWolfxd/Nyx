@@ -22,7 +22,7 @@ module.exports.run = async (client, message, args) => {
 module.exports.help = {
     name: "pussy",
     aliases: [ "vagina" ],
-    description: "Show an image of a random anime girl, with her pussy out.",
+    description: "Show a gif of a random anime girl, with her pussy out.",
     usage: "pussy",
     category: "NSFW"
 }

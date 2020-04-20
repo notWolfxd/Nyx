@@ -13,7 +13,7 @@ module.exports.run = async (client, message, args) => {
     .setTimestamp()
     .setColor('#dd67ff')
     .setImage(response.url)
-    .setFooter(`${config.version} | Requested by ${message.author.tag}`)
+    .setFooter(`${config.version} | Requested By ${message.author.tag}`)
     
     message.channel.send(embed);
 }

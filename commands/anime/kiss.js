@@ -24,7 +24,7 @@ module.exports.help = {
     name: "kiss",
     aliases: [ "kissu", "kisses" ],
     description: "Kiss someone.",
-    Usage: "kiss <User>",
-    Example: "kiss @Bestle",
-    Category: "Anime"
+    usage: "kiss <User>",
+    example: "kiss @Bestle",
+    category: "Anime"
 }

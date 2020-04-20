@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
       if (!message.channel.nsfw) return;
     
         const { body } = await snekfetch
-         .get('https://nekos.life/api/v2/img/lewdyuri');
+         .get('https://nekos.life/api/v2/img/yuri');
     
         let embed = new Discord.RichEmbed()
         .setTimestamp()
@@ -20,8 +20,8 @@ module.exports.run = async (client, message, args) => {
        message.channel.send(embed);
  }
 module.exports.help = {
-    name: "lewdyuri",
-    aliases: [ "lyuri" ],
+    name: "yuri",
+    aliases: [ "lyuri", "lewdyuri" ],
     description: "Show an image of random lewd lesbian anime girls.",
     usage: "lewdyuri",
     category: "NSFW"

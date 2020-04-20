@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args) => {
     
         snekfetch.get('https://nekos.life/api/v2/img/tickle')
             .set('Key', 'dnZ4fFJbjtch56pNbfrZeSRfgWqdPDgf')
-            .then(r => message.channel.send(`${user}, is tickling ${message.author.username}!`,{
+            .then(r => message.channel.send(`${message.author.username} is tickling ${user}!`,{
                 embed: {
                     image: {
                         url: r.body.url

@@ -21,7 +21,7 @@ module.exports.help = {
     name: "foxgirl",
     aliases: [ "kitsune" ],
     description: "Show an image of a random fox girl.",
-    Usage: "foxgirl",
-    Category: "Anime"
+    usage: "foxgirl",
+    category: "Anime"
 
 }

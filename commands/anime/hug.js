@@ -24,7 +24,7 @@ module.exports.help = {
     name: "hug",
     aliases: [ "huggu", "huggles" ],
     description: "Hug someone.",
-    Usage: "hug <User>",
-    Example: "hug @steve",
-    Category: "Anime"
+    usage: "hug <User>",
+    example: "hug @steve",
+    category: "Anime"
 }

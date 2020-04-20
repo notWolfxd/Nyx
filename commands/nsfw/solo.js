@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const snekfetch = require("snekfetch");
-const { getMember } = require("../../functions.js");
+const config = require("../../config.json");
 
 module.exports.run = async (client, message, args) => {
 

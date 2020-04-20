@@ -9,12 +9,12 @@ module.exports.run = async (client, message, args) => {
       if (!message.channel.nsfw) return;
     
         const { body } = await snekfetch
-         .get('https://nekos.life/api/lewd/eroyuri');
+         .get('https://nekos.life/api/v2/img/eroyuri');
     
         let embed = new Discord.RichEmbed()
         .setTimestamp()
         .setColor(0x00A2E8)
-        .setImage(body.neko)
+        .setImage(body.url)
         .setFooter(`${config.version} | Requested By: ${message.author.tag}`)
         
        message.channel.send(embed);

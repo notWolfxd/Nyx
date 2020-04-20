@@ -19,8 +19,8 @@ module.exports.run = async (client, message, args) => {
 }
 module.exports.help = {
     name: "woof",
-    aliases: [ "doggo" ],
-    description: "Show an image of a random fox girl.",
+    aliases: [ "doggo", "dog" ],
+    description: "Show an image of a random dog.",
     usage: "woof",
     category: "Anime"
 

@@ -21,8 +21,8 @@ module.exports.run = async (client, message, args) => {
          
 }
 module.exports.help = {
-    name: "les",
-    aliases: [ "lesbian" ],
+    name: "yurigif",
+    aliases: [ "yurig" ],
     description: "Show an image of random lesbian anime girls.",
     usage: "les",
     category: "NSFW"

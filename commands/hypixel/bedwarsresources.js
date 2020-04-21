@@ -77,7 +77,7 @@ module.exports.run = async (client, message, args) => {
 module.exports.help = {
     name: "bedwarsresources",
     aliases: [ "bwr", "bwres", "bwdresources", "bwrescollected" ],
-    description: "Get a player's resources collected in BedWars statisrics.",
+    description: "Get a player's resources collected in BedWars statistics.",
     usage: "bedwarsresources <IGN>",
     example: "bedwarsresources Cloudz",
     category: "Hypixel"

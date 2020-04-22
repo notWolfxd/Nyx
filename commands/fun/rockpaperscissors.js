@@ -1,5 +1,4 @@
 const { Discord } = require("discord.js");
-const config = require("../../config.json");
 
 module.exports.run = async (client, message, args) => {
 
@@ -9,26 +8,26 @@ if (message.author.id !== ("298812170093723649") && message.channel.id !== ("410
     const response = choices[Math.floor(Math.random() * choices.length)];
     const choice = args[0].toLowerCase();
   
-  if (!choices.includes(choice.toLowerCase())
+  if (!choices.includes(choice)
      return message.channel.send(`${message.author.username}, that is not a valid option, idiot.`);
      
-  if (choice == response) {
+  if (choice === response) {
      await message.channel.send(`🔫 ${message.author.username}, we both chose ${choice}. It is a **tie**!`);
-        }
+     }
      
-  else (choice !== response) {
+  else {
   
-    if (choice == ("rock") && response == ("paper"))
+    if (choice === ("rock") && response === ("paper"))
        return message.channel.send(`🗒 ${message.author.username}, I chose \`Paper\`, you **lose**!`);
-    if (choice == ("rock") && response == ("scissors"))
+    if (choice === ("rock") && response === ("scissors"))
        return message.channel.send(`✂️ ${message.author.username}, I chose \`Scissors\`, you **win**!`);
-    if (choice == ("scissorz") && response == ("paper"))
+    if (choice === ("scissors") && response === ("paper"))
        return message.channel.send(`🗒 ${message.author.username}, I chose \`Paper\`, you **win**!`);
-    if (choice == ("scissors") && response == ("rock"))
+    if (choice === ("scissors") && response === ("rock"))
        return message.channel.send(`🎐 ${message.author.username}, I chose \`Rock\`, you **lose**!`);
-    if (choice == ("paper") && response == ("scissors"))
+    if (choice === ("paper") && response === ("scissors"))
        return message.channel.send(`✂️ ${message.author.username}, I chose \`Scissors\`, you **lose**!`);
-    if (choice == ("paper") && response == ("rock"))
+    if (choice === ("paper") && response === ("rock"))
        return message.channel.send(`🎐 ${message.author.username}, I chose \`Rock\`, you **win**!`);
            }
            

@@ -27,11 +27,11 @@ module.exports.run = async (client, message, args) => {
   if (args[0].toLowerCase() != "factions" && args[0].toLowerCase() != "prison" && args[0].toLowerCase() != "skyblock" && args[0].toLowerCase() != "colour") 
      return message.channel.send(helpEmbed);
     
-  if (args[0].toLowerCase() == "factions" && !member.roles.has(556189435796914204)) {
+  if (args[0].toLowerCase() == "factions" && !member.roles.has(facsrole)) {
         await member.addRole(facsrole);
         await message.channel.send("Gave you the `Factions` role!");
         }
-  if (args[0].toLowerCase() == "factions" && member.roles.has(556189435796914204))  {
+  if (args[0].toLowerCase() == "factions" && member.roles.has(facsrole))  {
         await member.removeRole(facsrole);
         await message.channel.send("Removed the `Factions` role from you!");
         }

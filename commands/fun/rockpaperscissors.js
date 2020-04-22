@@ -10,10 +10,10 @@ if (message.author.id !== ("298812170093723649") && message.channel.id !== ("410
     const choice = args[0].toLowerCase();
   
   if (!choices.includes(choice.toLowerCase())
-     return message.channel.send(`${message.author.username}, that is not a valid choice, idiot.`);
+     return message.channel.send(`${message.author.username}, that is not a valid option, idiot.`);
      
   if (choice == response) 
-     return message.channsl.send(`🔫 ${message.author.username}, we both chose ${choice}. It is a **tie**!`);
+     return message.channel.send(`🔫 ${message.author.username}, we both chose ${choice}. It is a **tie**!`);
      
   else if (choice !== response) {
   

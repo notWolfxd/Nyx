@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (client, message, args) => {
 
         const data = [];
-        const { commands } = client.commands;
+        const { commands } = message.client;
 
         if (!args.length) {
             data.push('Here\'s a list of all my commands:');
@@ -32,9 +32,8 @@ module.exports.run = async (client, message, args) => {
 
 		if (command.aliases) data.push(`**Aliases:** ${command.aliases.join(', ')}`);
 		if (command.description) data.push(`**Description:** ${command.description}`);
-
 		if (command.usage) data.push(`**Usage:** ${command.name} ${command.usage}`);
-    if (command.example) data.push(`**Example:** ${command.example}
+                if (command.example) data.push(`**Example:** ${command.example}`);
 		if (command.category) data.push(`**Category:** ${command.cooldown}`);
 
 		message.channel.send(data, { split: true });

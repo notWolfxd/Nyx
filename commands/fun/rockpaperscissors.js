@@ -12,10 +12,11 @@ if (message.author.id !== ("298812170093723649") && message.channel.id !== ("410
   if (!choices.includes(choice.toLowerCase())
      return message.channel.send(`${message.author.username}, that is not a valid option, idiot.`);
      
-  if (choice == response) 
-     return message.channel.send(`🔫 ${message.author.username}, we both chose ${choice}. It is a **tie**!`);
+  if (choice == response) {
+     await message.channel.send(`🔫 ${message.author.username}, we both chose ${choice}. It is a **tie**!`);
+        }
      
-  else if (choice !== response) {
+  else (choice !== response) {
   
     if (choice == ("rock") && response == ("paper"))
        return message.channel.send(`🗒 ${message.author.username}, I chose \`Paper\`, you **lose**!`);

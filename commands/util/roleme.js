@@ -30,7 +30,8 @@ module.exports.run = async (client, message, args) => {
   if (args[0].toLowerCase() == "factions" && !member.roles.has(556189435796914204)) {
         await member.addRole(facsrole);
         await message.channel.send("Gave you the `Factions` role!");
-        } else if (args[0].toLowerCase() == "factions" && member.roles.has(556189435796914204))  {
+        }
+  if (args[0].toLowerCase() == "factions" && member.roles.has(556189435796914204))  {
         await member.removeRole(facsrole);
         await message.channel.send("Removed the `Factions` role from you!");
         }

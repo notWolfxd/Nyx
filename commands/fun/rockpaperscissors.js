@@ -6,29 +6,29 @@ if (message.author.id !== ("298812170093723649") && message.channel.id !== ("410
 
     let choices = [ "rock", "paper", "scissors" ];
     let response = choices[Math.floor(Math.random() * choices.length)];
-    let choice = args[0].toLowerCase();
+    let choice = args[0];
     
   if (!choice) 
-     return message.channel.send(`${message.author.username}, that is not a valid option, idiot.`);
-  if (!choices.includes(choice))
-     return message.channel.send(`${message.author.username}, you are not an airbender, choose else.`);     
+     return message.channel.send(`${message.author.username}, you are not an airbender, choose else.`);
+  if (!choices.includes(choice.toLowerCase()))
+     return message.channel.send(`${message.author.username}, that is not a valid option, idiot.`);     
     
-  if (choice === response)
+  if (choice.toLowerCase() === response)
      return message.channel.send(`🔫 ${message.author.username}, we both chose \`${choice}\`. It is a **tie**!`);
      
   else {
   
-    if (choice === ("rock") && response === ("paper"))
+    if (choice.toLowerCase() === ("rock") && response === ("paper"))
        return message.channel.send(`🗒 ${message.author.username}, I chose \`Paper\`, you **lose**!`);
-    if (choice === ("rock") && response === ("scissors"))
+    if (choice.toLowerCase() === ("rock") && response === ("scissors"))
        return message.channel.send(`✂️ ${message.author.username}, I chose \`Scissors\`, you **win**!`);
-    if (choice === ("scissors") && response === ("paper"))
+    if (choice.toLowerCase() === ("scissors") && response === ("paper"))
        return message.channel.send(`🗒 ${message.author.username}, I chose \`Paper\`, you **win**!`);
-    if (choice === ("scissors") && response === ("rock"))
+    if (choice.toLowerCase() === ("scissors") && response === ("rock"))
        return message.channel.send(`🎐 ${message.author.username}, I chose \`Rock\`, you **lose**!`);
-    if (choice === ("paper") && response === ("scissors"))
+    if (choice.toLowerCase() === ("paper") && response === ("scissors"))
        return message.channel.send(`✂️ ${message.author.username}, I chose \`Scissors\`, you **lose**!`);
-    if (choice === ("paper") && response === ("rock"))
+    if (choice.toLowerCase() === ("paper") && response === ("rock"))
        return message.channel.send(`🎐 ${message.author.username}, I chose \`Rock\`, you **win**!`);
            }
            

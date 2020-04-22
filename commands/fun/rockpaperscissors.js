@@ -4,16 +4,11 @@ module.exports.run = async (client, message, args) => {
 
 if (message.author.id !== ("298812170093723649") && message.channel.id !== ("410526913879080960") && message.guild.id !== ("460208972306186252") && message.channel.id !== ("517488355693559818") && message.channel.id !== ("324056323794796544")) return;
 
-    const choices = [ "rock", "paper", "scissors" ];
-    const response = choices[Math.floor(Math.random() * choices.length)];
+    let choices = [ "rock", "paper", "scissors" ];
+    let response = choices[Math.floor(Math.random() * choices.length)];
     let choice = args[0].toLowerCase();
     
-    if (error) 
-         return message.channel.send(error);
-    
   if ((!choice) || (!choices.includes(choice)))
-     if (error) 
-         return message.channel.send(error);
      return message.channel.send(`${message.author.username}, that is not a valid option, idiot.`);
      
   if (choice === response)

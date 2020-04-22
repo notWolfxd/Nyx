@@ -15,6 +15,7 @@ module.exports.run = async (client, message, args) => {
                message.guild.unban(user);
                 })
               });
+	
     await message.channel.send("All users unbanned.");
 	
 }        

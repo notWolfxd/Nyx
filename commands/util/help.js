@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (client, message, args) => {
 
         const data = [];
-        const { commands } = client.commands;
+        const { commands } = message.client.commands;
 
         if (!args.length) {
             data.push('Here\'s a list of all my commands:');

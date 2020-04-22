@@ -3,11 +3,11 @@ const Discord = require("discord.js");
 module.exports.run = async (client, message, args) => {
 
         const data = [];
-        const { commands } = message.client.commands;
+        const { commands } = message.client;
 
         if (!args.length) {
             data.push('Here\'s a list of all my commands:');
-            data.push(commands.map(command => command.name).join(', '));
+            data.push(commands.map(command => command.help.name).join(', '));
             data.push(`\nYou can send \`-help [command name]\` to get info on a specific command!`);
 
             return message.author.send(data, { split: true })
@@ -28,9 +28,9 @@ module.exports.run = async (client, message, args) => {
 			return message.reply('that\'s not a valid command!');
 		}
 
-		data.push(`**Name:** ${command.name}`);
+		data.push(`**Name:** ${command.help.name}`);
 
-		if (command.aliases) data.push(`**Aliases:** ${command.aliases.join(', ')}`);
+		if (command.help.aliases) data.push(`**Aliases:** ${command.help.aliases.join(', ')}`);
 		if (command.description) data.push(`**Description:** ${command.description}`);
 		if (command.usage) data.push(`**Usage:** ${command.name} ${command.usage}`);
                 if (command.example) data.push(`**Example:** ${command.example}`);

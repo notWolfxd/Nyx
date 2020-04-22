@@ -6,7 +6,7 @@ if (message.author.id !== ("298812170093723649") && message.channel.id !== ("410
 
     const choices = [ "rock", "paper", "scissors" ];
     const response = choices[Math.floor(Math.random() * choices.length)];
-    const choice = args.toLowerCase();
+    const choice = args[0].toLowerCase();
     
   if (!choice || !choices.includes(choice))
      return message.channel.send(`${message.author.username}, that is not a valid option, idiot.`);

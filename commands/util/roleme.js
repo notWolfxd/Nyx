@@ -1,6 +1,6 @@
 const { RichEmbed } = require("discord.js");
 const config = require("../../config.json");
-const stripIndents = require("common-tags");
+const { stripIndents } = require("common-tags");
 
 module.exports.run = async (client, message, args) => {
     

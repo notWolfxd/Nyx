@@ -31,10 +31,10 @@ module.exports.run = async (client, message, args) => {
 		data.push(`**Name:** ${command.help.name}`);
 
 		if (command.help.aliases) data.push(`**Aliases:** ${command.help.aliases.join(', ')}`);
-		if (command.description) data.push(`**Description:** ${command.help.description}`);
-		if (command.usage) data.push(`**Usage:** ${command.name} ${command.help.usage}`);
-                if (command.example) data.push(`**Example:** ${command.help.example}`);
-		if (command.category) data.push(`**Category:** ${command.help.category}`);
+		if (command.help.description) data.push(`**Description:** ${command.help.description}`);
+		if (command.help.usage) data.push(`**Usage:** ${command.name} ${command.help.usage}`);
+                if (command.help.example) data.push(`**Example:** ${command.help.example}`);
+		if (command.help.category) data.push(`**Category:** ${command.help.category}`);
 
 		message.channel.send(data, { split: true });
     }

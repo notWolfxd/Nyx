@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
 
         if (!args.length) {
             data.push('Here\'s a list of all my commands:');
-            data.push(commands.map(command => command.help.name && command.help.description).join('\n'));
+            data.push(commands.map(command => command.help.name).join('\n'));
             data.push(`\nYou can send \`-help [command name]\` to get info on a specific command!`);
 
             return message.author.send(data, { split: true })
@@ -31,10 +31,10 @@ module.exports.run = async (client, message, args) => {
 		data.push(`**Name:** ${command.help.name}`);
 
 		if (command.help.aliases) data.push(`**Aliases:** ${command.help.aliases.join(', ')}`);
-		if (command.description) data.push(`**Description:** ${command.description}`);
-		if (command.usage) data.push(`**Usage:** ${command.name} ${command.usage}`);
-                if (command.example) data.push(`**Example:** ${command.example}`);
-		if (command.category) data.push(`**Category:** ${command.cooldown}`);
+		if (command.description) data.push(`**Description:** ${command.help.description}`);
+		if (command.usage) data.push(`**Usage:** ${command.name} ${command.help.usage}`);
+                if (command.example) data.push(`**Example:** ${command.help.example}`);
+		if (command.category) data.push(`**Category:** ${command.help.category}`);
 
 		message.channel.send(data, { split: true });
     }

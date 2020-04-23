@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
 
         if (!args.length) {
             data.push('Here\'s a list of all my commands:');
-            data.push(commands.map(command => command.help.name).join(`- ${command.help.description} \n`));
+            data.push(commands.map(command => command.help.name).join(`- ${command.help.name} \n`));
             data.push(`\nYou can send \`${prefix}help [command name]\` to get info on a specific command!`);
 
             return message.author.send(data, { split: true })

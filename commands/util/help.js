@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
 
         const data = [];
         const { commands } = message.client;
-	let prefix = prefixes[message.guild.id].prefixes;
+	let prefix = prefixes[message.guild.id].prefixes || "-";
 
         if (!args.length) {
             data.push('Here\'s a list of all my commands:');

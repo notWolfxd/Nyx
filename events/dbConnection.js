@@ -18,7 +18,7 @@ if (err) {
       return console.error('Error executing query', err.stack)
     }
     console.log(result.rows)
-})
+}) })
 	
 module.exports = {
     dbConnect: () => {

@@ -14,6 +14,8 @@ console.log(err,res);
 })
 
 	
-module.exports = db;
-	
-	
+module.exports = {
+    dbConnect: () => {
+        return db
+    }
+}

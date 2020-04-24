@@ -22,7 +22,7 @@ db.query('BEGIN', err => {
             console.error('Error committing transaction', err.stack)
           }
           
-        
+        })
       })
     })
   })

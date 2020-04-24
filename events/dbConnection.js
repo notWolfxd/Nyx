@@ -18,4 +18,3 @@ db.query('CREATE TABLE IF NOT EXISTS guildSettings (guildId TEXT, prefix TEXT, c
 		});
 	}
 	
-module.exports = db;

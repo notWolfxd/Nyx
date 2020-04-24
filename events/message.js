@@ -27,6 +27,7 @@ exports.run = (client, message) => {
 
               const prefix = row.prefix
                 if (row.prefix === undefined) return prefix = "-"
+           })
    
     
 let args = message.content.slice(prefix.length).trim().split(/ +/g);

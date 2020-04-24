@@ -14,5 +14,6 @@ db.query('CREATE TABLE IF NOT EXISTS guildSettings (guildId TEXT, prefix TEXT, c
 	.catch((err) => {
 		console.log(err);
 		});
+db.end();
 
 module.exports = db;

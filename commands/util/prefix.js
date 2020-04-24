@@ -3,6 +3,7 @@ const { stripIndents } = require("common-tags");
 const {getMember, formatDate} = require("../../functions.js");
 const config = require("../../config.json");
 const fs = require("fs");
+const db = require("../../events/dbConnection.js");
 
 module.exports.run = async (client, message, args) => {
 

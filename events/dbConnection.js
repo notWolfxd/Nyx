@@ -14,6 +14,6 @@ console.log(err,res);
 })
 
 	
-	
+module.exports = db;
 	
 	

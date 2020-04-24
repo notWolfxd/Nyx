@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const fs = require("fs");
+const config = require("../../config.json");
 
 module.exports.run = async (client, message, args) => {
 	
@@ -40,12 +41,12 @@ module.exports.run = async (client, message, args) => {
 		}
 
 	
-		data.push(`**Name:** ${command.help.name}`);
+		data.push(`**Command:** ${command.help.name}\n`);
 
 		if (command.help.aliases) data.push(`**Aliases:** ${command.help.aliases.join(', ')}`);
-		if (command.help.description) data.push(`**Description:** ${command.help.description}`);
+		if (command.help.description) data.push(`**Description:** ${command.help.description}\n`);
 		if (command.help.usage) data.push(`**Usage:** ${prefix}${command.help.usage}`);
-                if (command.help.example) data.push(`**Example:** ${prefix}${command.help.example}`);
+                if (command.help.example) data.push(`**Example:** ${prefix}${command.help.example}\n`);
 		if (command.help.category) data.push(`**Category:** ${command.help.category}`);
 
 		message.channel.send(data, { split: true });

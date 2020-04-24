@@ -7,10 +7,12 @@ exports.run = (client, message) => {
     let db;
     db = dbConnect();
     
-    db.query(`SELECT * FROM gSettings WHERE guildId ="${message.guild.id}"`).then(row => {
-        if (!row) {
-            db.query(`INSERT INTO gSettings (guildId, prefix, casenumber, autoroleenabled, roletogive, logsenabled, logschannel, wlchannel, wlsystem, welcomemessage, slowmodetime, modrole, commandchannel, blacklisteduser) VALUES ("${message.guild.id}", "-", 1, "enabled", "none", "enabled", "bot-logs", "welcome", "disabled", "Hello %MENTION%, welcome to %GUILDNAME%.", 3, "Staff", "commands", "none")`);
-          } 
+    db.query(`SELECT * FROM gSettings WHERE guildId ="${message.guild.id}"`, (rows => {
+        if (rows.length < 1) {
+           let idk;
+           idk = `INSERT INTO gSettings (guildId, prefix, casenumber, autoroleenabled, roletogive, logsenabled, logschannel, wlchannel, wlsystem, welcomemessage, slowmodetime, modrole, commandchannel, blacklisteduser) VALUES ("${message.guild.id}", "-", 1, "enabled", "none", "enabled", "bot-logs", "welcome", "disabled", "Hello %MENTION%, welcome to %GUILDNAME%.", 3, "Staff", "commands", "none")`
+         
+            db.query(idk, console.log} 
         })
     
     if(message.author.bot) return;

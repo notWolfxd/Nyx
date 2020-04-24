@@ -17,7 +17,7 @@ db.query('CREATE TABLE IF NOT EXISTS guildSettings (guildId TEXT, prefix TEXT, c
 if (err) {
       return console.error('Error executing query', err.stack)
     }
-    console.log(result.rows)
+    console.log(res.rows)
 })
 })
 	

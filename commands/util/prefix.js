@@ -10,11 +10,11 @@ module.exports.run = async (client, message, args) => {
   //  let prefixes = require("../../prefixes.json");
 
     if (!message.member.hasPermission("MANAGE_GUILD")) return;
-db.query(`SELECT prefix FROM guildSettings WHERE guildId ="${message.guild.id}"`).then(row => {
+db.run(`SELECT prefix FROM guildSettings WHERE guildId ="${message.guild.id}"`).then(row => {
   if (!row) {
-    db.query("INSERT INTO guildSettings (guildId, prefix) VALUES (?, ?)", [message.guild.id, args[0]]);
+    db.run("INSERT INTO guildSettings (guildId, prefix) VALUES (?, ?)", [message.guild.id, args[0]]);
     } else {
-      db.query(`UPDATE guildSettings SET prefix = "${args[0]}" WHERE guildId = ${message.guild.id}`);
+      db.run(`UPDATE guildSettings SET prefix = "${args[0]}" WHERE guildId = ${message.guild.id}`);
     }
 }).catch((err) => {
     console.log(err);

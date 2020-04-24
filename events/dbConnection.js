@@ -17,7 +17,7 @@ db.query('CREATE TABLE IF NOT EXISTS gSettings (guildId TEXT, prefix TEXT, casen
 if (err) {
       return console.error('Error executing query', err.stack)
     }
-    console.log(result.rows)
+    console.log(res.rows)
 }) })
 	
 module.exports = {

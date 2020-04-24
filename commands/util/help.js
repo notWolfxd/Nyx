@@ -1,11 +1,18 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const config = require("../../config.json");
-const prefixes = require("../../prefixes.json");
 
 module.exports.run = async (client, message, args) => {
 	
-    let prefix = prefixes[message.guild.id].prefixes || config.prefix;
+        let prefixes = JSON.parse(fs.readFileSync("../../prefixes.json", "utf8"));
+
+    if (!prefixes[message.guild.id]) {
+        prefixes[message.guild.id] = {
+          prefixes: config.prefix
+        };
+      }
+
+    let prefix = prefixes[message.guild.id].prefixes;
 
         const data = [];
         const { commands } = message.client;

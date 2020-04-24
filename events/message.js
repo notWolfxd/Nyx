@@ -13,7 +13,7 @@ exports.run = (client, message) => {
            idk = `INSERT INTO gSettings (guildId, prefix, casenumber, autoroleenabled, roletogive, logsenabled, logschannel, wlchannel, wlsystem, welcomemessage, slowmodetime, modrole, commandchannel, blacklisteduser) VALUES ("${message.guild.id}", "-", 1, "enabled", "none", "enabled", "bot-logs", "welcome", "disabled", "Hello %MENTION%, welcome to %GUILDNAME%.", 3, "Staff", "commands", "none")`
          
             db.query(idk, console.log)} 
-        })
+        }) )
     
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;

@@ -8,7 +8,7 @@ const db = new Pool({
   idleTimeoutMillis: 0
 });
 
-db.connect((err, client, release) => {
+db.connect((err, db, release) => {
   if (err) {
     return console.error('Error acquiring client', err.stack)
   }

@@ -7,7 +7,7 @@ exports.run = (client, message) => {
     let db;
     db = dbConnect();
     
-    db.query(`SELECT guildid FROM guildsettings WHERE guildid ="${message.guild.id}"`).then(row => {
+    db.query(`SELECT * FROM guildsettings WHERE guildid ="${message.guild.id}"`).then(row => {
         if (!row) {
             db.query("INSERT INTO guildsettings (guildid, prefix, casenumber, autoroleenabled, roletogive, logsenabled, logschannel, wlchannel, wlsystem, welcomemessage, slowmodetime, modrole, commandchannel, blacklisteduser) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [message.guild.id, "-", 1, "enabled", "none", "enabled", "bot-logs", "welcome", "disabled", "Hello %MENTION%, welcome to %GUILDNAME%.", 3, "Staff", "commands", "none"]);
           } 

@@ -1,8 +1,11 @@
 const fs = require("fs");
 const config = require("../config.json");
-const db = require("./dbConnection.js");
+const { dbConnect } = require("./dbConnection.js");
 
 exports.run = (client, message) => {
+   
+    let db;
+    db = dbConnect();
     
     db.query(`SELECT * FROM guildsettings WHERE guildid ="${message.guild.id}"`).then(row => {
         if (!row) {

@@ -3,12 +3,14 @@ const { stripIndents } = require("common-tags");
 const {getMember, formatDate} = require("../../functions.js");
 const config = require("../../config.json");
 const fs = require("fs");
-const db = require("../../events/dbConnection.js");
+const { dbConnect }= require("../../events/dbConnection.js");
 
 module.exports.run = async (client, message, args) => {
 
   //  let prefixes = require("../../prefixes.json");
 
+  let db;
+  db = dbConnect();
     if (!message.member.hasPermission("MANAGE_GUILD")) return;
 db.query(`SELECT prefix FROM guildSettings WHERE guildId ="${message.guild.id}"`).then(row => {
   if (!row) {

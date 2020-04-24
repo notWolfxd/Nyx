@@ -7,9 +7,9 @@ exports.run = (client, message) => {
     let db;
     db = dbConnect();
     
-    db.query(`SELECT * FROM guildsettings WHERE guildid ="${message.guild.id}"`).then(row => {
+    db.query(`SELECT * FROM guildSettings WHERE guildId ="${message.guild.id}"`).then(row => {
         if (!row) {
-            db.query("INSERT INTO guildsettings (guildid, prefix, casenumber, autoroleenabled, roletogive, logsenabled, logschannel, wlchannel, wlsystem, welcomemessage, slowmodetime, modrole, commandchannel, blacklisteduser) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [message.guild.id, "-", 1, "enabled", "none", "enabled", "bot-logs", "welcome", "disabled", "Hello %MENTION%, welcome to %GUILDNAME%.", 3, "Staff", "commands", "none"]);
+            db.query("INSERT INTO guildSettings (guildId, prefix, casenumber, autoroleenabled, roletogive, logsenabled, logschannel, wlchannel, wlsystem, welcomemessage, slowmodetime, modrole, commandchannel, blacklisteduser) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [message.guild.id, "-", 1, "enabled", "none", "enabled", "bot-logs", "welcome", "disabled", "Hello %MENTION%, welcome to %GUILDNAME%.", 3, "Staff", "commands", "none"]);
           } 
         })
     
@@ -25,7 +25,7 @@ exports.run = (client, message) => {
  //     }
 
  //  let prefix = prefixes[message.guild.id].prefixes;
-       db.query(`SELECT * FROM guildsettings WHERE guildid ="${message.guild.id}"`).then(row => {
+       db.query(`SELECT * FROM guildSettings WHERE guildId ="${message.guild.id}"`).then(row => {
         if (!row) return;
 
               const prefix = row.prefix

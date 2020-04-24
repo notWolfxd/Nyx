@@ -1,5 +1,7 @@
 const { Client } = require('pg');
 
+exports.run = async (client, db) => {
+
 const db = new Client({
   connectionString: process.env.DATABASE_URL,
   ssl: true,
@@ -14,4 +16,6 @@ db.query('CREATE TABLE IF NOT EXISTS guildSettings (guildId TEXT, prefix TEXT, c
 	.catch((err) => {
 		console.log(err);
 		});
+	}
+	
 module.exports = db;

@@ -19,7 +19,7 @@ if (err) {
     }
     console.log(result.rows)
 })
-
+})
 	
 module.exports = {
     dbConnect: () => {

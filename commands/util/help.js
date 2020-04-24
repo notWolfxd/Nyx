@@ -1,15 +1,24 @@
 const Discord = require("discord.js");
-const prefixes = require("../../prefixes.json");
+const fs = require("fs");
 
 module.exports.run = async (client, message, args) => {
+	
+	let prefixes = JSON.parse(fs.readFileSync("../../prefixes.json", "utf8"));
+
+    if (!prefixes[message.guild.id]) {
+        prefixes[message.guild.id] = {
+          prefixes: config.prefix
+        };
+      }
+
+    let prefix = prefixes[message.guild.id].prefixes;
 
         const data = [];
         const { commands } = message.client;
-	let prefix = prefixes[message.guild.id].prefixes || "-";
 
         if (!args.length) {
-            data.push('Here\'s a list of all my commands:');
-            data.push(commands.map(command => command.help.name).join('- description here\n'));
+            data.push('Here\'s a list of all my commands:\n');
+            data.push(commands.map(command => command.help.name).join(' - description here\n'));
             data.push(`\nYou can send \`${prefix}help [command name]\` to get info on a specific command!`);
 
             return message.author.send(data, { split: true })
@@ -30,6 +39,7 @@ module.exports.run = async (client, message, args) => {
 			return message.reply('that\'s not a valid command!');
 		}
 
+	
 		data.push(`**Name:** ${command.help.name}`);
 
 		if (command.help.aliases) data.push(`**Aliases:** ${command.help.aliases.join(', ')}`);

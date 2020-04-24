@@ -49,7 +49,7 @@ if (client.commands.has(cmd)) {
         if (message.author.id == config.owner) return message.channel.send(`${message.author.username} Sorry the command has been Disabled!!`);
     }
 try {
-    command.run(client, message, args, prefix);
+    command.run(client, message, args, prefix, db);
 
 } catch (e) {
 }

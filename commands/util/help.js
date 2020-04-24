@@ -1,11 +1,10 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const config = require("../../config.json");
+const prefixes = require("../../prefixes.json");
 
 module.exports.run = async (client, message, args) => {
 	
-    let prefixes = JSON.parse(fs.readFileSync("../../prefixes.json", "utf8"));
-
     let prefix = prefixes[message.guild.id].prefixes || config.prefix;
 
         const data = [];

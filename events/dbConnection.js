@@ -1,8 +1,6 @@
 const { Pool } = require('pg');
 
-exports.run = async (client) => {
-
-const db = await new Pool({
+const db = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: true,
   max: 20,
@@ -10,14 +8,12 @@ const db = await new Pool({
   idleTimeoutMillis: 0
 });
 
-await db.run('CREATE TABLE guildSettings (guildId TEXT, prefix TEXT, casenumber INTEGER, autoroleenabled TEXT, roletogive TEXT, logsenabled TEXT, logschannel TEXT, wlchannel TEXT, wlsystem TEXT, welcomemessage TEXT, slowmodetime INTEGER, modrole TEXT, commandchannel TEXT, blacklisteduser TEXT);')
-.then(() => {
-		console.log("Table created.");
-		})
-	.catch((err) => {
-		console.log(err);
-		});
+db.query('CREATE TABLE guildSettings (guildId TEXT, prefix TEXT, casenumber INTEGER, autoroleenabled TEXT, roletogive TEXT, logsenabled TEXT, logschannel TEXT, wlchannel TEXT, wlsystem TEXT, welcomemessage TEXT, slowmodetime INTEGER, modrole TEXT, commandchannel TEXT, blacklisteduser TEXT)', (err, res) => {
+
+console.log(err,res);
+})
+
 	
 	
-	}
+	
 	

@@ -2,7 +2,7 @@ const fs = require("fs");
 const config = require("../config.json");
 const { dbConnect } = require("./dbConnection.js");
 
-module.exports = (client, guild) => {
+exports.run = (client, guild) => {
 
     let db;
     db = dbConnect();

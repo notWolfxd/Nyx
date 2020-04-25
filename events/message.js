@@ -11,7 +11,6 @@ exports.run = async (client, message) => {
    const phVal1 = [message.guild.id]
    
    db.query(selGuild, phVal1, (er, res) => {
-      console.log(er);
       if (res.rows.length === 0) { 
          
          const insGuild = "INSERT INTO guildSettings(guildId, prefix, casenumber, autoroleenabled, roletogive, logsenabled, logschannel, wlchannel, wlsystem, welcomemessage, slowmodetime, modrole, commandchannel, blacklisteduser) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING *"

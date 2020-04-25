@@ -6,6 +6,26 @@ exports.run = async (client, message) => {
    
     let db;
     db = dbConnect();
+   
+   const selGuild = "SELECT * FROM guildSettings WHERE guildId = $1"
+   const phVal1 = [message.guild.id]
+   
+   db.query(selGuild, phVal1, (er, res) => {
+      console.log(er, res);
+      if (res.rows.length === 0) { 
+         
+         const insGuild = "INSERT INTO guildSettings(guildId, prefix, casenumber, autoroleenabled, roletogive, logsenabled, logschannel, wlchannel, wlsystem, welcomemessage, slowmodetime, modrole, commandchannel, blacklisteduser) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING *"
+         const phVal2 = [message.guild.id, "-", 1, "enabled", "none", "enabled", "bot-logs", "welcome", "disabled", "Hello %MENTION%, welcome to %GUILDNAME%.", 3, "Staff", "commands", "none"];
+      
+    db.query(insGuild, phVal2, (err, res) => { 
+      if (err) { 
+         console.log(err.stack);
+               } else {
+         console.log(res.rows[0]);
+               }
+           })
+         }
+      })
     
  /*  await db.query(`SELECT * FROM gSettings WHERE guildId ="${message.guild.id}"`).then(rows => {
         if (!rows) {
@@ -20,14 +40,14 @@ exports.run = async (client, message) => {
             db.query(idk, console.log(err))
      })
   
-  })*/
+  })
    await db.query(`SELECT * FROM gSettings WHERE guildId ="${message.guild.id}"`, (rows) => {
         if (rows.length < 1) {
            let idk;
            idk = `INSERT INTO gSettings(guildId, prefix, casenumber, autoroleenabled, roletogive, logsenabled, logschannel, wlchannel, wlsystem, welcomemessage, slowmodetime, modrole, commandchannel, blacklisteduser) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" ["${message.guild.id}", "-", 1, "enabled", "none", "enabled", "bot-logs", "welcome", "disabled", "Hello %MENTION%, welcome to %GUILDNAME%.", 3, "Staff", "commands", "none"]`;
          
             db.query(idk, console.log)} 
-        }) 
+        }) */
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
     

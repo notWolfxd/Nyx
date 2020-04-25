@@ -3,6 +3,8 @@ const { dbConnect } = require("../../events/dbConnection.js");
 
 module.exports.run = async (client, message, args) => {
     
+    if (message.author.id !== ("298812170093723649")) return;
+    
     let db;
     db = dbConnect();
     const HYPE = `SELECT * FROM guildSettings WHERE guildId="${message.guild.id}"`

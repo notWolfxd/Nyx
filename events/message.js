@@ -48,7 +48,7 @@ exports.run = async (client, message) => {
       if (res.rows.length === 0) { 
          return prefix = "-";
          }
-      })
+      
    /*    db.query(`SELECT * FROM guildSettings WHERE guildId ="${message.guild.id}"`).then(row => {
         if (!row) return;
 
@@ -77,5 +77,5 @@ try {
 
 } catch (e) {
 }
- //})
+ })
 }

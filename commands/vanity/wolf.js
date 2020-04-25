@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
     db = dbConnect();
     const HYPE = `SELECT EXISTS (SELECT * FROM guildSettings WHERE guildId="${message.guild.id}")`
  
-    await db.query(HYPE, (er, row) => {
+    db.query(HYPE, (er, row) => {
        
         if (!row) {
     

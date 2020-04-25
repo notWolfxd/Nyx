@@ -7,12 +7,12 @@ module.exports.run = async (client, message, args) => {
     
     let db;
     db = dbConnect();
-    const HYPE = { 
-                   text: "SELECT * FROM guildSettings WHERE guildId = $1",
-                   values: [message.guild.id]
-                  }
+    const HYPE = "SELECT * FROM guildSettings WHERE guildId = $1"
+                 const valued = [message.guild.id]
+                  
       
-    db.query(HYPE, (er, res) => {
+    db.query(HYPE, valued, (er, res) => {
+        console.log(res)
        
       if (!res) {
     

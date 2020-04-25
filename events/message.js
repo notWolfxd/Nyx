@@ -44,7 +44,7 @@ exports.run = async (client, message) => {
    
    db.query(selGuildPrefix, phVal3, (er, res) => {
       
-     const prefix = res.rows.prefix;
+     const prefix = res.rows;
       if (res.rows.length === 0) { 
          return prefix = "-";
          }

@@ -10,6 +10,7 @@ module.exports.run = async (client, message, args) => {
     const HYPE = `SELECT * FROM guildSettings WHERE guildId="${message.guild.id}"`
     let guildId = message.guild.id
     await db.query(HYPE, (er, row) => {
+        let guildId = message.guild.id
         if (!row.guildId) {
     
     const text = "INSERT INTO guildSettings(guildId, prefix, casenumber, autoroleenabled, roletogive, logsenabled, logschannel, wlchannel, wlsystem, welcomemessage, slowmodetime, modrole, commandchannel, blacklisteduser) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING *"

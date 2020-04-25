@@ -16,7 +16,7 @@ module.exports.run = async (client, message, args) => {
     const values = [message.guild.id, "-", 1, "enabled", "none", "enabled", "bot-logs", "welcome", "disabled", "Hello %MENTION%, welcome to %GUILDNAME%.", 3, "Staff", "commands", "none"];
    */ 
     const fix = `DELETE FROM guildSettings WHERE guildSettings.id NOT IN 
-(SELECT id FROM (
+(SELECT id FROM guildSettings (
     SELECT DISTINCT ON (guildId, prefix) *
   FROM guildSettings));`
     

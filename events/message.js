@@ -7,14 +7,6 @@ exports.run = (client, message) => {
     let db;
     db = dbConnect();
     
-    db.query(`SELECT * FROM gSettings WHERE guildId ="${message.guild.id}"`, (rows) => {
-        if (rows.length < 1) {
-           let idk;
-           idk = `INSERT INTO gSettings(guildId, prefix, casenumber, autoroleenabled, roletogive, logsenabled, logschannel, wlchannel, wlsystem, welcomemessage, slowmodetime, modrole, commandchannel, blacklisteduser) VALUES ("${message.guild.id}", "-", 1, "enabled", "none", "enabled", "bot-logs", "welcome", "disabled", "Hello %MENTION%, welcome to %GUILDNAME%.", 3, "Staff", "commands", "none")`;
-         
-            db.query(idk, console.log)} 
-        })
-    
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
     
@@ -27,16 +19,24 @@ exports.run = (client, message) => {
       }
 
    let prefix = prefixes[message.guild.id].prefixes;
-     //  db.query(`SELECT * FROM guildSettings WHERE guildId ="${message.guild.id}"`).then(row => {
-     //   if (!row) return;
+       db.query(`SELECT * FROM guildSettings WHERE guildId ="${message.guild.id}"`).then(row => {
+        if (!row) return;
 
-      //        const prefix = row.prefix
-         //       if (row.prefix === undefined) return prefix = "-"
+             const prefix = row.prefix
+                if (row.prefix === undefined) return prefix = "-"
            
     
 let args = message.content.slice(prefix.length).trim().split(/ +/g);
 let cmd = args.shift().toLowerCase();
 let command;
+   
+   db.query(`SELECT * FROM gSettings WHERE guildId ="${message.guild.id}"`, (rows) => {
+        if (rows.length < 1) {
+           let idk;
+           idk = `INSERT INTO gSettings(guildId, prefix, casenumber, autoroleenabled, roletogive, logsenabled, logschannel, wlchannel, wlsystem, welcomemessage, slowmodetime, modrole, commandchannel, blacklisteduser) VALUES ("${message.guild.id}", "-", 1, "enabled", "none", "enabled", "bot-logs", "welcome", "disabled", "Hello %MENTION%, welcome to %GUILDNAME%.", 3, "Staff", "commands", "none")`;
+         
+            db.query(idk, console.log)} 
+        })
 
 if (client.commands.has(cmd)) {
     command = client.commands.get(cmd);

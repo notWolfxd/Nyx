@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args) => {
                   
       
     db.query(HYPE, valued, (er, rowCount) => {
-        console.log(er, res)
+        console.log(er, rowCount)
        
       if (rowCount == 0) {
     

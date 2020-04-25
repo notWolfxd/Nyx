@@ -40,11 +40,11 @@ exports.run = async (client, message) => {
       }
 
    let prefix = prefixes[message.guild.id].prefixes;
-    /*   db.query(`SELECT * FROM guildSettings WHERE guildId ="${message.guild.id}"`).then(row => {
+       db.query(`SELECT * FROM guildSettings WHERE guildId ="${message.guild.id}"`).then(row => {
         if (!row) return;
 
              const prefix = row.prefix
-                if (row.prefix === undefined) return prefix = "-" */
+                if (row.prefix === undefined) return prefix = "-" 
            
     
 let args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -68,5 +68,5 @@ try {
 
 } catch (e) {
 }
-// })
+ })
 }

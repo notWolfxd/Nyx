@@ -17,8 +17,7 @@ module.exports.run = async (client, message, args) => {
    
   }
 })
-
-/*    if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.channel.send("<:error:526841077248819250> You are lacking the permission `MANAGE_CHANNELS`!");
+  /*   if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.channel.send("<:error:526841077248819250> You are lacking the permission `MANAGE_CHANNELS`!");
 
     let helper = await message.guild.roles.find(r => r.name.toLowerCase() == "helper").members.map(member => member.id)
     let mod = await message.guild.roles.find(r => r.name.toLowerCase() == "mod").members.map(member => member.id)

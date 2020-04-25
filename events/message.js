@@ -44,7 +44,7 @@ exports.run = async (client, message) => {
    
    db.query(selGuildPrefix, phVal3, (er, res) => {
      console.log(res.fields[0].name)
-     const prefix = res.fields[1];
+     const prefix = res.rows;
       
       
    /*    db.query(`SELECT * FROM guildSettings WHERE guildId ="${message.guild.id}"`).then(row => {

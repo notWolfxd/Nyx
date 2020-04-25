@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
     
     let db;
     db = dbConnect();
-    const HYPE = { name: "fetch-guild",
+    const HYPE = { 
                    text: `SELECT * FROM guildSettings WHERE guildId = $1`,
                    values: [message.guild.id]
                   }

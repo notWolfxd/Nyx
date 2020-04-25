@@ -26,31 +26,10 @@ exports.run = async (client, message) => {
          }
       })
     
- /*  await db.query(`SELECT * FROM gSettings WHERE guildId ="${message.guild.id}"`).then(rows => {
-        if (!rows) {
-           let idk;
-           idk = `INSERT INTO gSettings(guildId, prefix, casenumber, autoroleenabled, roletogive, logsenabled, logschannel, wlchannel, wlsystem, welcomemessage, slowmodetime, modrole, commandchannel, blacklisteduser) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)" ["${message.guild.id}", "-", 1, "enabled", "none", "enabled", "bot-logs", "welcome", "disabled", "Hello %MENTION%, welcome to %GUILDNAME%.", 3, "Staff", "commands", "none"]`;
-            db.query(idk, console.log)} 
-        }).catch((err) => { 
-     console.error;
-     db.query("CREATE TABLE IF NOT EXISTS gSettings(guildId TEXT, prefix TEXT, casenumber INTEGER, autoroleenabled TEXT, roletogive TEXT, logsenabled TEXT, logschannel TEXT, wlchannel TEXT, wlsystem TEXT, welcomemessage TEXT, slowmodetime INTEGER, modrole TEXT, commandchannel TEXT, blacklisteduser TEXT").then(() => {
-     let idk;
-           idk = `INSERT INTO gSettings(guildId, prefix, casenumber, autoroleenabled, roletogive, logsenabled, logschannel, wlchannel, wlsystem, welcomemessage, slowmodetime, modrole, commandchannel, blacklisteduser) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)" ["${message.guild.id}", "-", 1, "enabled", "none", "enabled", "bot-logs", "welcome", "disabled", "Hello %MENTION%, welcome to %GUILDNAME%.", 3, "Staff", "commands", "none"]`;
-            db.query(idk, console.log(err))
-     })
-  
-  })
-   await db.query(`SELECT * FROM gSettings WHERE guildId ="${message.guild.id}"`, (rows) => {
-        if (rows.length < 1) {
-           let idk;
-           idk = `INSERT INTO gSettings(guildId, prefix, casenumber, autoroleenabled, roletogive, logsenabled, logschannel, wlchannel, wlsystem, welcomemessage, slowmodetime, modrole, commandchannel, blacklisteduser) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)" ["${message.guild.id}", "-", 1, "enabled", "none", "enabled", "bot-logs", "welcome", "disabled", "Hello %MENTION%, welcome to %GUILDNAME%.", 3, "Staff", "commands", "none"]`;
-         
-            db.query(idk, console.log)} 
-        }) */
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
     
-   let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
+  /* let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
 
     if (!prefixes[message.guild.id]) {
        prefixes[message.guild.id] = {
@@ -58,7 +37,18 @@ exports.run = async (client, message) => {
       };
       }
 
-   let prefix = prefixes[message.guild.id].prefixes; 
+   let prefix = prefixes[message.guild.id].prefixes; */
+   
+   const selGuildPrefix = "SELECT prefix FROM guildSettings WHERE guildId = $1"
+   const phVal3 = [message.guild.id]
+   
+   db.query(selGuildPrefix, phVal3, (er, res) => {
+      
+     const prefix = res.rows.prefix;
+      if (res.rows.length === 0) { 
+         return prefix = "-";
+         }
+      })
    /*    db.query(`SELECT * FROM guildSettings WHERE guildId ="${message.guild.id}"`).then(row => {
         if (!row) return;
 

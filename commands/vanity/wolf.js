@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
     let db;
     db = dbConnect();
     const HYPE = `SELECT * FROM guildSettings WHERE guildId="${message.guild.id}"`
-    
+    let guildId = message.guild.id
     await db.query(HYPE, (er, row) => {
         if (!row.guildId) {
     

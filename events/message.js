@@ -46,14 +46,8 @@ exports.run = async (client, message) => {
   //   console.log(res.rows[0].prefix)
      const prefix = res.rows[0].prefix;
       
-      
-   /*    db.query(`SELECT * FROM guildSettings WHERE guildId ="${message.guild.id}"`).then(row => {
-        if (!row) return;
 
-             const prefix = row.prefix
-                if (row.prefix === undefined) return prefix = "-" */
-           
-    
+
 let args = message.content.slice(prefix.length).trim().split(/ +/g);
 let cmd = args.shift().toLowerCase();
 let command;

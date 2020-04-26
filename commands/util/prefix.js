@@ -14,7 +14,7 @@ if (!args[0]) return message.channel.send("Please specify a new prefix!");
    
       db.query(selGuildPrefix, phVal3, (er, res) => {
        
-        const updPrefix = `UPDATE guildSettings SET prefix VALUES ($1)`
+        const updPrefix = `UPDATE guildSettings SET prefix $1`
         const phVals = [args[0]]
         const prefix = res.rows[0].prefix;
        

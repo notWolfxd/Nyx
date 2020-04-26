@@ -9,14 +9,25 @@ if (!args[0]) return message.channel.send("Please specify a new prefix!");
   let db;
   db = dbConnect();
     
- /*   const selGuildPrefix = "SELECT prefix FROM guildSettings WHERE guildId = $1"
+    const selGuildPrefix = "SELECT prefix FROM guildSettings WHERE guildId = $1"
     const phVal3 = [message.guild.id]
    
       db.query(selGuildPrefix, phVal3, (er, res) => {
+       
+        const updPrefix = `UPDATE guildSettings SET prefix VALUES ($1)`
+        const phVals = [args[0]]
         const prefix = res.rows[0].prefix;
+       
+         db.query(updPrefix, phVals, (err, res) => { 
+           if (err) { 
+         console.log(err.stack);
+               } else {
+         console.log(res.rows[0]);
+               }
+           })
 
     message.channel.send(`Your prefix was set to ${prefix}`);
-        }) */
+        }) 
 };
 
 module.exports.help = {

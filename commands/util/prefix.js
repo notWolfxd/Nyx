@@ -22,7 +22,7 @@ if (!args[0]) return message.channel.send("Please specify a new prefix!");
            if (err) { 
               console.log(err.stack);
                } else {
-              console.log(res.rows[0].prefix);
+              console.log(`Prefix changed to ${args[0]} in ${message.guild.id}`);
                }
            })
 

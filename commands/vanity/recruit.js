@@ -16,7 +16,8 @@ module.exports.run = async (client, message, args) => {
     .setTitle("Command: Recruit")
     .setColor("#f74e00")
     .setThumbnail(message.author.avatarURL)
-    .addField("Recruit people to join your team.", stripIndents`\n**Permissions:** Gamemode specific leader role.
+    .addField("Recruit people to join your team.", stripIndents` 
+    **Permissions:** Gamemode specific leader role.
     **Syntax Formatter:** Use https://notwolfxd.github.io/leaders to format your post
     **Friendly PSA:** If you are caught using this to advertise other servers, you will be banned.`)
     .setFooter(`${config.version}`, client.user.avatarURL)

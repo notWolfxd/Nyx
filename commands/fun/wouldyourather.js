@@ -17,7 +17,7 @@ module.exports.run = async (client, message, args) => {
     .addField("Choose...", stripIndents`🅰️ ${response.choicea} 
     🅱️ ${response.choiceb}
     
-    **Question Info:** [Link](${response.link}) | ${response.votes} people answered`)
+    **Question Info:** [[Link]](${response.link}) | ${response.votes} people answered`)
     .setFooter(`${config.version} | Requested By ${message.author.tag}`)
     
     message.channel.send({embed}).then(m => {

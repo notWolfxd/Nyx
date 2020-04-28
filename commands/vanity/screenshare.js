@@ -19,11 +19,14 @@ module.exports.run = async (client, message, args) => {
     
      let playertoSS = args[0];
      let realm = args[1];
+     let realms = [ "runic", "demonic", "heroic", "prison", "space", "hogwarts", "genesis" ]
      let reason = args.slice(2).join(" ");
      let ssverifiedrole = message.guild.roles.find(r => r.name === "SS Verified");
  
+   if (!realms.includes(realm.toLowerCase()))
+      return message.channel.send(ssrHelp);
    if (!playertoSS || !realm || !reason) 
-      return message.channel.sendEmbed(ssrHelp);
+      return message.channel.send(ssrHelp);
     
    const ssrEmbed = new RichEmbed()
     .setTitle("Screenshare Requested")

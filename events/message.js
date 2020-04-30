@@ -10,7 +10,7 @@ exports.run = async (client, message) => {
    const selGuild = "SELECT * FROM guildSettings WHERE guildId = $1"
    const phVal1 = [message.guild.id]
    
-   db.query(selGuild, phVal1, (er, res) => {
+ await db.query(selGuild, phVal1, (er, res) => {
       if (res.rows.length === 0) { 
          
          const insGuild = "INSERT INTO guildSettings(guildId, prefix, casenumber, autoroleenabled, roletogive, logsenabled, logschannel, wlchannel, wlsystem, welcomemessage, slowmodetime, modrole, commandchannel, blacklisteduser) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING *"
@@ -42,7 +42,7 @@ exports.run = async (client, message) => {
    const selGuildPrefix = "SELECT prefix FROM guildSettings WHERE guildId = $1"
    const phVal3 = [message.guild.id]
    
-   db.query(selGuildPrefix, phVal3, (er, res) => {
+  await db.query(selGuildPrefix, phVal3, (er, res) => {
   //   console.log(res.rows[0].prefix)
      const prefix = res.rows[0].prefix;
       

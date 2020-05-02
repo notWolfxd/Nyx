@@ -29,46 +29,45 @@ module.exports.run = async (client, message, args) => {
     .setThumbnail('https://cravatar.eu/head/' + (player.uuid || '') + '?size=2408.png')
     .setColor(member.displayHexColor === '#000000' ? '#ffffff' : member.displayHexColor)
 
-    .addField('**__General:__**', stripIndents`:rosette: **Level:** ${(player.stats.SkyWars.levelFormatted || "§71").replace(/(§[0-9])+/g, "").replace(/(§[a-z])+/g, "")}
-    :video_game: **Games Played:** ${(player.stats.SkyWars.games_played_skywars || 0)}
+    .addField('**__General:__**', stripIndents`<:level:706030765473005568> **Level:** ${(player.stats.SkyWars.levelFormatted || "§71").replace(/(§[0-9])+/g, "").replace(/(§[a-z])+/g, "")}
+    <:gamesplayed:706020723185025116> **Games Played:** ${(player.stats.SkyWars.games_played_skywars || 0)}
 
-    :skull: **Heads:** ${(player.stats.SkyWars.heads || 0)}
-    :ghost: **Souls:** ${(player.stats.SkyWars.souls || 0)}
+    <:head:706238121486057513> **Heads:** ${(player.stats.SkyWars.heads || 0)}
+    <:soul:706238190763114496> **Souls:** ${(player.stats.SkyWars.souls || 0)}
 
-    :moneybag: **Coins:** ${(player.stats.SkyWars.coins || 0)}
-    :gem: **Tokens:** ${(player.stats.SkyWars.cosmetic_tokens || 0)}`)
+    <:coins:706031344249077820> **Coins:** ${(player.stats.SkyWars.coins || 0)}
+    <:tokens:706031250254594108> **Tokens:** ${(player.stats.SkyWars.cosmetic_tokens || 0)}`)
 
-    .addField('**__Solo Total:__**', stripIndents`> **Kills:** ${(player.stats.SkyWars.kills_solo || 0)}
-    > **Deaths:** ${(player.stats.SkyWars.deaths_solo || 0)}
-    > **Wins:** ${(player.stats.SkyWars.wins_solo || 0)}
-    > **Losses:** ${(player.stats.SkyWars.losses_solo || 0)}
-    > **W/L:** ${((player.stats.SkyWars.wins_solo || 0) / (player.stats.SkyWars.losses_solo || 1)).toPrecision(2)}
-    > **K/D:** ${((player.stats.SkyWars.kills_solo || 0) / (player.stats.SkyWars.deaths_solo || 1)).toPrecision(2)}
-    - - -`, true)
+    .addField('**__Solo Total:__**', stripIndents`<:kill:706030866949734442> **Kills:** ${(player.stats.SkyWars.kills_solo || 0)}
+    <:death:706031056536731669> **Deaths:** ${(player.stats.SkyWars.deaths_solo || 0)}
+    <:kdr:706032148012072990> **K/D:** ${((player.stats.SkyWars.kills_solo || 0) / (player.stats.SkyWars.deaths_solo || 1)).toPrecision(2)}
 
-    .addField('**__Solo Insane:__**', stripIndents`> **Kills:** ${(player.stats.SkyWars.kills_solo_insane || 0)}
-    > **Deaths:** ${(player.stats.SkyWars.deaths_solo_insane || 0)}
-    > **Wins:** ${(player.stats.SkyWars.wins_solo_insane || 0)}
-    > **Losses:** ${(player.stats.SkyWars.losses_solo_insane || 0)}
-    > **W/L:** ${((player.stats.SkyWars.wins_solo_insane || 0) / (player.stats.SkyWars.losses_solo_insane || 1)).toPrecision(2)}
-    > **K/D:** ${((player.stats.SkyWars.kills_solo_insane || 0) / (player.stats.SkyWars.deaths_solo_insane || 1)).toPrecision(2)}
-    - - -`, true)
+    <:win:706020774938411048> **Wins:** ${(player.stats.SkyWars.wins_solo || 0)}
+    <:loss:706030978790850670> **Losses:** ${(player.stats.SkyWars.losses_solo || 0)}
+    <:wlr:706032249098731540> **W/L:** ${((player.stats.SkyWars.wins_solo || 0) / (player.stats.SkyWars.losses_solo || 1)).toPrecision(2)}`, true)
 
-    .addField('**__Solo Normal:__**', stripIndents`> **Kills:** ${(player.stats.SkyWars.kills_solo_normal || 0)}
-    > **Deaths:** ${(player.stats.SkyWars.deaths_solo_normal || 0)}
-    > **Wins:** ${(player.stats.SkyWars.wins_solo_normal || 0)}
-    > **Losses:** ${(player.stats.SkyWars.losses_solo_normal || 0)}
-    > **W/L:** ${((player.stats.SkyWars.wins_solo_normal || 0) / (player.stats.SkyWars.losses_solo_normal || 1)).toPrecision(2)}
-    > **K/D:** ${((player.stats.SkyWars.kills_solo_normal || 0) / (player.stats.SkyWars.deaths_solo_normal || 1)).toPrecision(2)}
-    - - -`, true)
+    .addField('**__Solo Insane:__**', stripIndents`<:kill:706030866949734442> **Kills:** ${(player.stats.SkyWars.kills_solo_insane || 0)}
+    <:death:706031056536731669> **Deaths:** ${(player.stats.SkyWars.deaths_solo_insane || 0)}
+    <:kdr:706032148012072990> **K/D:** ${((player.stats.SkyWars.kills_solo_insane || 0) / (player.stats.SkyWars.deaths_solo_insane || 1)).toPrecision(2)}
+
+    <:win:706020774938411048> **Wins:** ${(player.stats.SkyWars.wins_solo_insane || 0)}
+    <:loss:706030978790850670> **Losses:** ${(player.stats.SkyWars.losses_solo_insane || 0)}
+    <:wlr:706032249098731540> **W/L:** ${((player.stats.SkyWars.wins_solo_insane || 0) / (player.stats.SkyWars.losses_solo_insane || 1)).toPrecision(2)}`, true)
+
+    .addField('**__Solo Normal:__**', stripIndents`<:kill:706030866949734442> **Kills:** ${(player.stats.SkyWars.kills_solo_normal || 0)}
+    <:death:706031056536731669> **Deaths:** ${(player.stats.SkyWars.deaths_solo_normal || 0)}
+    <:kdr:706032148012072990> **K/D:** ${((player.stats.SkyWars.kills_solo_normal || 0) / (player.stats.SkyWars.deaths_solo_normal || 1)).toPrecision(2)}
+
+    <:win:706020774938411048> **Wins:** ${(player.stats.SkyWars.wins_solo_normal || 0)}
+    <:loss:706030978790850670> **Losses:** ${(player.stats.SkyWars.losses_solo_normal || 0)}
+    <:wlr:706032249098731540> **W/L:** ${((player.stats.SkyWars.wins_solo_normal || 0) / (player.stats.SkyWars.losses_solo_normal || 1)).toPrecision(2)}`, true)
 
     .addField('**__Doubles Total:__**', stripIndents`> **Kills:** ${(player.stats.SkyWars.kills_team || 0)}
     > **Deaths:** ${(player.stats.SkyWars.deaths_team || 0)}
     > **Wins:** ${(player.stats.SkyWars.wins_team || 0)}
     > **Losses:** ${(player.stats.SkyWars.losses_team || 0)}
     > **W/L:** ${((player.stats.SkyWars.wins_team || 0) / (player.stats.SkyWars.losses_team || 1)).toPrecision(2)}
-    > **K/D:** ${((player.stats.SkyWars.kills_team || 0) / (player.stats.SkyWars.deaths_team || 1)).toPrecision(2)}
-    - - -`, true)
+    > **K/D:** ${((player.stats.SkyWars.kills_team || 0) / (player.stats.SkyWars.deaths_team || 1)).toPrecision(2)}`, true)
 
     .addField('**__Doubles Insane:__**', stripIndents`> **Kills:** ${(player.stats.SkyWars.kills_team_insane || 0)}
     > **Deaths:** ${(player.stats.SkyWars.deaths_team_insane || 0)}

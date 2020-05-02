@@ -62,49 +62,53 @@ module.exports.run = async (client, message, args) => {
     <:loss:706030978790850670> **Losses:** ${(player.stats.SkyWars.losses_solo_normal || 0)}
     <:wlr:706032249098731540> **W/L:** ${((player.stats.SkyWars.wins_solo_normal || 0) / (player.stats.SkyWars.losses_solo_normal || 1)).toPrecision(2)}`, true)
 
-    .addField('**__Doubles Total:__**', stripIndents`> **Kills:** ${(player.stats.SkyWars.kills_team || 0)}
-    > **Deaths:** ${(player.stats.SkyWars.deaths_team || 0)}
-    > **Wins:** ${(player.stats.SkyWars.wins_team || 0)}
-    > **Losses:** ${(player.stats.SkyWars.losses_team || 0)}
-    > **W/L:** ${((player.stats.SkyWars.wins_team || 0) / (player.stats.SkyWars.losses_team || 1)).toPrecision(2)}
-    > **K/D:** ${((player.stats.SkyWars.kills_team || 0) / (player.stats.SkyWars.deaths_team || 1)).toPrecision(2)}`, true)
+    .addField('**__Doubles Total:__**', stripIndents`<:kill:706030866949734442> **Kills:** ${(player.stats.SkyWars.kills_team || 0)}
+    <:death:706031056536731669> **Deaths:** ${(player.stats.SkyWars.deaths_team || 0)}
+    <:kdr:706032148012072990> **K/D:** ${((player.stats.SkyWars.kills_team || 0) / (player.stats.SkyWars.deaths_team || 1)).toPrecision(2)}
 
-    .addField('**__Doubles Insane:__**', stripIndents`> **Kills:** ${(player.stats.SkyWars.kills_team_insane || 0)}
-    > **Deaths:** ${(player.stats.SkyWars.deaths_team_insane || 0)}
-    > **Wins:** ${(player.stats.SkyWars.wins_team_insane || 0)}
-    > **Losses:** ${(player.stats.SkyWars.losses_team_insane || 0)}
-    > **W/L:** ${((player.stats.SkyWars.wins_team_insane || 0) / (player.stats.SkyWars.losses_team_insane || 1)).toPrecision(2)}
-    > **K/D:** ${((player.stats.SkyWars.kills_team_insane || 0) / (player.stats.SkyWars.deaths_team_insane || 1)).toPrecision(2)}
-    - - -`, true)
+    <:win:706020774938411048> **Wins:** ${(player.stats.SkyWars.wins_team || 0)}
+    <:loss:706030978790850670> **Losses:** ${(player.stats.SkyWars.losses_team || 0)}
+    <:wlr:706032249098731540> **W/L:** ${((player.stats.SkyWars.wins_team || 0) / (player.stats.SkyWars.losses_team || 1)).toPrecision(2)}`, true)
 
-    .addField('**__Doubles Normal:__**', stripIndents`> **Kills:** ${(player.stats.SkyWars.kills_team_normal || 0)}
-    > **Deaths:** ${(player.stats.SkyWars.deaths_team_normal || 0)}
-    > **Wins:** ${(player.stats.SkyWars.wins_team_normal || 0)}
-    > **Losses:** ${(player.stats.SkyWars.losses_team_normal || 0)}
-    > **W/L:** ${((player.stats.SkyWars.wins_team_normal || 0) / (player.stats.SkyWars.losses_team_normal || 1)).toPrecision(2)}
-    > **K/D:** ${((player.stats.SkyWars.kills_team_normal || 0) / (player.stats.SkyWars.deaths_team_normal || 1)).toPrecision(2)}
-    - - -`, true)
+    .addField('**__Doubles Insane:__**', stripIndents`<:kill:706030866949734442> **Kills:** ${(player.stats.SkyWars.kills_team_insane || 0)}
+    <:death:706031056536731669> **Deaths:** ${(player.stats.SkyWars.deaths_team_insane || 0)}
+    <:kdr:706032148012072990> **K/D:** ${((player.stats.SkyWars.kills_team_insane || 0) / (player.stats.SkyWars.deaths_team_insane || 1)).toPrecision(2)}
 
-    .addField('**__Ranked:__**', stripIndents`> **Kills:** ${(player.stats.SkyWars.kills_ranked || 0)}
-    > **Deaths:** ${(player.stats.SkyWars.deaths_ranked || 0)}
-    > **Wins:** ${(player.stats.SkyWars.wins_ranked || 0)}
-    > **Losses:** ${(player.stats.SkyWars.losses_ranked || 0)}
-    > **W/L:** ${((player.stats.SkyWars.wins_ranked || 0) / (player.stats.SkyWars.losses_ranked || 1)).toPrecision(2)}
-    > **K/D:** ${((player.stats.SkyWars.kills_ranked || 0) / (player.stats.SkyWars.deaths_ranked || 1)).toPrecision(2)}`, true)
+    <:win:706020774938411048> **Wins:** ${(player.stats.SkyWars.wins_team_insane || 0)}
+    <:loss:706030978790850670> **Losses:** ${(player.stats.SkyWars.losses_team_insane || 0)}
+    <:wlr:706032249098731540> **W/L:** ${((player.stats.SkyWars.wins_team_insane || 0) / (player.stats.SkyWars.losses_team_insane || 1)).toPrecision(2)}`, true)
 
-    .addField('**__Lab:__**', stripIndents`> **Kills:** ${(player.stats.SkyWars.kills_lab || 0)}
-    > **Deaths:** ${(player.stats.SkyWars.deaths_lab || 0)}
-    > **Wins:** ${(player.stats.SkyWars.wins_lab || 0)}
-    > **Losses:** ${(player.stats.SkyWars.losses_lab || 0)}
-    > **W/L:** ${((player.stats.SkyWars.wins_lab || 0) / (player.stats.SkyWars.losses_lab || 1)).toPrecision(2)}
-    > **K/D:** ${((player.stats.SkyWars.kills_lab || 0) / (player.stats.SkyWars.deaths_lab || 1)).toPrecision(2)}`, true)
+    .addField('**__Doubles Normal:__**', stripIndents`<:kill:706030866949734442> **Kills:** ${(player.stats.SkyWars.kills_team_normal || 0)}
+    <:death:706031056536731669> **Deaths:** ${(player.stats.SkyWars.deaths_team_normal || 0)}
+    <:kdr:706032148012072990> **K/D:** ${((player.stats.SkyWars.kills_team_normal || 0) / (player.stats.SkyWars.deaths_team_normal || 1)).toPrecision(2)}
 
-    .addField('**__Mega (Doubles):__**', stripIndents`> **Kills:** ${(player.stats.SkyWars.kills_mega_doubles || 0)}
-    > **Deaths:** ${(player.stats.SkyWars.deaths_mega_doubles || 0)}
-    > **Wins:** ${(player.stats.SkyWars.wins_mega_doubles || 0)}
-    > **Losses:** ${(player.stats.SkyWars.losses_mega_doubles || 0)}
-    > **W/L:** ${((player.stats.SkyWars.wins_mega_doubles || 0) / (player.stats.SkyWars.losses_mega_doubles || 1)).toPrecision(2)}
-    > **K/D:** ${((player.stats.SkyWars.kills_mega_doubles || 0) / (player.stats.SkyWars.deaths_mega_doubles || 1)).toPrecision(2)}`, true)
+    <:win:706020774938411048> **Wins:** ${(player.stats.SkyWars.wins_team_normal || 0)}
+    <:loss:706030978790850670> **Losses:** ${(player.stats.SkyWars.losses_team_normal || 0)}
+    <:wlr:706032249098731540> **W/L:** ${((player.stats.SkyWars.wins_team_normal || 0) / (player.stats.SkyWars.losses_team_normal || 1)).toPrecision(2)}`, true)
+
+    .addField('**__Ranked:__**', stripIndents`<:kill:706030866949734442> **Kills:** ${(player.stats.SkyWars.kills_ranked || 0)}
+    <:death:706031056536731669> **Deaths:** ${(player.stats.SkyWars.deaths_ranked || 0)}
+    <:kdr:706032148012072990> **K/D:** ${((player.stats.SkyWars.kills_ranked || 0) / (player.stats.SkyWars.deaths_ranked || 1)).toPrecision(2)}
+
+    <:win:706020774938411048> **Wins:** ${(player.stats.SkyWars.wins_ranked || 0)}
+    <:loss:706030978790850670> **Losses:** ${(player.stats.SkyWars.losses_ranked || 0)}
+    <:wlr:706032249098731540> **W/L:** ${((player.stats.SkyWars.wins_ranked || 0) / (player.stats.SkyWars.losses_ranked || 1)).toPrecision(2)}`, true)
+
+    .addField('**__Lab:__**', stripIndents`<:kill:706030866949734442> **Kills:** ${(player.stats.SkyWars.kills_lab || 0)}
+    <:death:706031056536731669> **Deaths:** ${(player.stats.SkyWars.deaths_lab || 0)}
+    <:kdr:706032148012072990> **K/D:** ${((player.stats.SkyWars.kills_lab || 0) / (player.stats.SkyWars.deaths_lab || 1)).toPrecision(2)}
+
+    <:win:706020774938411048> **Wins:** ${(player.stats.SkyWars.wins_lab || 0)}
+    <:loss:706030978790850670> **Losses:** ${(player.stats.SkyWars.losses_lab || 0)}
+    <:wlr:706032249098731540> **W/L:** ${((player.stats.SkyWars.wins_lab || 0) / (player.stats.SkyWars.losses_lab || 1)).toPrecision(2)}`, true)
+
+    .addField('**__Mega (Doubles):__**', stripIndents`<:kill:706030866949734442> **Kills:** ${(player.stats.SkyWars.kills_mega_doubles || 0)}
+    <:death:706031056536731669> **Deaths:** ${(player.stats.SkyWars.deaths_mega_doubles || 0)}
+    <:kdr:706032148012072990> **K/D:** ${((player.stats.SkyWars.kills_mega_doubles || 0) / (player.stats.SkyWars.deaths_mega_doubles || 1)).toPrecision(2)}
+
+    <:win:706020774938411048> **Wins:** ${(player.stats.SkyWars.wins_mega_doubles || 0)}
+    <:loss:706030978790850670> **Losses:** ${(player.stats.SkyWars.losses_mega_doubles || 0)}
+    <:wlr:706032249098731540> **W/L:** ${((player.stats.SkyWars.wins_mega_doubles || 0) / (player.stats.SkyWars.losses_mega_doubles || 1)).toPrecision(2)}`, true)
 
     .setFooter(`${config.version} | Requested By: ${message.author.tag}`, client.user.avatarURL)
 

@@ -6,7 +6,7 @@ if (message.author.id !== ("298812170093723649") && message.channel.id !== ("410
 
     let choice = args.join(" ").split(" | ");
     let unfilteredchoices = [];
-    unfilteredchoices.push(choice.length);
+    choice.forEach(choice => unfilteredchoices.push(choice))
     
     let choices = [];
     for (let i = 0; i < unfilteredchoices.length; i++) {

@@ -30,6 +30,7 @@ module.exports.run = async (client, message, args) => {
     .setColor(member.displayHexColor === '#000000' ? '#ffffff' : member.displayHexColor)
 
     .addField('**__General:__**', stripIndents`<:level:706030765473005568> **Level:** ${(player.stats.SkyWars.levelFormatted || "§71").replace(/(§[0-9])+/g, "").replace(/(§[a-z])+/g, "")}
+    <:lootbox:706032330422353942> **Loot Boxes:** ${(player.stats.SkyWars.skywars_chests || 0)}
     <:gamesplayed:706020723185025116> **Games Played:** ${(player.stats.SkyWars.games_played_skywars || 0)}
 
     <:head:706238121486057513> **Heads:** ${(player.stats.SkyWars.heads || 0)}

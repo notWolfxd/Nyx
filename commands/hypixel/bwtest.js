@@ -41,7 +41,7 @@ module.exports.help = {
     name: "bwtest",
     aliases: [ "bwt", "bwtstats", "bedwarst", "bwts" ],
     description: "Get a player's BedWarst general statistics.",
-    usage: "bedwarsstats <IGN>",
+    usage: "bedwarsstatts <IGN>",
     example: "bedwarsstatst Wolf",
     category: "Hypixel"
 }

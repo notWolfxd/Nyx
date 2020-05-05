@@ -10,7 +10,7 @@ if (message.author.id !== ("298812170093723649") && message.channel.id !== ("410
   if (!choice[1]) 
      return message.channel.send(`${message.author.username}, you didn't give much to choose from?`);
      
-  await message.channel.send(`🤔 ${response});
+  message.channel.send(`🤔 ${response});
      }
 module.exports.help = {
     name: "choose",

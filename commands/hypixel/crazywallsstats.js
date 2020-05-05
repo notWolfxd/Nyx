@@ -61,7 +61,42 @@ module.exports.run = async (client, message, args) => {
     <:loss:706030978790850670> **Losses:** ${(player.stats.TrueCombat.crazywalls_losses_solo_chaos || 0)}
     <:wlr:706032249098731540> **W/L:** ${((player.stats.TrueCombat.crazywalls_wins_solo_chaos || 0) / (player.stats.TrueCombat.crazywalls_losses_solo_chaos || 1)).toPrecision(2)}`, true)
 
+    .addField('➖➖➖', `➖➖➖`)
     
+    .addField('**__Teams Total:__**', stripIndents`<:kill:706030866949734442> **Kills:** ${((player.stats.TrueCombat.crazywalls_kills_team || 0) + (player.stats.TrueCombat.crazywalls_kills_team_chaos || 0))}
+    <:death:706031056536731669> **Deaths:** ${((player.stats.TrueCombat.crazywalls_deaths_team || 0) + (player.stats.TrueCombat.crazywalls_deaths_team_chaos || 0))}
+    <:kdr:706032148012072990> **K/D:** ${(((player.stats.TrueCombat.crazywalls_kills_team || 0) + (player.stats.TrueCombat.crazywalls_kills_team_chaos || 0)) / ((player.stats.TrueCombat.crazywalls_deaths_team || 0.0001) + (player.stats.TrueCombat.crazywalls_deaths_team_chaos || 0.9999))).toPrecision(2)}
+
+    <:win:706020774938411048> **Wins:** ${((player.stats.TrueCombat.crazywalls_wins_team || 0) + (player.stats.TrueCombat.crazywalls_wins_team_chaos || 0))}
+    <:loss:706030978790850670> **Losses:** ${((player.stats.TrueCombat.crazywalls_losses_team || 0) + (player.stats.TrueCombat.crazywalls_losses_team_chaos || 0))}
+    <:wlr:706032249098731540> **W/L:** ${(((player.stats.TrueCombat.crazywalls_wins_team || 0) + (player.stats.TrueCombat.crazywalls_wins_team_chaos || 0)) / ((player.stats.TrueCombat.crazywalls_losses_team || 0.0001) + (player.stats.TrueCombat.crazywalls_losses_team_chaos || 0.9999))).toPrecision(2)}`, true)
+
+    .addField('**__Teams Normal:__**', stripIndents`<:kill:706030866949734442> **Kills:** ${(player.stats.TrueCombat.crazywalls_kills_team || 0)}
+    <:death:706031056536731669> **Deaths:** ${(player.stats.TrueCombat.crazywalls_deaths_team || 0)}
+    <:kdr:706032148012072990> **K/D:** ${((player.stats.TrueCombat.crazywalls_kills_team || 0) / (player.stats.TrueCombat.crazywalls_deaths_team || 1)).toPrecision(2)}
+
+    <:win:706020774938411048> **Wins:** ${(player.stats.TrueCombat.crazywalls_wins_team || 0)}
+    <:loss:706030978790850670> **Losses:** ${(player.stats.TrueCombat.crazywalls_losses_team || 0)}
+    <:wlr:706032249098731540> **W/L:** ${((player.stats.TrueCombat.crazywalls_wins_team || 0) / (player.stats.TrueCombat.crazywalls_losses_team || 1)).toPrecision(2)}`, true)
+
+    .addField('**__Teams Lucky:__**', stripIndents`<:kill:706030866949734442> **Kills:** ${(player.stats.TrueCombat.crazywalls_kills_team_chaos || 0)}
+    <:death:706031056536731669> **Deaths:** ${(player.stats.TrueCombat.crazywalls_deaths_team_chaos || 0)}
+    <:kdr:706032148012072990> **K/D:** ${((player.stats.TrueCombat.crazywalls_kills_team_chaos || 0) / (player.stats.TrueCombat.crazywalls_deaths_team_chaos || 1)).toPrecision(2)}
+
+    <:win:706020774938411048> **Wins:** ${(player.stats.TrueCombat.crazywalls_wins_team_chaos || 0)}
+    <:loss:706030978790850670> **Losses:** ${(player.stats.TrueCombat.crazywalls_losses_team_chaos || 0)}
+    <:wlr:706032249098731540> **W/L:** ${((player.stats.TrueCombat.crazywalls_wins_team_chaos || 0) / (player.stats.TrueCombat.crazywalls_losses_team_chaos || 1)).toPrecision(2)}`, true)
+
+    .addField('➖➖➖', `➖➖➖`)
+    
+    .addField('**__Overall:__**', stripIndents`<:kill:706030866949734442> **Kills:** ${(player.stats.TrueCombat.kills || 0)}
+    <:death:706031056536731669> **Deaths:** ${(player.stats.TrueCombat.deaths || 0)}
+    <:kdr:706032148012072990> **K/D:** ${((player.stats.TrueCombat.kills || 0) / (player.stats.TrueCombat.deaths || 1)).toPrecision(2)}
+
+    <:win:706020774938411048> **Wins:** ${(player.stats.TrueCombat.wins || 0)}
+    <:loss:706030978790850670> **Losses:** ${(player.stats.TrueCombat.losses || 0)}
+    <:wlr:706032249098731540> **W/L:** ${((player.stats.TrueCombat.wins || 0) / (player.stats.TrueCombat.losses || 1)).toPrecision(2)}`, true)
+
     .setFooter(`${config.version} | Requested By: ${message.author.tag}`, client.user.avatarURL)
 
     message.channel.send(embed);

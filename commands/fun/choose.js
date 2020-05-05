@@ -9,7 +9,7 @@ if (message.author.id !== ("298812170093723649") && message.channel.id !== ("410
     unfilteredchoices.push(choice);
     
     let choices = [];
-    for (let i = 0; i < unfilteredchoices.length; i++;) {
+    for (let i = 0; i < unfilteredchoices.length; i++) {
         if (choices.indexOf(unfilteredchoices[i]) === -1) {
             choices.push(unfilteredchoices[i])
             }

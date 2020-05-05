@@ -29,7 +29,7 @@ module.exports.run = async (client, message, args) => {
     .setThumbnail('https://cravatar.eu/head/' + (player.uuid || '') + '?size=2408.png')
     .setColor(member.displayHexColor === '#000000' ? '#ffffff' : member.displayHexColor)
 
-    .addField('**__General:__**', stripIndents`:rosette: **Level:** ${("player.stats.BedWars.four_four_permanent "+"_items_purchased_bedwars" || 0)}`)
+    .addField('**__General:__**', stripIndents`:rosette: **Level:** ${(`player.stats.BedWars.four_four_permanent _items_purchased_bedwars` || 0)}`)
     
         .setFooter(`${config.version} | Requested By: ${message.author.tag}`, client.user.avatarURL)
 

@@ -43,7 +43,7 @@ module.exports.run = async (client, message, args) => {
     .setTitle("Team Recruitment!")
     .setColor("#ffa0bb")
     .setThumbnail(message.author.avatarURL)
-    .addField("Recruitment Format:", "https://notwolfxd.github.io/leaders")
+    .addField("Recruitment Format:", "[Go Here](https://notwolfxd.github.io/Leaders-Site)")
     .addField("Recruiter:", `${message.author.tag} | ${message.author.id}`)
     .addField("Recruiting On:", `${gameType}`)
     .addField("Recruiting For:", `${teamName}`)

@@ -1,15 +1,16 @@
 const { RichEmbed } = require("discord.js");
+const { dbConnect } = require("./../events/dbConnection.js");
 const { getChannel } = require("../../functions.js");
 
-module.exports.run = async (client, message, args, db) => {
+module.exports.run = async (client, message, args) => {
  
 if (!message.member.hasPermission("MANAGE_GUILD")) return;
 if (!args[0]) return message.channel.send("Please specify a new channel!");
 
 const channel = getChannel(message, args[0]);
   
-//  let db;
-//  db = dbConnect();
+  let db;
+  db = dbConnect();
     
     const selCmdChan = "SELECT commandchannel FROM guildSettings WHERE guildId = $1"
     const phVal3 = [message.guild.id]

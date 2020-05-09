@@ -20,7 +20,7 @@ module.exports = {
         return target;
     },
     
-    getRole: function(message, toFind = '') {
+    getChannel: function(message, toFind = '') {
         toFind = toFind.toLowerCase();
 
         let target = message.guild.channels.get(toFind);

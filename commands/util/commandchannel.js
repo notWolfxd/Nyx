@@ -1,5 +1,5 @@
 const { RichEmbed } = require("discord.js");
-const { dbConnect } = require("./../events/dbConnection.js");
+const { dbConnect } = require("../../events/dbConnection.js");
 const { getChannel } = require("../../functions.js");
 
 module.exports.run = async (client, message, args) => {

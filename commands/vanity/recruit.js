@@ -18,7 +18,7 @@ module.exports.run = async (client, message, args) => {
     .setThumbnail(message.author.avatarURL)
     .addField("Recruit people to join your team.", stripIndents` 
     **Permissions:** Gamemode specific leader role.
-    **Syntax Formatter:** Use https://notwolfxd.github.io/leaders to format your post
+    **Syntax Formatter:** Use [this](https://notwolfxd.github.io/Leaders-Site) to format your post
     **Friendly PSA:** If you are caught using this to advertise other servers, you will be banned.`)
     .setFooter(`${config.version}`, client.user.avatarURL)
 
@@ -82,6 +82,6 @@ module.exports.run = async (client, message, args) => {
     name: "recruit",
     aliases: [ "recruitment", "recruiting" ],
     description: "Recruit players to join your team.",
-    usage: "Refer to [this](https://notwolfxd.github.io/leaders) for info on usage.",
+    usage: "Refer to [this](https://notwolfxd.github.io/Leaders-Site) for info on usage.",
     category: "Vanity"
 }

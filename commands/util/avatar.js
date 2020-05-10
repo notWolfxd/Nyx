@@ -5,7 +5,6 @@ const config = require("../../config.json");
 
 module.exports.run = async (client, message, args) => {
 
-    if (message.channel.id !== "410526913879080960" && message.channel.id !== "460217052339372042" && message.author.id !== "298812170093723649") return;
     let msg = await message.channel.send("Generating avatar...");
 
     const member = getMember(message, args.join(" "));
@@ -26,5 +25,9 @@ module.exports.run = async (client, message, args) => {
 
 module.exports.help = {
     name: "avatar",
-    aliases: ["av", "pfp"]
+    aliases: ["av", "pfp"],
+    description: "Display a user's profile picture.",
+    usage: "avatar [User]",
+    example: "avatar @uwu.",
+    category: "Util"
 }

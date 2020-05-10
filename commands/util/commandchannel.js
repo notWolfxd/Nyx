@@ -18,7 +18,7 @@ const channel = getChannel(message, args[0]);
       db.query(selCmdChan, phVal3, (er, res) => {
        
         const updCmdChan = `UPDATE guildSettings SET commandchannel = $1 WHERE guildId = $2`
-        const phVals = [channel, message.guild.id]
+        const phVals = [channel.id, message.guild.id]
        
          db.query(updCmdChan, phVals, (err, res) => {
           
@@ -29,7 +29,7 @@ const channel = getChannel(message, args[0]);
                }
            })
 
-    message.channel.send(`Your commands channel was set to \`${channel}\`!`);
+    message.channel.send(`Your commands channel was set to \`${channel.id}\`!`);
         }) 
 };
 

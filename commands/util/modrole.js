@@ -18,7 +18,7 @@ const role = getRole(message, args.join(" "));
       db.query(selModRole, phVal3, (er, res) => {
        
         const updModRole = `UPDATE guildSettings SET modrole = $1 WHERE guildId = $2`
-        const phVals = [role, message.guild.id]
+        const phVals = [role.id, message.guild.id]
        
          db.query(updModRole, phVals, (err, res) => {
           
@@ -29,7 +29,7 @@ const role = getRole(message, args.join(" "));
                }
            })
 
-    message.channel.send(`Your mod role was set to \`${role}\`!`);
+    message.channel.send(`Your mod role was set to \`${role.id}\`!`);
         }) 
 };
 

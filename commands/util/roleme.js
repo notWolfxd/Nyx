@@ -4,9 +4,6 @@ const { stripIndents } = require("common-tags");
 
 module.exports.run = async (client, message, args) => {
     
-  if (message.channel.id !== ("410526913879080960"))
-     return;
-    
   const helpEmbed = new RichEmbed()
     .setColor("#f4392b")
     .setThumbnail(message.author.avatarURL)

@@ -34,7 +34,7 @@ exports.run = async (client, message) => {
    
   await db.query(selGuildData, phVal3, (er, res) => {
      const prefix = res.rows[0].prefix;
-     const modrole = res.row[0].modrole;
+     const modrole = res.rows[0].modrole;
      const commandchannel = res.rows[0].commandchannel;     
 
     let args = message.content.slice(prefix.length).trim().split(/ +/g);

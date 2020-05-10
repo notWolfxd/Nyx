@@ -5,7 +5,6 @@ const config = require("../../config.json");
 
 module.exports.run = async (client, message, args) => {
 
-    if (message.channel.id !== "410526913879080960" && message.channel.id !== "460217052339372042" && message.author.id !== "298812170093723649") return;
     const member = getMember(message, args.join(" "));
 
     // Member variables
@@ -40,5 +39,9 @@ module.exports.run = async (client, message, args) => {
 
 module.exports.help = {
     name: "whois",
-    aliases: ["uinfo", "userinfo"]
+    aliases: ["uinfo", "userinfo"],
+    description: "Get information about a user.",
+    usage: "whois [User]",
+    example: "whois @Jet",
+    category: "Util"
 }

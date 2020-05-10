@@ -46,7 +46,7 @@ exports.run = async (client, message) => {
     } else if (client.aliases.has(cmd)) {
          command = client.commands.get(client.aliases.get(cmd));
     }
-      if (message.channel.id !== (commandchannel) || !message.member.roles.has(modrole) || !message.member.hasPermission("ADMINISTRATOR")) return;
+      if (message.channel.id !== (commandchannel) && !message.member.roles.has(modrole) && !message.member.hasPermission("ADMINISTRATOR")) return;
       if (!message.content.startsWith(prefix)) return;
 
       if (command) {

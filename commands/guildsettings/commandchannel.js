@@ -39,5 +39,5 @@ module.exports.help = {
     description: "Change the channel for command usage in this guild.",
     usage: "commandchannel <Channel>",
     example: "commandchannel #commands",
-    category: "Util"
+    category: "Guild Settings"
 }

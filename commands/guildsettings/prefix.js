@@ -36,5 +36,5 @@ module.exports.help = {
     description: "Change the bot prefix for this guild.",
     usage: "prefix <NewPrefix>",
     example: "prefix >",
-    category: "Util"
+    category: "Guild Settings"
 }

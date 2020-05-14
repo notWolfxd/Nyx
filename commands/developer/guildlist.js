@@ -22,14 +22,14 @@ module.exports.run = async(client, message) => {
 
 	let msg = await message.channel.send(embed);
 
-	await msg.react("⬅");
-	await msg.react("➡");
+	await msg.react("⬅️");
+	await msg.react("➡️");
 	await msg.react("❌");
 
 	let collector = msg.createReactionCollector((reaction, user) => user.id === message.author.id);
 
 	collector.on("collect", async(reaction, user) => {
-		if (reaction._emoji.name === "⬅") {
+		if (reaction._emoji.name === "⬅️") {
 
 			// Updates variables
 			i0 = i0 - 10;
@@ -59,7 +59,7 @@ module.exports.run = async(client, message) => {
 
 		};
 
-		if (reaction._emoji.name === "➡") {
+		if (reaction._emoji.name === "➡️") {
 
 			// Updates variables
 			i0 = i0 + 10;
@@ -94,7 +94,7 @@ module.exports.run = async(client, message) => {
 		}
 
 		// Remove the reaction when the user react to the message
-		await reaction.users.remove(message.author.id);
+		await reaction.user.remove(message.author.id);
 	});
 
 };

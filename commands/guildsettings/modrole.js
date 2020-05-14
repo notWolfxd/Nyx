@@ -39,5 +39,5 @@ module.exports.help = {
     description: "Change the moderator role for commands in this guild.",
     usage: "modrole <Role>",
     example: "modrole Staff",
-    category: "Util"
+    category: "Guild Settings"
 }

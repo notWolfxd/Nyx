@@ -8,7 +8,7 @@
     "start": "node bot.js"
   },
   "engines": {
-    "node": "8.4.0"
+    "node": "9.x"
   },
   "repository": {
     "type": "git",

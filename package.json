@@ -8,7 +8,6 @@
     "start": "node bot.js"
   },
   "engines": {
-    "leveldown": "3.0.0",
     "node": "9.x"
   },
   "repository": {
@@ -24,7 +23,6 @@
   "dependencies": {
     "common-tags": "^1.8.0",
     "discord.js": "^11.6.4",
-    "enmap": "^0.3.2",
     "express": "^4.16.3",
     "hypixel-api": "^1.1.0",
     "moment": "^2.24.0",

@@ -8,6 +8,7 @@
     "start": "node bot.js"
   },
   "engines": {
+    "leveldown": "3.0.0",
     "node": "9.x"
   },
   "repository": {

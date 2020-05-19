@@ -19,7 +19,11 @@ module.exports.run = async (client, message, args) => {
     try {
         test = ( await ez.getPlayer('name', args[0])).player;
         uwa = player.uuid;
-        }
+        } catch (err) {
+        console.log(err)
+        message.channel.send('Hmm, that player doesn\'t seem to exist!')
+        return;
+                }
     
     try {
         player =  ( await HypixelClient.getPlayer(uwa))

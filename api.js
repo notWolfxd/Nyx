@@ -6,7 +6,7 @@ class Client {
    
    this.key = key
     }
-     async getPlayer (message, player = '', key = '') {
+     async getPlayer (key = '', message, player = '') {
        const dataName = await fetch(`https://api.mojang.com/users/profiles/minecraft/${player}`);
        const respName = JSON.parse( await dataName.text() );
        const playerName = respName.name

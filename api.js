@@ -13,7 +13,7 @@ class Client {
        const respName = JSON.parse( await dataName.text() );
        const playerName = respName.name
      
-       const hypixelPlayerData = await fetch(`https://api.hypixel.net/player?key=${yourkey}&name=${playerName}`);
+       const hypixelPlayerData = await fetch(`https://api.hypixel.net/player?key=${this.key}&name=${playerName}`);
        const hypixelPDResp = JSON.parse( await hypixelPlayerData.text() );
        
        if ( hypixelPDResp.success ) {

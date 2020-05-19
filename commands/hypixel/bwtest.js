@@ -21,12 +21,12 @@ module.exports.run = async (client, message, args) => {
         test = ( await ez.getPlayer('name', args[0])).player;
         } catch (err) {
         console.log(err)
-        message.channel.send('Hmm, that player doesn\'t seem to exist!')
+        message.channel.send('Hmm, that  doesn\'t seem to exist!')
         return;
                 }
     let uwa = test.uuid;
     try {
-        player =  ( await HypixelClient.getPlayer(uwa))
+        player =  ( await HypixelClient.getPlayer('name', uwa)).player
         let zzz = player.stats.SkyBlock.profiles.profile_id;
         profile = ( await HypixelClient.getSkyblockStats(zzz))
         }

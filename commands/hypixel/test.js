@@ -41,7 +41,7 @@ module.exports.run = async (client, message, args) => {
 	
 	
 	
-const data = await nodef(`https://api.mojang.com/profiles/minecraft/${args[0]`);
+const data = await nodef(`https://api.mojang.com/profiles/minecraft/${args[0]}`);
 const resp = JSON.parse( await data.text() );
 message.channel.send(resp.id);
     let member = message.author;

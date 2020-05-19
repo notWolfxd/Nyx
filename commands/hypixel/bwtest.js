@@ -1,5 +1,5 @@
 const { RichEmbed } = require("discord.js");
-const Hypixel = require('hypixel-api');
+const Hypixel = require('hypixel-api-reborn');
 const { stripIndents } = require("common-tags");
 const config = require("../../config.json")
 

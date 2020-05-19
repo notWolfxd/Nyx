@@ -3,52 +3,18 @@ const Hypixel = require('hypixel-api');
 const { stripIndents } = require("common-tags");
 const nodef = require("node-fetch");
 const config = require("../../config.json");
+const Hypixel2 = require("../../api.js");
 
 module.exports.run = async (client, message, args) => {
-   /*
-	const targetType = (args[0] ? 'name' : 'uuid')
-	const identifier = (args[0] ? args[0] : 'name')
-
-	let targetUUID = (targetType === 'uuid' ? identifier : null)
-
-	if (targetType === 'name') {
-		let playerResolution = await nodef('https://api.mojang.com/profiles/minecraft', {method: 'POST', body: identifier})
-
-		if (playerResolution.statusCode === 200) {
-			let body
-			try {
-				body = JSON.parse(playerResolution.body)
-
-				if (!Array.isArray(body)) throw 'Not array'
-			}
-			catch (err) {
-				throw new Error('Invalid response recieved from Mojang UUID resolution endpoint.')
-			}
-
-			if (body.length > 0) {
-				targetUUID = body[0].id
-			}
-			else {
-				throw new Error('Player does not exist.')
-			}
-		}
-		else {
-			throw new Error('Unexpected HTTP status code from Mojang UUID resolution endpoint.')
-		}
-	}
-
-	return message.channel.send(targetUUID)*/
-	
-	
-	
-const data = await nodef(`https://api.mojang.com/users/profiles/minecraft/${args[0]}`);
+		
+/* const data = await nodef(`https://api.mojang.com/users/profiles/minecraft/${args[0]}`);
 const resp = JSON.parse( await data.text() );
-message.channel.send(resp.id);
+message.channel.send(resp.id); */
     let member = message.author;
     let key = process.env.HYPIXEL_TOKEN;
     let player;
 
-    const HypixelClient = new Hypixel(key);
+    const HypixelClient = new Hypixel2(key);
     
     try {
         player = (await HypixelClient.getPlayer('name', args[0])).player

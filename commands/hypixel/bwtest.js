@@ -15,7 +15,9 @@ module.exports.run = async (client, message, args) => {
     const HypixelClient = new Hypixel(key);
     
     try {
-        player = ( await HypixelClient.getPlayer('name', args[0])).player
+        player =  ( await HypixelClient.getPlayer('name', args[0])).player
+        let zzz = player.stats.SkyBlock.profile_id;
+        profile = ( await HypixelClient.getPlayer('profile_id', zzz))
         }
     catch (err) {
         console.log(err)
@@ -29,7 +31,7 @@ module.exports.run = async (client, message, args) => {
     .setThumbnail('https://cravatar.eu/head/' + (player.uuid || '') + '?size=2408.png')
     .setColor(member.displayHexColor === '#000000' ? '#ffffff' : member.displayHexColor)
 
-    .addField('**__General:__**', stripIndents`:rosette: **Level:** ${(player.stats.BedWars.four_four_permanent_items_purchased_bedwars || 0)}`)
+    .addField('**__General:__**', stripIndents`:rosette: **Level:** ${(profile.profile_id || 0)}`)
     
         .setFooter(`${config.version} | Requested By: ${message.author.tag}`, client.user.avatarURL)
 

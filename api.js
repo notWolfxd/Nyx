@@ -16,7 +16,7 @@ const fetch = require("node-fetch");
        const getPlayerNameData = await fetch(`https://api.mojang.com/users/profiles/minecraft/${player}`);
        const getPlayerNameResponse = JSON.parse( await getPlayerNameData.text() );
        const getPlayerNameDefinition = getPlayerNameResponse.name;
-         },
+         }
       
    async getPlayerStatistics (message, player = '') {
        
@@ -32,7 +32,7 @@ const fetch = require("node-fetch");
             return getPlayerStatisticsResponse
            }
          else console.log(getPlayerStatisticsResponse.cause || response)
-         },
+         }
 
    async getPlayerSession (message, player = '') {
       
@@ -48,7 +48,7 @@ const fetch = require("node-fetch");
             return getPlayerSessionResponse
            }
          else console.log(getPlayerSessionResponse.cause || response)
-         },
+         }
             
    async getPlayerFriends (message, player = '') {
       
@@ -64,7 +64,7 @@ const fetch = require("node-fetch");
             return getPlayerFriendsResponse
            }
          else console.log(getPlayerFriendsResponse.cause || response)
-         },
+         }
       
    async getPlayerGuild (message, player = '') {
       
@@ -80,7 +80,7 @@ const fetch = require("node-fetch");
             return getPlayerGuildResponse
            }
          else console.log(getPlayerGuildResponse.cause || response)
-         },
+         }
 
    async getPlayerSkyblockProfile (message, player = '') {
       

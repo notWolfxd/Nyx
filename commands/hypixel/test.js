@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args) => {
 	let targetUUID = (targetType === 'uuid' ? identifier : null)
 
 	if (targetType === 'name') {
-		let playerResolution = await nodef('https://api.mojang.com/profiles/minecraft', {method: 'POST', body: [identifier]})
+		let playerResolution = await nodef('https://api.mojang.com/profiles/minecraft', {method: 'POST', body: identifier})
 
 		if (playerResolution.statusCode === 200) {
 			let body

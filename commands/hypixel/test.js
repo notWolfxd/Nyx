@@ -5,7 +5,7 @@ const nodef = require("node-fetch");
 const config = require("../../config.json");
 
 module.exports.run = async (client, message, args) => {
-   
+   /*
 	const targetType = (args[0] ? 'name' : 'uuid')
 	const identifier = (args[0] ? args[0] : 'name')
 
@@ -37,7 +37,9 @@ module.exports.run = async (client, message, args) => {
 		}
 	}
 
-	return message.channel.send(targetUUID)
+	return message.channel.send(targetUUID)*/
+	
+	
 
 
     let member = message.author;

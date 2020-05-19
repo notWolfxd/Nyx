@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 
    class Client {
 
-     constructor(key) {
+     constructor(key, profile) {
         this.key = key;
         this.profile = profile;
                       }

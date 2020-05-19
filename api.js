@@ -24,4 +24,4 @@ class Client {
 
    }
 
-module.sxports = Client
+module.exports = Client

@@ -4,10 +4,10 @@ const { stripIndents } = require("common-tags");
 const nodef = require("node-fetch");
 const config = require("../../config.json");
 
-module.exports.run = async (client, message, args, p1, p2) => {
+module.exports.run = async (client, message, args) => {
    
-	const targetType = (p2 ? p1 : 'uuid')
-	const identifier = (p2 ? p2 : p1)
+	const targetType = (args[0] ? 'name' : 'uuid')
+	const identifier = (args[0] ? args[0] : 'name')
 
 	let targetUUID = (targetType === 'uuid' ? identifier : null)
 

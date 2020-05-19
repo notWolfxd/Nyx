@@ -1,5 +1,6 @@
 const { RichEmbed } = require("discord.js");
 const Hypixel = require('hypixel-api-reborn');
+const HypixelE = require('hypixel-api');
 const { stripIndents } = require("common-tags");
 const config = require("../../config.json")
 
@@ -13,9 +14,15 @@ module.exports.run = async (client, message, args) => {
     let player;
 
     const HypixelClient = new Hypixel(key);
+    const ez = new HypixelE(key);
     
     try {
-        player =  ( await HypixelClient.getPlayer(args[0]))
+        test = ( await ez.getPlayer('name', args[0])).player;
+        uwa = player.uuid;
+        }
+    
+    try {
+        player =  ( await HypixelClient.getPlayer(uwa))
         let zzz = player.stats.SkyBlock.profiles.profile_id;
         profile = ( await HypixelClient.getSkyblockStats(zzz))
         }

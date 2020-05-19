@@ -4,7 +4,7 @@ class Client {
 
    constructor(key) {
    
-   this.key = process.env.HYPIXEL_TOKEN
+   this.key = key
     }
      async getPlayer (message, player = '') {
        const dataName = await fetch(`https://api.mojang.com/users/profiles/minecraft/${player}`);

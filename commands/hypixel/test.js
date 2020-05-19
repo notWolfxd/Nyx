@@ -16,15 +16,17 @@ message.channel.send(resp.id); */
 
     const Hypixel2Client = new Hypixel2(key);
     
-    try {
+ /*   try {
         player = (await Hypixel2Client.getPlayer('name', args[0])).player
         }
     catch (err) {
         console.log(err)
         message.channel.send('Hmm, that player doesn\'t seem to exist!')
         return;
-                }
-
+                } */
+	
+	
+const player = Hypixel2Client.getPlayer(message, args[0]);
     const embed = new RichEmbed()
 
     .setDescription(`[**${player.displayname}'s SkyWars Heads**](https://hypixel.net/${args[0]})`)

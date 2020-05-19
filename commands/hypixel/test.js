@@ -14,10 +14,10 @@ message.channel.send(resp.id); */
     let key = process.env.HYPIXEL_TOKEN;
     let player;
 
-    const HypixelClient = new Hypixel2(key);
+    const Hypixel2Client = new Hypixel2(key);
     
     try {
-        player = (await HypixelClient.getPlayer('name', args[0])).player
+        player = (await Hypixel2Client.getPlayer('name', args[0])).player
         }
     catch (err) {
         console.log(err)

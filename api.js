@@ -1,7 +1,5 @@
 const fetch = require("node-fetch");
 
-module.exports => {
-
 class Client {
 
    constructor(key) {
@@ -19,13 +17,11 @@ class Client {
        if ( hypixelPDResp.success ) {
           return hypixelPDResp
         }
-        else console.log(parsed.cause || response)
+        else console.log(hypixelPDResp.cause || response)
           }
          
       }
 
    }
-
-}
 
 module.sxports = Client

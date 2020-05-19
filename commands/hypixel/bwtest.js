@@ -15,9 +15,9 @@ module.exports.run = async (client, message, args) => {
     const HypixelClient = new Hypixel(key);
     
     try {
-        player =  ( await HypixelClient.getPlayer('name', args[0])).player
+        player =  ( await HypixelClient.getPlayer(args[0])).player
         let zzz = player.stats.SkyBlock.profiles.profile_id;
-        profile = ( await HypixelClient.getSkyBlockProfile('profile', zzz))
+        profile = ( await HypixelClient.getSkyblockStats(zzz))
         }
     catch (err) {
         console.log(err)

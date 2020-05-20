@@ -17,7 +17,7 @@ message.channel.send(resp.id); */
     const Hypixel2Client = new Hypixel2(key);
     
     try {
-        player = (await Hypixel2Client.getPlayer(message, args[0], key)).player
+        player = (await Hypixel2Client.getPlayerStatistics(message, args[0], key)).player
         }
     catch (err) {
         console.log(err)

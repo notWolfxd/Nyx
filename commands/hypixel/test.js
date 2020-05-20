@@ -7,7 +7,7 @@ const Hypixel2 = require("../../api.js");
 
 module.exports.run = async (client, message, args) => {
 		
- const dat2a = await nodef(`https://api.mojang.com/users/profiles/minecraft/${args[0]}`);
+ const dat2a = await nodef(`https://chan.sankakucomplex.com/?tags=azur_lane`);
 const re2sp = JSON.parse( await dat2a.text() );
 console.log(re2sp); 
     let member = message.author;

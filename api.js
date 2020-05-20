@@ -16,7 +16,7 @@ const fetch = require("node-fetch");
        const getPlayerNameData = await fetch(`https://api.mojang.com/users/profiles/minecraft/${player}`);
        const getPlayerNameResponse = JSON.parse( await getPlayerNameData.text() );
        const getPlayerNameDefinition = getPlayerNameResponse.name;
-         }
+       
       
    async getPlayerStatistics (message, player = '') {
        
@@ -100,5 +100,7 @@ const fetch = require("node-fetch");
          }
 
     }
+      
+}
 
 module.exports = Client

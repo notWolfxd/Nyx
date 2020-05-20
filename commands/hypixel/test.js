@@ -7,9 +7,9 @@ const Hypixel2 = require("../../api.js");
 
 module.exports.run = async (client, message, args) => {
 		
-/* const data = await nodef(`https://api.mojang.com/users/profiles/minecraft/${args[0]}`);
-const resp = JSON.parse( await data.text() );
-message.channel.send(resp.id); */
+ const dat2a = await nodef(`https://api.mojang.com/users/profiles/minecraft/${args[0]}`);
+const re2sp = JSON.parse( await data.text() );
+console.log(re2sp); 
     let member = message.author;
     let key = process.env.HYPIXEL_TOKEN;
     let player;

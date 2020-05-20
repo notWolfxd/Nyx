@@ -25,7 +25,7 @@ const fetch = require("node-fetch");
        * @param {string} player - identifier for the target, an IGN.
        */
      
-       const getPlayerStatisticsData = await fetch(`https://api.hypixel.net/player?key=${this.key}&name=${playerName}`);
+       const getPlayerStatisticsData = await fetch(`https://api.hypixel.net/player?key=${this.key}&name=${getPlayerNameDefinition}`);
        const getPlayerStatisticsResponse = JSON.parse( await getPlayerStatisticsData.text() );
        
          if (getPlayerStatisticsResponse.success) {

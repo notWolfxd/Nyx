@@ -6,9 +6,11 @@ const fetch = require("node-fetch");
         this.key = key;
         this.profile = profile;
                       }
-   async getPlayerName (message, player = '') {
+
       
-       /**
+   async getPlayerStatistics (message, player = '') {
+       
+      /*
        * Get a player's Minecraft name - for use in later functions.
        * @param {string} player - identifier for the target, an IGN or UUID.
        */
@@ -16,11 +18,8 @@ const fetch = require("node-fetch");
        const getPlayerNameData = await fetch(`https://api.mojang.com/users/profiles/minecraft/${player}`);
        const getPlayerNameResponse = JSON.parse( await getPlayerNameData.text() );
        const getPlayerNameDefinition = getPlayerNameResponse.name;
-       
       
-   async getPlayerStatistics (message, player = '') {
-       
-       /**
+      /*
        * Get a player's Hypixel gamemode statistics.
        * @param {string} player - identifier for the target, an IGN.
        */
@@ -35,6 +34,15 @@ const fetch = require("node-fetch");
          }
 
    async getPlayerSession (message, player = '') {
+      
+      /*
+       * Get a player's Minecraft name - for use in later functions.
+       * @param {string} player - identifier for the target, an IGN or UUID.
+       */
+      
+       const getPlayerNameData = await fetch(`https://api.mojang.com/users/profiles/minecraft/${player}`);
+       const getPlayerNameResponse = JSON.parse( await getPlayerNameData.text() );
+       const getPlayerNameDefinition = getPlayerNameResponse.name;
       
        /**
        * Get a player's current or last session on Hypixel.
@@ -101,6 +109,6 @@ const fetch = require("node-fetch");
 
     }
       
-}
+
 
 module.exports = Client

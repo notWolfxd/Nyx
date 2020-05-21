@@ -44,12 +44,12 @@ const fetch = require("node-fetch");
        const getPlayerNameResponse = JSON.parse( await getPlayerNameData.text() );
        const getPlayerNameDefinition = getPlayerNameResponse.name;
       
-       /**
+      /*
        * Get a player's current or last session on Hypixel.
        * @param {string} player - identifier for the target, an IGN.
        */
    
-       const getPlayerSessionData = await fetch(`https://api.hypixel.net/session?key=${this.key}&name=${playerName}`);
+       const getPlayerSessionData = await fetch(`https://api.hypixel.net/session?key=${this.key}&name=${getPlayerNameDefinition}`);
        const getPlayerSessionResponse = JSON.parse( await getPlayerSessionData.text() );
        
          if (getPlayerSessionResponse.success) {
@@ -60,12 +60,21 @@ const fetch = require("node-fetch");
             
    async getPlayerFriends (message, player = '') {
       
-       /**
+      /*
+       * Get a player's Minecraft name - for use in later functions.
+       * @param {string} player - identifier for the target, an IGN or UUID.
+       */
+      
+       const getPlayerNameData = await fetch(`https://api.mojang.com/users/profiles/minecraft/${player}`);
+       const getPlayerNameResponse = JSON.parse( await getPlayerNameData.text() );
+       const getPlayerNameDefinition = getPlayerNameResponse.name;
+      
+      /*
        * Get a player's friend list statistics on Hypixel.
        * @param {string} player - identifier for the target, an IGN.
        */
    
-       const getPlayerFriendsData = await fetch(`https://api.hypixel.net/friends?key=${this.key}&name=${playerName}`);
+       const getPlayerFriendsData = await fetch(`https://api.hypixel.net/friends?key=${this.key}&name=${getPlayerNameDefinition}`);
        const getPlayerFriendsResponse = JSON.parse( await getPlayerFriendsResponse.text() );
        
          if (getPlayerFriendsResponse.success) {
@@ -76,12 +85,21 @@ const fetch = require("node-fetch");
       
    async getPlayerGuild (message, player = '') {
       
-       /**
+      /*
+       * Get a player's Minecraft name - for use in later functions.
+       * @param {string} player - identifier for the target, an IGN or UUID.
+       */
+      
+       const getPlayerNameData = await fetch(`https://api.mojang.com/users/profiles/minecraft/${player}`);
+       const getPlayerNameResponse = JSON.parse( await getPlayerNameData.text() );
+       const getPlayerNameDefinition = getPlayerNameResponse.name;
+      
+      /*
        * Get a player's guild statistics on Hypixel.
        * @param {string} player - identifier for the target, an IGN.
        */
    
-       const getPlayerGuildData = await fetch(`https://api.hypixel.net/guild?key=${this.key}&name=${playerName}`);
+       const getPlayerGuildData = await fetch(`https://api.hypixel.net/guild?key=${this.key}&name=${getPlayerNameDefinition}`);
        const getPlayerGuildResponse = JSON.parse( await getPlayerGuildData.text() );
        
          if (getPlayerGuildResponse.success) {
@@ -92,7 +110,7 @@ const fetch = require("node-fetch");
 
    async getPlayerSkyblockProfile (message, player = '') {
       
-       /**
+      /*
        * Get a player's SkyBlock statistics on Hypixel.
        * @param {string} player - identifier for the target, an IGN.
        * @param {string} profile - [player.stats.SkyBlock.profile], you must get this yourself.

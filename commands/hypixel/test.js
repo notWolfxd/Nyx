@@ -38,7 +38,7 @@ console.log(re2sp); */
                 }
 	
   const sbProfile = new Hypixel2(profile);*/
-	let ee = player.stats.SkyBlock.profiles; console.log(ee); 
+	let ee = player.stats.SkyBlock.profiles[0]; console.log(ee); 
 	let zz = ee.forEach(p => p.profile_id); console.log(zz);
 	
 	

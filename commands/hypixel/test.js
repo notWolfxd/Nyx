@@ -40,7 +40,7 @@ console.log(re2sp); */
 	let ee = player.stats.SkyBlock.profiles; console.log(ee); 
 	let profile = Object.keys(ee)[0]; 
 	
-	const sbp = new Hypixel2(profile)
+	const sbp = new Hypixel2(key, profile)
 	
 	
 	try {

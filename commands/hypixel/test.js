@@ -28,7 +28,7 @@ console.log(re2sp); */
                 }
 	
 try {
-	profile = (await `player.stats.SkyBlock.profiles.profile_id`);
+	profile = (await player.stats.SkyBlock.profiles.profile_id);
 	    console.log(profile);
         }
     catch (err) {

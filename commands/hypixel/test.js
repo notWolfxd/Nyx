@@ -20,6 +20,7 @@ console.log(re2sp); */
     try {
         player = (await Hypixel2Client.getPlayerStatistics(message, args[0], key)).player; 
 	profile = (await player.stats.SkyBlock.profiles.profile_id);
+	    console.log(profile);
         }
     catch (err) {
         console.log(err)

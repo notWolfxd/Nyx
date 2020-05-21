@@ -26,7 +26,7 @@ console.log(re2sp); */
                 }
 	let profile = player.stats.SkyBlock.profiles;
 	if (profile === undefined);
-	return message.channsl.send("No profile found");
+	return message.channel.send("No profile found");
 	
   const sbProfile = new Hypixel2(profile);
 	

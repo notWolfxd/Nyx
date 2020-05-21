@@ -13,8 +13,7 @@ console.log(re2sp); */
     let member = message.author;
     let key = process.env.HYPIXEL_TOKEN;
     let player;
-    let profile;
-
+ let player2;
     const Hypixel2Client = new Hypixel2(key);
     
     try {
@@ -39,8 +38,20 @@ console.log(re2sp); */
 	
   const sbProfile = new Hypixel2(profile);*/
 	let ee = player.stats.SkyBlock.profiles; console.log(ee); 
-	let zz = Object.keys(ee)[0]; console.log(zz);
+	let profile = Object.keys(ee)[0]; 
 	
+	const sbp = new Hypixel2(profile)
+	
+	
+	try {
+        player2 = (await Hypixel2Client.getPlayerSkyblockProfile(message, args[0])); 
+	
+        }
+    catch (err) {
+        console.log(err)
+        message.channel.send('Hmm, that player doesn\'t seem to exist!')
+        return;
+                }
 	
     const embed = new RichEmbed()
 
@@ -49,7 +60,7 @@ console.log(re2sp); */
     .setColor(member.displayHexColor === '#000000' ? '#ffffff' : member.displayHexColor)
 
     .addField('**__Heads Information:__**', stripIndents`Each head gives a different amount of EXP, and can only be obtained from corrupted games.
-    > **Angel of Death Tier:** ${(player.stats.SkyBlock.profiles.forEach(p => p.profile_id))}`)
+    > **Angel of Death Tier:** ${(player2.profile.profile_id)}`)
 
     .setFooter(`${config.version} | Requested By: ${message.author.tag}`, client.user.avatarURL)
 

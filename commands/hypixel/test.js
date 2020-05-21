@@ -24,9 +24,9 @@ console.log(re2sp); */
         message.channel.send('Hmm, that player doesn\'t seem to exist!')
         return;
                 }
-	let profile = player.stats.SkyBlock.profiles.profile_id;
+	let profile = `player.stats.SkyBlock.profiles.profile_id`;/*
 	if (profile === undefined);
-	return message.channel.send("No profile found");
+	return message.channel.send("No profile found");*/
 	
   const sbProfile = new Hypixel2(profile);
 	

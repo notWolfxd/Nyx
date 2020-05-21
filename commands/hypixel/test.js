@@ -38,6 +38,8 @@ console.log(re2sp); */
                 }
 	
   const sbProfile = new Hypixel2(profile);*/
+	let ee = player.stats.SkyBlock.profiles; console.log(ee);
+	
 	
     const embed = new RichEmbed()
 
@@ -46,7 +48,7 @@ console.log(re2sp); */
     .setColor(member.displayHexColor === '#000000' ? '#ffffff' : member.displayHexColor)
 
     .addField('**__Heads Information:__**', stripIndents`Each head gives a different amount of EXP, and can only be obtained from corrupted games.
-    > **Angel of Death Tier:** ${(player.stats.SkyBlock.profiles.first().profile_id)}`)
+    > **Angel of Death Tier:** ${(player.stats.SkyBlock.profiles)}`)
 
     .setFooter(`${config.version} | Requested By: ${message.author.tag}`, client.user.avatarURL)
 

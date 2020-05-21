@@ -44,7 +44,7 @@ console.log(re2sp); */
 	
 	
 	try {
-        player2 = (await Hypixel2Client.getPlayerSkyblockProfile(message, args[0])); 
+        player2 = (await sbp.getPlayerSkyblockProfile(message, args[0])); 
 	
         }
     catch (err) {

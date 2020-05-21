@@ -7,9 +7,9 @@ const Hypixel2 = require("../../api.js");
 
 module.exports.run = async (client, message, args) => {
 		
- const dat2a = await nodef(`https://chan.sankakucomplex.com/post/show/20748210`);
+/* const dat2a = await nodef(`https://chan.sankakucomplex.com/post/show/20748210`);
 const re2sp = JSON.parse( await dat2a.text() );
-console.log(re2sp); 
+console.log(re2sp); */
     let member = message.author;
     let key = process.env.HYPIXEL_TOKEN;
     let player;

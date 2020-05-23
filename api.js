@@ -2,9 +2,10 @@ const fetch = require("node-fetch");
 
    class Client {
 
-     constructor(key, profile) {
+     constructor(key, profile, productID) {
         this.key = key;
         this.profile = profile;
+        this.productID = productID;
                       }
 
       

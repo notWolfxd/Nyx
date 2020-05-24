@@ -46,7 +46,7 @@ const logEmbed = new RichEmbed()
      > **Reason:** ${reason}`)
      .setFooter(`${config.version} | Made By: Wolf#9001`, client.user.avatarURL)
 
-    if (modlog) modlog.send({ logEmbed });
+   modlog.send(logEmbed);
                         
 }
 module.exports.help = {

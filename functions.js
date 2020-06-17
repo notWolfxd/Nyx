@@ -72,7 +72,7 @@ module.exports = {
         }
             
         if (!target) 
-            target = message.member;
+            target = message.guild.id;
             
         return target;
     },
